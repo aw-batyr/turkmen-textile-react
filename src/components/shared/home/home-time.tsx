@@ -61,7 +61,7 @@ export const HomeTime: FC<Props> = ({ className }) => {
             ))}
           </div>
 
-          <Link to="" className="md:w-fit w-full  mx-auto">
+          <Link to="/stend-form" className="md:w-fit w-full  mx-auto">
             <Button className="w-full">Забронируйте стенд </Button>
           </Link>
         </div>

@@ -42,7 +42,7 @@ export const Header: FC = () => {
               <h4 className="text-sm">Ашхабад, Туркменистан</h4>
             </div>
 
-            <nav className="flex items-center gap-6 text-reverse_primary">
+            <nav className="flex items-center gap-6 text-white">
               {navData.map(({ title, link }) => (
                 <Link className="py-2" key={title} to={link}>
                   {title}
@@ -54,7 +54,7 @@ export const Header: FC = () => {
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <Smartphone size={16} strokeWidth="3px" />
-              <h4 className="text-sm text-reverse_primary">+99371871814</h4>
+              <h4 className="text-sm text-white">+99371871814</h4>
             </div>
 
             {/* <LangMenu /> */}
@@ -69,7 +69,7 @@ export const Header: FC = () => {
               <Logo />
             </Link>
 
-            <nav className="lg:flex hidden items-center gap-6 text-reverse_primary">
+            <nav className="lg:flex hidden items-center gap-6 text-white">
               {navData2.map(({ title, link }) => (
                 <Link key={title} to={link} className="flex items-center gap-2">
                   {title} <img src="/chevron.svg" />
@@ -87,18 +87,20 @@ export const Header: FC = () => {
             <Button
               variant={"secondary"}
               size={"sm"}
-              className="bg-secondary_container text-primary hover:bg-secondary_container/90"
+              className="bg-white text-primary hover:bg-white/90"
             >
               Официальная поддержка
             </Button>
 
-            <Button
-              variant={"secondary"}
-              size={"sm"}
-              className="bg-reverse_primary text-on_secondary_container hover:bg-reverse_primary/90"
-            >
-              B2B | B2G встречи
-            </Button>
+            <Link to="/B2B-B2G">
+              <Button
+                variant={"secondary"}
+                size={"sm"}
+                className="bg-teritary text-white hover:bg-teritary/90"
+              >
+                B2B | B2G встречи
+              </Button>
+            </Link>
           </div>
         </Container>
       </div>

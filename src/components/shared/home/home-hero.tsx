@@ -3,6 +3,7 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout";
+import { useMediaQuery } from "usehooks-ts";
 
 export const btns = [
   {
@@ -11,29 +12,29 @@ export const btns = [
   },
   {
     title: "Забронировать стенд",
-    link: "",
+    link: "/stend-form",
   },
   {
-    title: "B2B | B2G встречи",
+    title: "Программа ",
     link: "",
   },
   {
     title: "Стать спонсором",
-    link: "",
+    link: "/become-sponsor",
   },
 ];
 
 export const HomeHero: FC = () => {
   const [embalRef] = useEmblaCarousel();
 
-  // const lg = useMediaQuery("(min-width: 1024px)");
-  // const md = useMediaQuery("(min-width: 768px)");
+  const lg = useMediaQuery("(min-width: 1024px)");
+  const md = useMediaQuery("(min-width: 768px)");
 
-  // function getBanner() {
-  //   if (lg) return "/banners/ru/l.jpg";
-  //   else if (md) return "/banners/ru/m.jpg";
-  //   else return "/banners/ru/s.jpg";
-  // }
+  function getBanner() {
+    if (lg) return "/banners/ru/l.jpg";
+    else if (md) return "/banners/ru/m.jpg";
+    else return "/banners/ru/s.jpg";
+  }
 
   return (
     <section className="flex flex-col gap-5">
@@ -41,7 +42,7 @@ export const HomeHero: FC = () => {
         <div className="embla__container">
           <div className="embla__slide">
             <img
-              src={"/hero-banner.png"}
+              src={getBanner()}
               alt=""
               className="size-full object-cover lg:max-h-[600px] lg:min-h-[320px]"
             />
@@ -55,7 +56,7 @@ export const HomeHero: FC = () => {
             <Button
               size={"lg"}
               variant={"teritary"}
-              className="w-full drop-shadow-sm shadow-md bg-teritary text-on_teritary hover:bg-teritary/90"
+              className="w-full drop-shadow-sm shadow-md text-xl bg-teritary text-on_teritary hover:bg-teritary/90"
             >
               {title}
             </Button>

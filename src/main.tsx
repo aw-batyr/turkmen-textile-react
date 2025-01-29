@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { About, Home } from "./pages";
+import { About, B2b, BecomeSponsor, Home, StendForm } from "./pages";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +17,18 @@ const router = createBrowserRouter([
       {
         element: <About />,
         path: "/about",
+      },
+      {
+        element: <B2b />,
+        path: "/B2B-B2G",
+      },
+      {
+        element: <BecomeSponsor />,
+        path: "/become-sponsor",
+      },
+      {
+        element: <StendForm />,
+        path: "/stend-form",
       },
     ],
   },

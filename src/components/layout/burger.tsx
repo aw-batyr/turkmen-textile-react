@@ -35,7 +35,7 @@ export const Burger: FC<Props> = () => {
             <Button
               variant={"secondary"}
               size={"sm"}
-              className="bg-reverse_primary w-full text-on_teritary hover:bg-reverse_primary/90"
+              className="bg-teritary w-full text-on_teritary hover:bg-teritary/90"
             >
               Официальная поддержка
             </Button>
