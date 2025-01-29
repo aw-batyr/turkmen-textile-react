@@ -9,7 +9,6 @@ import {
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 import { navData2 } from "./header";
-import { ArrowUpRight } from "lucide-react";
 
 interface Props {
   className?: string;
@@ -22,9 +21,9 @@ export const Burger: FC<Props> = () => {
     <Sheet onOpenChange={() => setOpen(!open)} open={open}>
       <SheetTrigger>
         <div className="flex flex-col gap-1 lg:hidden items-center justify-center size-10">
-          <div className="w-[18px] h-0.5 bg-on_secondary_container rounded-[2px]" />
-          <div className="w-[18px] h-0.5 bg-on_secondary_container rounded-[2px]" />
-          <div className="w-[18px] h-0.5 bg-on_secondary_container rounded-[2px]" />
+          <div className="w-[18px] h-0.5 bg-reverse_primary rounded-[2px]" />
+          <div className="w-[18px] h-0.5 bg-reverse_primary rounded-[2px]" />
+          <div className="w-[18px] h-0.5 bg-reverse_primary rounded-[2px]" />
         </div>
       </SheetTrigger>
 
@@ -32,18 +31,11 @@ export const Burger: FC<Props> = () => {
         <SheetClose />
 
         <SheetHeader className="mt-16 flex flex-col gap-2">
-          <Link to="https://qacis.turkmenexpo.com/" target="_blank">
-            <Button variant="outline" className="w-full" size={"sm"}>
-              QACIS 2025
-              <ArrowUpRight />
-            </Button>
-          </Link>
-
           <Link to="">
             <Button
               variant={"secondary"}
               size={"sm"}
-              className="bg-[#FFAE2A] w-full text-on_teritary hover:bg-[#FFAE2A]/90"
+              className="bg-reverse_primary w-full text-on_teritary hover:bg-reverse_primary/90"
             >
               Официальная поддержка
             </Button>
