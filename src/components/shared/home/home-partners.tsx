@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { FC, useCallback, useEffect, useState } from "react";
-import { Container, EmblaDots } from "../";
 import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Container } from "@/components/layout";
 
 interface Props {
   className?: string;
@@ -76,7 +76,7 @@ export const HomePartners: FC<Props> = ({ className }) => {
           </div>
         </div>
 
-        <EmblaDots scrollTo={scrollTo} slides={4} active={selectedIndex} />
+        {/* <EmblaDots scrollTo={scrollTo} slides={4} active={selectedIndex} /> */}
       </Container>
     </section>
   );

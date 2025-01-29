@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
 import { FC } from "react";
-import { Container } from "../container";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Container } from "@/components/layout";
 
 interface Props {
   className?: string;
@@ -22,7 +22,7 @@ export const AboutBron: FC<Props> = ({ className }) => {
         <h3 className="h2 text-center !text-on_primary mb-6">
           Приглашение к участию
         </h3>
-        <p className="text-center md:text-lg text-sm  text-primary_04 max-w-[808px] mx-auto mb-10">
+        <p className="text-center md:text-lg text-sm  text-primary_03 max-w-[828px] px-5 mx-auto mb-10">
           Торгово-промышленная палата Туркменистана приглашает бизнес-сообщество
           со всего мира присоединиться к этому уникальному событию, которое
           станет важным шагом к укреплению позиций Туркменистана на глобальной
@@ -31,12 +31,12 @@ export const AboutBron: FC<Props> = ({ className }) => {
 
         <div className="flex flex-col md:flex-row items-center gap-6">
           <Link to={"/stend-form"} className="w-full">
-            <Button className="bg-white w-full text-primary hover:bg-white/90">
+            <Button className="bg-reverse_primary w-full text-primary hover:bg-reverse_primary/90">
               Забронировать стенд
             </Button>
           </Link>
           <Link to={"/B2B-B2G"} className="w-full">
-            <Button className="bg-white w-full hover:bg-white/90 text-primary">
+            <Button className="bg-reverse_primary w-full hover:bg-reverse_primary/90 text-primary">
               B2B | B2G встречи
             </Button>
           </Link>

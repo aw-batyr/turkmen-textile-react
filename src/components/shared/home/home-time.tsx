@@ -3,7 +3,7 @@ import { FC } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Container } from "@/components/layout";
-import { TimeCard } from "../";
+import { ContactCard, TimeCard } from "../";
 
 interface Props {
   className?: string;
@@ -61,7 +61,7 @@ export const HomeTime: FC<Props> = ({ className }) => {
             ))}
           </div>
 
-          <Link to="/stend-form" className="md:w-fit w-full  mx-auto">
+          <Link to="" className="md:w-fit w-full  mx-auto">
             <Button className="w-full">Забронируйте стенд </Button>
           </Link>
         </div>

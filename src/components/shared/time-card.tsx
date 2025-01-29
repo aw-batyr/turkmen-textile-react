@@ -16,7 +16,7 @@ export const TimeCard: FC<Props> = ({
 }) => {
   return (
     <div className={cn("rounded-t-[4px] overflow-hidden", className)}>
-      <div className="bg-teritary_07 flex items-center text-teritary_11 h-11 px-4">
+      <div className="bg-primary text-white flex items-center h-11 px-4">
         {name}
       </div>
 

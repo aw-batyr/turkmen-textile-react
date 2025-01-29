@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { Container } from "..";
 import { ThemeCard } from "../theme-card";
+import { Container } from "@/components/layout";
 
 export const themes = [
   {

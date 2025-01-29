@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
 import { FC } from "react";
-import { Container } from "../container";
 import { times } from "../home/home-time";
-import { TimeCard } from "../time-card";
+import { Container } from "@/components/layout";
+import { TimeCard } from "../";
 
 interface Props {
   className?: string;

@@ -10,20 +10,24 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
-        primary: "#2C57A7",
+        primary: "#99101D",
+        reverse_primary: "#F6B2B8",
+        primary_03: "#F6B2B8",
         primary_04: "#9AB4E4",
         on_primary: "#ffffff",
         primary_container: "#BBCDED",
         on_primary_container: "#112343",
         primary_outline_reverse: "#789BDB",
 
+        surface_container: "#F0EFEF",
+
         secondary: "#495F89",
         on_secondary: "#ffffff",
-        secondary_container: "#C7D0E1",
+        secondary_container: "#DDCBCD",
         on_secondary_container: "#1D2637",
 
-        teritary: "#FFAE2A",
-        on_teritary: "#2A1A00",
+        teritary: "#F1700D",
+        on_teritary: "#ffffff",
         teritary_container: "#FFDDBA",
         on_teritary_container: "#2B1700",
         teritary_04: "#FFCE7F",
@@ -33,8 +37,8 @@ export default {
         teritary_surface_container: "#FFF3E0",
 
         surface_high: "#E8E7EF",
-        on_surface: "#26292E",
-        on_surface_v: "#5F6674",
+        on_surface: "#2C2828",
+        on_surface_v: "#6F6466",
 
         outline: "#A1A7B2",
         outline_v: "#D0D3D8",

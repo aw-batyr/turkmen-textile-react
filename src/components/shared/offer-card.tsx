@@ -18,7 +18,7 @@ export const OfferCard: FC<Props> = ({ className, title, text, img }) => {
         className
       )}
     >
-      <div className="absolute size-full z-10  top-0 left-0 bg-gradient-to-r from-25% from-[#2C57A7] to-[#2C57A7]/20 " />
+      <div className="absolute size-full z-10  top-0 left-0 bg-gradient-to-r from-25% from-primary to-primary/20 " />
       <img
         src={img}
         className="absolute size-full top-0 right-0 object-cover"

@@ -1,6 +1,6 @@
+import { Container } from "@/components/layout";
 import { cn } from "@/lib/utils";
 import { FC } from "react";
-import { Container } from "../container";
 
 interface Props {
   className?: string;
@@ -15,8 +15,8 @@ export const AboutPlace: FC<Props> = ({ className }) => {
       )}
     >
       <Container>
-        <h3 className="h2 w-[312px] mb-6">Место проведения</h3>
-        <p className="text-lg max-w-[490px] text-on_surface_v normal">
+        <h3 className="h2  mb-6">Место проведения</h3>
+        <p className="text-lg  text-on_surface_v normal">
           Торгово-промышленная палата Туркменистана создана в целях содействия
           развитию экономики Туркменистана, ее интегрированию в мировую
           хозяйственную систему, формированию современной промышленной,
@@ -25,12 +25,6 @@ export const AboutPlace: FC<Props> = ({ className }) => {
           установлении торгово-экономических, научных и технических связей с
           зарубежными партнерами.
         </p>
-
-        {/* <img
-          src="/map.png"
-          alt="map"
-          className="absolute top-0 right-0 w-[900px] h-full object-cover"
-        /> */}
       </Container>
     </section>
   );
