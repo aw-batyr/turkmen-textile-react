@@ -9,4 +9,14 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "react-vendor": ["react", "react-dom", "react-router-dom"], // Вынос библиотеки React
+          "ui-library": ["@/components/shared"], // Отдельный чанк для UI-компонентов
+        },
+      },
+    },
+  },
 });
