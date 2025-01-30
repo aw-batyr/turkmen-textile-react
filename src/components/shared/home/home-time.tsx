@@ -12,15 +12,15 @@ interface Props {
 export const times = [
   {
     name: "Монтаж выставки",
-    date: "1 — 27 апреля 2025 года",
+    date: "12 мая – 10 июня 2025 года",
   },
   {
     name: "Работа",
-    date: "29 — 1 мая 2025 года",
+    date: "11–13 июня 2025 года",
   },
   {
     name: "Демонтаж",
-    date: "1 — 2 мая 2025 года",
+    date: "13–14 июня 2025 года",
   },
 ];
 
@@ -36,7 +36,7 @@ const contacts = [
     img: "/contacts/location.svg",
   },
   {
-    title: "+99371871814; 99363719588",
+    title: "+99371871812; 99363719588",
     subtitle: "Контактный номер",
     img: "/contacts/mobile.svg",
   },

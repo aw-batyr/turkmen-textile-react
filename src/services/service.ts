@@ -1,13 +1,14 @@
 import { SponsorFormType } from "@/lib/get-sponsor-form-details";
+import { StandFormType } from "@/lib/get-stend-form-details";
 import axios from "axios";
 
 const URL = "https://itse.turkmenexpo.com/app/api/v1";
 
-// export const postStend = async (data: StandFormType): Promise<boolean> => {
-//   const res = axios.post(`${URL}/become_delegate`, data);
+export const postStend = async (data: StandFormType): Promise<boolean> => {
+  const res = axios.post(`${URL}/book_stand_form`, data);
 
-//   return (await res).status === 201;
-// };
+  return (await res).status === 201;
+};
 
 export const postB2b = async (data: FormData): Promise<boolean> => {
   const res = axios.post(`${URL}/form`, data);
@@ -16,7 +17,7 @@ export const postB2b = async (data: FormData): Promise<boolean> => {
 };
 
 export const postSponsor = async (data: SponsorFormType): Promise<boolean> => {
-  const res = axios.post(`${URL}/become_sponsor`, data);
+  const res = axios.post(`${URL}/become_sponsor_form`, data);
 
   return (await res).status === 201;
 };

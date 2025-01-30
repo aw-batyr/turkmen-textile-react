@@ -1,5 +1,10 @@
 import { Container, Cover } from "@/components/layout";
-import { AboutBron, AboutPlace, AboutTime } from "@/components/shared";
+import {
+  AboutBron,
+  AboutPlace,
+  AboutThemes,
+  AboutTime,
+} from "@/components/shared";
 import { useScrollTop } from "@/hooks/use-scroll-top";
 import { cn } from "@/lib/utils";
 import { FC } from "react";
@@ -130,7 +135,7 @@ export const About: FC<Props> = ({ className }) => {
         </div>
       </Container>
 
-      {/* <AboutThemes /> */}
+      <AboutThemes />
       <AboutTime />
       <AboutPlace />
       <AboutBron />

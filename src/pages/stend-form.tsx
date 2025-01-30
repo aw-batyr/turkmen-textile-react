@@ -20,6 +20,7 @@ import { FC, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Loader } from "lucide-react";
 import { Cover } from "@/components/layout";
+import { postStend } from "@/services/service";
 
 interface Props {
   className?: string;
@@ -33,12 +34,9 @@ export const StendForm: FC<Props> = ({ className }) => {
   });
 
   const onSubmit = async (data: StandFormType) => {
-    const res = await axios.post(
-      "https://itse.turkmenexpo.com/app/api/v1/book_stand_form",
-      data
-    );
+    const status = await postStend(data);
 
-    if (res.status === 201) setSuccess(true);
+    if (status) setSuccess(true);
   };
 
   useEffect(() => {

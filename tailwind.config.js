@@ -14,8 +14,9 @@ export default {
         reverse_primary: "#F6B2B8",
         primary_03: "#F6B2B8",
         primary_04: "#9AB4E4",
+        primary_09: "#99101D",
         on_primary: "#ffffff",
-        primary_container: "#BBCDED",
+        primary_container: "#F6B2B8",
         on_primary_container: "#112343",
         primary_outline_reverse: "#789BDB",
 

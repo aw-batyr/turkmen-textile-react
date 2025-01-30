@@ -54,7 +54,7 @@ export const Header: FC = () => {
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <Smartphone size={16} strokeWidth="3px" />
-              <h4 className="text-sm text-white">+99371871814</h4>
+              <h4 className="text-sm text-white">+99371871812</h4>
             </div>
 
             {/* <LangMenu /> */}

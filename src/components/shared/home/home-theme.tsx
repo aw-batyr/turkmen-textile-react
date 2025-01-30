@@ -47,7 +47,11 @@ export const HomeTheme: FC = () => {
 
         <div className="grid md:grid-cols-4 grid-cols-2 gap-6">
           {themes.map((item) => (
-            <ThemeCard key={item.title} {...item} />
+            <ThemeCard
+              key={item.title}
+              {...item}
+              iconClassName="bg-teritary_04"
+            />
           ))}
         </div>
       </Container>

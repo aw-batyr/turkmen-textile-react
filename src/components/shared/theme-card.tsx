@@ -5,9 +5,15 @@ interface Props {
   img: string;
   title: string;
   className?: string;
+  iconClassName?: string;
 }
 
-export const ThemeCard: FC<Props> = ({ className, img, title }) => {
+export const ThemeCard: FC<Props> = ({
+  className,
+  img,
+  title,
+  iconClassName,
+}) => {
   return (
     <article
       className={cn(
@@ -16,7 +22,11 @@ export const ThemeCard: FC<Props> = ({ className, img, title }) => {
       )}
     >
       <div className="bg-primary size-full -z-[10] absolute top-2.5 left-2.5" />
-      <img src={img} alt="theme icon" className="md:size-20 size-12" />
+      <div
+        className={cn("md:size-[84px] size-12 bg-teritary p-3", iconClassName)}
+      >
+        <img src={img} alt="theme icon" />
+      </div>
       <h3 className="md:mt-6 mt-2 md:text-xl text-sm">{title}</h3>
     </article>
   );
