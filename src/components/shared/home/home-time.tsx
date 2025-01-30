@@ -46,7 +46,7 @@ export const HomeTime: FC<Props> = ({ className }) => {
   return (
     <section className={cn("bg-surface_high pt-10 pb-20", className)}>
       <Container>
-        <h2 className="h2 mb-10">Время мероприятий</h2>
+        <h2 className="h2 mb-10">Время выставки</h2>
 
         <div className="flex flex-col gap-6">
           <div className="flex flex-col md:flex-row items-center gap-6">

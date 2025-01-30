@@ -11,7 +11,9 @@ interface Props {
 export const ContactCard: FC<Props> = ({ className, subtitle, title, img }) => {
   return (
     <div className={cn("flex items-center gap-4", className)}>
-      <img src={img} alt="contact icon" />
+      <div className="bg-secondary_container size-16 rounded-[2px] p-3">
+        <img src={img} alt="contact icon" className="size-full" />
+      </div>
 
       <div className="flex flex-col gap-2">
         <h5 className="text-sm text-[#454545]">{subtitle}</h5>
