@@ -2,13 +2,9 @@ import { Cover } from "@/components/layout";
 import { B2bFormProgress } from "@/components/shared";
 import { B2bForm } from "@/components/shared/forms/b2b-form";
 import { useScrollTop } from "@/hooks/use-scroll-top";
-import { FC, useState } from "react";
+import { useState } from "react";
 
-interface Props {
-  className?: string;
-}
-
-export const B2b: FC<Props> = () => {
+export default function B2b() {
   useScrollTop();
 
   const [stage, setStage] = useState(1);
@@ -30,4 +26,4 @@ export const B2b: FC<Props> = () => {
       </div>
     </div>
   );
-};
+}

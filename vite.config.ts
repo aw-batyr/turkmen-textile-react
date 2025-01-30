@@ -13,8 +13,8 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          "react-vendor": ["react", "react-dom", "react-router-dom"], // Вынос библиотеки React
-          "ui-library": ["@/components/shared"], // Отдельный чанк для UI-компонентов
+          "react-vendor": ["react", "react-dom", "react-router-dom"],
+          "ui-library": ["@/components/shared"],
         },
       },
     },

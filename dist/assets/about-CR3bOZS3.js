@@ -1,0 +1,1 @@
+import{j as s,f as o,C as t,A as a,g as e,h as r,i as u,k as i}from"./ui-library-BWmJzXiX.js";import"./react-vendor-DnK_KZAP.js";import{u as x}from"./use-scroll-top-DE9Ps7OH.js";function l(){return x(),s.jsxs("div",{className:o(""),children:[s.jsx(t,{title:"О выставке"}),s.jsx(a,{}),s.jsx(e,{}),s.jsx(r,{}),s.jsx(u,{}),s.jsx(i,{})]})}export{l as default};

@@ -15,17 +15,13 @@ import {
   StandFormType,
 } from "@/lib/get-stend-form-details";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Loader } from "lucide-react";
 import { Cover } from "@/components/layout";
 import { postStend } from "@/services/service";
 
-interface Props {
-  className?: string;
-}
-
-export const StendForm: FC<Props> = ({ className }) => {
+export default function StendForm() {
   const [success, setSuccess] = useState(false);
   const form = useForm<StandFormType>({
     resolver: zodResolver(standFormSchema),
@@ -45,7 +41,7 @@ export const StendForm: FC<Props> = ({ className }) => {
   const { errors } = form.formState;
 
   return (
-    <div className={className}>
+    <div>
       <Cover title="Забронировать стенд" />
 
       <AnimatePresence>
@@ -202,4 +198,4 @@ export const StendForm: FC<Props> = ({ className }) => {
       {success && <FormSuccesStatus delay={0.3} />}
     </div>
   );
-};
+}

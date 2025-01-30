@@ -1,13 +1,8 @@
 import { Container } from "@/components/layout";
 import { ContactsForm } from "@/components/shared/forms/contacts-form";
 import { useScrollTop } from "@/hooks/use-scroll-top";
-import { FC } from "react";
 
-interface Props {
-  className?: string;
-}
-
-export const Contacts: FC<Props> = () => {
+export default function Contacts() {
   useScrollTop();
 
   return (
@@ -74,4 +69,4 @@ export const Contacts: FC<Props> = () => {
       </section>
     </div>
   );
-};
+}

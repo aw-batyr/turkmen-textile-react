@@ -16,18 +16,14 @@ import {
   SponsorFormType,
 } from "@/lib/get-sponsor-form-details";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { FC, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Loader } from "lucide-react";
 import { postSponsor } from "@/services/service";
 import { useScrollTop } from "@/hooks/use-scroll-top";
 import { Cover } from "@/components/layout";
 
-interface Props {
-  className?: string;
-}
-
-export const BecomeSponsor: FC<Props> = ({ className }) => {
+export default function BecomeSponsor() {
   useScrollTop();
 
   const [success, setSuccess] = useState(false);
@@ -49,7 +45,7 @@ export const BecomeSponsor: FC<Props> = ({ className }) => {
   const { errors } = form.formState;
 
   return (
-    <div className={className}>
+    <div>
       <Cover title="Стать спонсором" />
 
       <AnimatePresence>
@@ -155,4 +151,4 @@ export const BecomeSponsor: FC<Props> = ({ className }) => {
       {success && <FormSuccesStatus delay={0.3} />}
     </div>
   );
-};
+}

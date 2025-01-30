@@ -1,5 +1,3 @@
-import { FC } from "react";
-
 import {
   HomeAbout,
   HomeHero,
@@ -8,7 +6,7 @@ import {
   HomeTime,
 } from "@/components/shared";
 
-export const Home: FC = () => {
+export default function Home() {
   return (
     <div className="flex flex-col gap-20">
       <HomeHero />
@@ -18,4 +16,4 @@ export const Home: FC = () => {
       <HomeTime />
     </div>
   );
-};
+}
