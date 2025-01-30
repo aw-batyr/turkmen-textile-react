@@ -11,7 +11,6 @@ import {
   defaultValuesContacts,
 } from "@/lib/get-contacts-form-details";
 import { postContact } from "@/services/service";
-import { FormSuccesStatus } from "../form-succes-status";
 import { Loader2 } from "lucide-react";
 
 interface Props {
