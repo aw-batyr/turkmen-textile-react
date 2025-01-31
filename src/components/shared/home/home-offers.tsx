@@ -1,10 +1,33 @@
-import { FC } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { Container } from "@/components/layout";
-import { OfferCard } from "../";
+import { EmblaDots, OfferCard } from "../";
 
 export const HomeOffers: FC = () => {
-  const [emblaRef] = useEmblaCarousel({ align: "start" });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start" });
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const scrollTo = useCallback(
+    (index: number) => {
+      if (emblaApi) {
+        emblaApi.scrollTo(index);
+      }
+    },
+    [emblaApi]
+  );
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const onSelect = () => {
+      setActiveIndex(emblaApi.selectedScrollSnap());
+    };
+
+    emblaApi.on("select", onSelect);
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi]);
 
   return (
     <section className="bg-surface_high py-10 relative overflow-hidden">
@@ -20,10 +43,17 @@ export const HomeOffers: FC = () => {
             <OfferCard
               img="/offer-2.png"
               className="embla__slide flex-[0_0_300px] md:flex-[0_0_600px]"
-              title="Ознакомьтесь с планом выставки ITSE 2025"
+              title="Ознакомьтесь с планом выставки TurkmenTextile Expo 2025"
               text="Как выбрать лучшее место на выставке? Вы всегда должны помнить, что удачное расположение выставочной экспозиции повышает Ваши шансы привлечь внимание Ваших потенциальных клиентов"
             />
           </div>
+
+          <EmblaDots
+            className="lg:hidden"
+            scrollTo={scrollTo}
+            active={activeIndex}
+            slides={2}
+          />
         </div>
       </Container>
     </section>
