@@ -7,9 +7,10 @@ import { Button } from "@/components/ui/button";
 interface Props {
   className?: string;
   handleNext: VoidFunction;
+  handlePrev: VoidFunction;
 }
 
-export const Stage2: FC<Props> = ({ handleNext }) => {
+export const Stage2: FC<Props> = ({ handleNext, handlePrev }) => {
   const { control, formState } = useFormContext();
 
   return (
@@ -74,14 +75,25 @@ export const Stage2: FC<Props> = ({ handleNext }) => {
         />
       </div>
 
-      <Button
-        variant={"secondary"}
-        type="button"
-        onClick={handleNext}
-        className="w-full mt-10"
-      >
-        Далее
-      </Button>
+      <div className="flex items-center gap-6 mt-10">
+        <Button
+          type="button"
+          onClick={handlePrev}
+          variant={"outline"}
+          className="text-on_surface"
+        >
+          Вернуться назад
+        </Button>
+
+        <Button
+          variant={"secondary"}
+          type="button"
+          onClick={handleNext}
+          className="w-full"
+        >
+          Далее
+        </Button>
+      </div>
     </motion.div>
   );
 };

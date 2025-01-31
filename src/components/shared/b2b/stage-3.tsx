@@ -7,9 +7,10 @@ import { Loader } from "lucide-react";
 
 interface Props {
   className?: string;
+  handlePrev: VoidFunction;
 }
 
-export const Stage3: FC<Props> = () => {
+export const Stage3: FC<Props> = ({ handlePrev }) => {
   const { control, formState } = useFormContext();
 
   return (
@@ -57,77 +58,61 @@ export const Stage3: FC<Props> = () => {
           label="Дополнительные технические или логистические требования (например, аудио-видео оборудование, переводчики и т.д.)"
           // label="Additional technical or logistical requirements (e.g. AV equipment, interpreters, etc)"
         />
-
-        <h3 className="h2 mt-4">
-          Название компании/организации
-          {/* Company/Organization Profile: */}
-        </h3>
-
-        <Field
-          control={control}
-          name={"sector_industry"}
-          error={formState.errors.sector_industry as FieldError}
-          placeholder=""
-          label="Sector Industry"
-        />
-        <Field
-          control={control}
-          name={"key_services"}
-          error={formState.errors.key_services as FieldError}
-          placeholder=""
-          label="Key Services/Products"
-        />
-        <Field
-          control={control}
-          name={"government_experience"}
-          error={formState.errors.government_experience as FieldError}
-          placeholder=""
-          label="Previous Experience working with Governments (if applicable)"
-        />
       </div>
 
       <div className="flex flex-col gap-8">
         <div className="">
-          <h3 className="h2 mt-10">Attachments</h3>
+          <h3 className="h2 mt-10">Приложения:</h3>
           <h5 className="text-on_surface_v">
-            (Please attach the following documents as applicable)
+            (Пожалуйста приложите следующие документы, если это необходимо)
           </h5>
         </div>
 
         <Field
           control={control}
           name="company_profile"
-          label="Company/organization profile"
+          label="Название компании/организации"
           type="file"
           textDark
         />
         <Field
           control={control}
           name="proposal_presentation"
-          label="Proposal presentation"
+          label="Предложение/презентация"
           type="file"
           textDark
         />
         <Field
           control={control}
           name="relevant_certification"
-          label="Relevant certification/licenses"
+          label="Соответствующие сертификаты/лицензии"
           type="file"
           textDark
         />
       </div>
 
-      <Button
-        disabled={formState.isSubmitting}
-        type="submit"
-        className="w-full mt-10"
-      >
-        {formState.isSubmitting ? (
-          <Loader className="animate-spin" />
-        ) : (
-          "Отправить"
-        )}
-      </Button>
+      <div className="flex items-center gap-6 mt-10">
+        <Button
+          type="button"
+          onClick={handlePrev}
+          variant={"outline"}
+          className="text-on_surface"
+        >
+          Вернуться назад
+        </Button>
+
+        <Button
+          disabled={formState.isSubmitting}
+          type="submit"
+          className="w-full"
+        >
+          {formState.isSubmitting ? (
+            <Loader className="animate-spin" />
+          ) : (
+            "Отправить"
+          )}
+        </Button>
+      </div>
     </motion.div>
   );
 };
