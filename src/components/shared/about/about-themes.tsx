@@ -11,14 +11,8 @@ interface Props {
 export const AboutThemes: FC<Props> = ({ className }) => {
   return (
     <section
-      className={cn("relative w-full bg-[#FDE8C4] -z-10 py-10", className)}
+      className={cn("relative w-full bg-[#FDEDEE] -z-10 py-10", className)}
     >
-      <img
-        src="/theme-cover.png"
-        alt=""
-        className="absolute top-0 left-0 size-full -z-10 object-cover"
-      />
-
       <Container>
         <h3 className="h2 mb-4">Отрасли</h3>
         <p className="text-lg text-primary_09 mb-6">
@@ -27,11 +21,7 @@ export const AboutThemes: FC<Props> = ({ className }) => {
 
         <div className="grid md:grid-cols-4 grid-cols-2 gap-6">
           {themes.map((item) => (
-            <ThemeCard
-              className="!bg-primary_container"
-              key={item.title}
-              {...item}
-            />
+            <ThemeCard className="!bg-[#F5F4F4]" key={item.title} {...item} />
           ))}
         </div>
 
