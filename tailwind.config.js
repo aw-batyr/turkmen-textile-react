@@ -22,6 +22,8 @@ export default {
 
         surface_container: "#F0EFEF",
 
+        surface_bg: "#FAFAFA",
+
         secondary: "#495F89",
         on_secondary: "#ffffff",
         secondary_container: "#DDCBCD",
