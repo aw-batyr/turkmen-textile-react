@@ -7,7 +7,7 @@ import { AboutCard } from "../about-card";
 
 const data = [
   {
-    nums: "4,200 m²",
+    nums: "8,400 m²",
     text: "выставочной площади",
   },
   {
