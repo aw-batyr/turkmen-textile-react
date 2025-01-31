@@ -7,6 +7,6 @@ export { ContactCard } from "./contact-card";
 export { B2bFormProgress } from "./b2b-form-progress";
 export { Field } from "./field";
 export { FormSuccesStatus } from "./form-succes-status";
-
+export { EmblaDots } from "./embla-dots";
 export * from "./about";
 export * from "./home";
