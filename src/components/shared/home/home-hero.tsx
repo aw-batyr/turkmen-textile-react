@@ -15,12 +15,12 @@ export const btns = [
     link: "/stend-form",
   },
   {
-    title: "Программа ",
+    title: "Список участников ",
     link: "",
   },
   {
-    title: "Стать спонсором",
-    link: "/become-sponsor",
+    title: "B2B | B2G встречи",
+    link: "/B2B-B2G",
   },
 ];
 
