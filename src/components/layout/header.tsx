@@ -34,7 +34,7 @@ export const navData2 = [
 export const Header: FC = () => {
   return (
     <header>
-      <div className="h-12 hidden lg:flex bg-teritary text-on_primary items-center overflow-hidden">
+      <div className="h-12 hidden lg:flex bg-sur text-surface-bg items-center overflow-hidden">
         <Container className="flex items-center justify-between">
           <div className="gap-8 flex items-center justify-between">
             <div className="flex items-center gap-2">
@@ -42,7 +42,7 @@ export const Header: FC = () => {
               <h4 className="text-sm">Ашхабад, Туркменистан</h4>
             </div>
 
-            <nav className="flex items-center gap-6 text-white">
+            <nav className="flex items-center gap-6">
               {navData.map(({ title, link }) => (
                 <Link className="py-2" key={title} to={link}>
                   {title}
@@ -54,7 +54,7 @@ export const Header: FC = () => {
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <Smartphone size={16} strokeWidth="3px" />
-              <h4 className="text-sm text-white">+99371871812</h4>
+              <h4 className="text-sm ">+99371871812</h4>
             </div>
 
             {/* <LangMenu /> */}
@@ -92,13 +92,13 @@ export const Header: FC = () => {
               Официальная поддержка
             </Button>
 
-            <Link to="/B2B-B2G">
+            <Link to="/become-sponsor">
               <Button
                 variant={"secondary"}
                 size={"sm"}
                 className="bg-teritary text-white hover:bg-teritary/90"
               >
-                B2B | B2G встречи
+                Стать спонсором{" "}
               </Button>
             </Link>
           </div>
