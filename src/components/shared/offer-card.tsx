@@ -2,15 +2,17 @@ import { cn } from "@/lib/utils";
 import { FC } from "react";
 import { Button } from "../ui/button";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface Props {
   title: string;
   text: string;
   className?: string;
   img: string;
+  link?: string;
 }
 
-export const OfferCard: FC<Props> = ({ className, title, text, img }) => {
+export const OfferCard: FC<Props> = ({ className, title, text, img, link }) => {
   return (
     <article
       className={cn(
@@ -30,9 +32,17 @@ export const OfferCard: FC<Props> = ({ className, title, text, img }) => {
         </h4>
         <p className="md:text-base text-sm normal max-w-[360px] z-20">{text}</p>
 
-        <Button className="text-sm px-0 mt-4 py-1.5 z-20" variant={"link"}>
-          Скачать PDF <ArrowUpRight />
-        </Button>
+        {!link ? (
+          <Button className="text-sm px-0 mt-4 py-1.5 z-20" variant={"link"}>
+            Скачать PDF <ArrowUpRight />
+          </Button>
+        ) : (
+          <Link to={link} target="_blank">
+            <Button className="text-sm px-0 mt-4 py-1.5 z-20" variant={"link"}>
+              Путеводитель <ArrowUpRight />
+            </Button>
+          </Link>
+        )}
       </div>
     </article>
   );

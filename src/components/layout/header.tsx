@@ -84,13 +84,18 @@ export const Header: FC = () => {
           </div>
 
           <div className="lg:flex hidden items-center gap-2">
-            <Button
-              variant={"secondary"}
-              size={"sm"}
-              className="bg-white text-primary hover:bg-white/90"
+            <Link
+              to="https://turkmentextile.turkmenexpo.com/app/storage/app/media/official_support/official_support_ru.pdf"
+              target="_blank"
             >
-              Официальная поддержка
-            </Button>
+              <Button
+                variant={"secondary"}
+                size={"sm"}
+                className="bg-white text-primary hover:bg-white/90"
+              >
+                Официальная поддержка
+              </Button>
+            </Link>
 
             <Link to="/become-sponsor">
               <Button
