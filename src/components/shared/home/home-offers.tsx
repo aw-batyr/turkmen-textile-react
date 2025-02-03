@@ -35,6 +35,7 @@ export const HomeOffers: FC = () => {
         <div ref={emblaRef} className="embla ">
           <div className="mb-2 flex gap-6 embla__container">
             <OfferCard
+              btnText="Скачать путеводитель"
               img="/offer-1.png"
               className="embla__slide flex-[0_0_300px] md:flex-[0_0_600px]"
               title="Гостиницы, трансфер, визы"
@@ -42,6 +43,8 @@ export const HomeOffers: FC = () => {
               text="По вопросам размещения в гостиницах, визовой поддержки, транспортного и экскурсионного обслуживания Вы можете обращаться к официальным туроператорам выставки"
             />
             <OfferCard
+              btnText="Скачать план выставки"
+              link="https://turkmentextile.turkmenexpo.com/app/storage/app/media/Floor%20plan/floor%20plan.pdf"
               img="/offer-2.png"
               className="embla__slide flex-[0_0_300px] md:flex-[0_0_600px]"
               title="Ознакомьтесь с планом выставки TurkmenTextile Expo 2025"
