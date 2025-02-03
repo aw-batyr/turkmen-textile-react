@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import useEmblaCarousel from "embla-carousel-react";
 import { Container } from "@/components/layout";
 import { AboutCard } from "../about-card";
+import { aboutData } from "@/data/home-about.data";
+import { useTranslate } from "@/hooks/use-translate";
+import { Language, useLangStore } from "@/store/lang";
 
 const data = [
   {
@@ -26,13 +29,14 @@ const data = [
 
 export const HomeAbout: FC = () => {
   const [ebmblaRef] = useEmblaCarousel();
+  const lang = useLangStore((state) => state.lang);
 
   return (
     <section>
       <Container className="flex flex-col gap-6">
         <div className="text-center">
           <h2 className="h2 md:mb-3 mb-6 text-left sm:text-center">
-            Выставка-ярмарка «TurkmenTextile Expo 2025» в Ашхабаде{" "}
+            Выставка-ярмарка «TurkmenTextile Expo 2025» в Ашхабаде
           </h2>
           <p className="md:text-base text-sm normal text-left sm:text-center text-[#454545]">
             Глобальная выставка и ярмарка текстиля и моды, которая объединит
@@ -46,7 +50,7 @@ export const HomeAbout: FC = () => {
 
         <div ref={ebmblaRef} className="embla overflow-hidden">
           <div className="flex embla__container items-center gap-6">
-            {data.map((item) => (
+            {aboutData[useTranslate(lang)].data.map((item) => (
               <AboutCard
                 key={item.text}
                 {...item}
@@ -56,7 +60,11 @@ export const HomeAbout: FC = () => {
           </div>
         </div>
         <Link to="/about" className="mx-auto">
-          <Button variant={"outline"}>Подробнее о выставке</Button>
+          <Button variant={"outline"}>
+            {lang === Language.RU
+              ? "Подробнее о выставке"
+              : "More about the exhibition"}
+          </Button>
         </Link>
       </Container>
     </section>

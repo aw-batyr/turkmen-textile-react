@@ -4,34 +4,13 @@ import { MapPin, Smartphone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Logo } from "../shared";
-
-export const navData = [
-  {
-    title: "Медиа",
-    link: "",
-  },
-  {
-    title: "Контакты",
-    link: "/contacts",
-  },
-];
-
-export const navData2 = [
-  {
-    title: "О выставке",
-    link: "/about",
-  },
-  {
-    title: "Посетителям",
-    link: "",
-  },
-  {
-    title: "Экспонентам",
-    link: "",
-  },
-];
+import { useLangStore } from "@/store/lang";
+import { navData } from "@/data/header.data";
+import { useTranslate } from "@/hooks/use-translate";
 
 export const Header: FC = () => {
+  const lang = useLangStore((state) => state.lang);
+
   return (
     <header>
       <div className="h-12 hidden lg:flex bg-sur text-surface-bg items-center overflow-hidden">
@@ -39,15 +18,21 @@ export const Header: FC = () => {
           <div className="gap-8 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <MapPin />
-              <h4 className="text-sm">Ашхабад, Туркменистан</h4>
+              <h4 className="text-sm">
+                {lang === "ru"
+                  ? "Ашхабад, Туркменистан"
+                  : "Ashgabat, Turkmenistan"}
+              </h4>
             </div>
 
             <nav className="flex items-center gap-6">
-              {navData.map(({ title, link }) => (
-                <Link className="py-2" key={title} to={link}>
-                  {title}
-                </Link>
-              ))}
+              {navData[useTranslate(lang)].data
+                .slice(0, 2)
+                .map(({ title, link }) => (
+                  <Link className="py-2" key={title} to={link}>
+                    {title}
+                  </Link>
+                ))}
             </nav>
           </div>
 
@@ -70,11 +55,17 @@ export const Header: FC = () => {
             </Link>
 
             <nav className="lg:flex hidden items-center gap-6 text-white">
-              {navData2.map(({ title, link }) => (
-                <Link key={title} to={link} className="flex items-center gap-2">
-                  {title} <img src="/chevron.svg" />
-                </Link>
-              ))}
+              {navData[useTranslate(lang)].data
+                .slice(2, 5)
+                .map(({ title, link }) => (
+                  <Link
+                    key={title}
+                    to={link}
+                    className="flex items-center gap-2"
+                  >
+                    {title} <img src="/chevron.svg" />
+                  </Link>
+                ))}
             </nav>
           </div>
 
@@ -93,7 +84,7 @@ export const Header: FC = () => {
                 size={"sm"}
                 className="bg-white text-primary hover:bg-white/90"
               >
-                Официальная поддержка
+                {lang === "ru" ? "Официальная поддержка" : "Official Support"}
               </Button>
             </Link>
 
@@ -103,7 +94,7 @@ export const Header: FC = () => {
                 size={"sm"}
                 className="bg-teritary text-white hover:bg-teritary/90"
               >
-                Стать спонсором{" "}
+                {lang === "ru" ? "Стать спонсором" : "Become a sponsor"}
               </Button>
             </Link>
           </div>

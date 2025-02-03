@@ -1,8 +1,10 @@
 import { FC } from "react";
 import { Container } from "./";
 import { Logo } from "../shared";
+import { Language, useLangStore } from "@/store/lang";
 
 export const Footer: FC = () => {
+  const lang = useLangStore((state) => state.lang);
   return (
     <footer className="py-5 bg-primary">
       <Container className="flex flex-col gap-6">
@@ -19,7 +21,9 @@ export const Footer: FC = () => {
         <hr className="border-white/50" />
 
         <h5 className="text-base text-center normal text-white">
-          ©2025 Все права защищены
+          {lang === Language.RU
+            ? "©2025 Все права защищены"
+            : "All rights reserved"}
         </h5>
       </Container>
     </footer>
