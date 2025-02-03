@@ -1,0 +1,1 @@
+import{j as e,a as s,b as o,c as m,d as a,e as x}from"./ui-library-BcloLnpy.js";import"./react-vendor-DnK_KZAP.js";function j(){return e.jsxs("div",{className:"flex flex-col gap-20",children:[e.jsx(s,{}),e.jsx(o,{}),e.jsx(m,{}),e.jsx(a,{}),e.jsx(x,{})]})}export{j as default};
