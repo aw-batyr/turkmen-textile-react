@@ -20,8 +20,12 @@ import { useForm } from "react-hook-form";
 import { Loader } from "lucide-react";
 import { Cover } from "@/components/layout";
 import { postStend } from "@/services/service";
+import { stendData } from "@/data/stend.data";
+import { useTranslate } from "@/hooks/use-translate";
+import { useLangStore } from "@/store/lang";
 
 export default function StendForm() {
+  const lang = useLangStore((state) => state.lang);
   const [success, setSuccess] = useState(false);
   const form = useForm<StandFormType>({
     resolver: zodResolver(standFormSchema),
@@ -42,7 +46,7 @@ export default function StendForm() {
 
   return (
     <div>
-      <Cover title="Забронировать стенд" />
+      <Cover title={stendData[useTranslate(lang)].cover} />
 
       <AnimatePresence>
         {!success && (
@@ -60,7 +64,7 @@ export default function StendForm() {
                 render={({ field }) => (
                   <FormItem className="space-y-5">
                     <FormLabel className="text-xl">
-                      Выберите один из вариантов:
+                      {stendData[useTranslate(lang)].h2}
                     </FormLabel>
 
                     <FormControl>
@@ -77,7 +81,7 @@ export default function StendForm() {
                             />
                           </FormControl>
                           <FormLabel className="text-base">
-                            Только стенд
+                            {stendData[useTranslate(lang)].radio}
                           </FormLabel>
                         </FormItem>
 
@@ -89,7 +93,7 @@ export default function StendForm() {
                             />
                           </FormControl>
                           <FormLabel className="text-base">
-                            Комплексное предложение
+                            {stendData[useTranslate(lang)].radio_2}
                           </FormLabel>
                         </FormItem>
                       </RadioGroup>
@@ -99,49 +103,54 @@ export default function StendForm() {
               />
 
               <Field
-                label="Название компании/организации"
+                label={stendData[useTranslate(lang)].label_1}
                 name="company_name"
                 control={form.control}
                 error={errors.company_name}
               />
               <Field
-                label="Имя представителя"
+                label={stendData[useTranslate(lang)].label_2}
                 name="rep_name"
                 control={form.control}
                 error={errors.rep_name}
               />
               <Field
-                label="Название должности/позиция"
+                label={stendData[useTranslate(lang)].label_3}
                 name="job_title"
                 control={form.control}
                 error={errors.job_title}
               />
               <Field
-                label="Количество участников"
+                label={stendData[useTranslate(lang)].number_of_participants}
                 type="number"
                 name="participants_number"
                 control={form.control}
                 error={errors.participants_number}
               />
               <Field
-                label="Страна"
+                label={stendData[useTranslate(lang)].label_4}
                 name="country"
                 control={form.control}
                 error={errors.country}
               />
               <Field
-                label="E-mail адрес"
+                label={stendData[useTranslate(lang)].label_5}
                 name="email"
                 control={form.control}
                 error={errors.email}
               />
               <Field
-                label="Номер телефона"
+                label={stendData[useTranslate(lang)].label_6}
                 name="phone"
                 control={form.control}
                 error={errors.phone}
               />
-              <Field label="Вебсайт" name="website" control={form.control} />
+
+              <Field
+                label={stendData[useTranslate(lang)].label_7}
+                name="website"
+                control={form.control}
+              />
 
               <FormField
                 control={form.control}
@@ -149,7 +158,7 @@ export default function StendForm() {
                 render={({ field }) => (
                   <FormItem className="space-y-5">
                     <FormLabel className="text-xl">
-                      Визовая поддержка:
+                      {stendData[useTranslate(lang)].visa}
                     </FormLabel>
 
                     <FormControl>
@@ -165,7 +174,9 @@ export default function StendForm() {
                               checked={field.value === "yes"}
                             />
                           </FormControl>
-                          <FormLabel className="text-base">Да</FormLabel>
+                          <FormLabel className="text-base">
+                            {stendData[useTranslate(lang)].visa_radio}
+                          </FormLabel>
                         </FormItem>
 
                         <FormItem className="flex items-center space-x-5 space-y-0 ">
@@ -175,7 +186,9 @@ export default function StendForm() {
                               checked={field.value === "no"}
                             />
                           </FormControl>
-                          <FormLabel className="text-base">Нет</FormLabel>
+                          <FormLabel className="text-base">
+                            {stendData[useTranslate(lang)].visa_radio_2}
+                          </FormLabel>
                         </FormItem>
                       </RadioGroup>
                     </FormControl>
@@ -187,7 +200,7 @@ export default function StendForm() {
                 {form.formState.isSubmitting ? (
                   <Loader className="animate-spin" />
                 ) : (
-                  "Отправить"
+                  stendData[useTranslate(lang)].button
                 )}
               </Button>
             </motion.form>

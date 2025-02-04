@@ -27,7 +27,7 @@ export const contacts = [
         img: "/contacts/home/mail.svg",
       },
       {
-        title: "здание ТПП Туркменистана",
+        title: "Building of the CCI of Turkmenistan",
         subtitle: "Exhibition address",
         img: "/contacts/home/location.svg",
       },

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout";
 import { useMediaQuery } from "usehooks-ts";
-import { btns } from "@/data/home-hero.data";
+import { btns } from "@/data/home/home-hero.data";
 import { useTranslate } from "@/hooks/use-translate";
 import { useLangStore } from "@/store/lang";
 

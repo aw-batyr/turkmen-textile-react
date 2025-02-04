@@ -2,7 +2,7 @@ import { FC } from "react";
 import { ThemeCard } from "../theme-card";
 import { Container } from "@/components/layout";
 import { useLangStore } from "@/store/lang";
-import { homeTheme } from "@/data/home-theme.data";
+import { homeTheme } from "@/data/home/home-theme.data";
 import { useTranslate } from "@/hooks/use-translate";
 
 export const themes = [

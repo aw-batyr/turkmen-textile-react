@@ -6,7 +6,7 @@ import { Container } from "@/components/layout";
 import { ContactCard, TimeCard } from "../";
 import { useTranslate } from "@/hooks/use-translate";
 import { Language, useLangStore } from "@/store/lang";
-import { times } from "@/data/home-time.data";
+import { times } from "@/data/home/home-time.data";
 import { contacts } from "@/data/contacts.data";
 
 interface Props {

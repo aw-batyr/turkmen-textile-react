@@ -3,6 +3,9 @@ import { FieldError, useFormContext } from "react-hook-form";
 import { Field } from "../";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
+import { Language, useLangStore } from "@/store/lang";
+import { useTranslate } from "@/hooks/use-translate";
+import { b2bStage2 } from "@/data/b2b.data";
 
 interface Props {
   className?: string;
@@ -11,6 +14,7 @@ interface Props {
 }
 
 export const Stage2: FC<Props> = ({ handleNext, handlePrev }) => {
+  const lang = useLangStore((state) => state.lang);
   const { control, formState } = useFormContext();
 
   return (
@@ -19,7 +23,7 @@ export const Stage2: FC<Props> = ({ handleNext, handlePrev }) => {
       animate={{ opacity: 1, y: 0, transition: { delay: 0.5, duration: 0.3 } }}
       exit={{ opacity: 0, y: 100 }}
     >
-      <h3 className="h2 mb-8">Цели встречи:</h3>
+      <h2 className="h2 mb-8">{b2bStage2[useTranslate(lang)].h2}</h2>
 
       <div className="flex flex-col gap-8">
         <Field
@@ -27,51 +31,45 @@ export const Stage2: FC<Props> = ({ handleNext, handlePrev }) => {
           name={"meeting_objective"}
           error={formState.errors.meeting_objective as FieldError}
           placeholder=""
-          label="Основная цель встречи"
+          label={b2bStage2[useTranslate(lang)].data[0].label}
         />
         <Field
           control={control}
           name={"proposal_description"}
           error={formState.errors.proposal_description as FieldError}
           placeholder=""
-          label="Краткое описание вашего предложения/проекта/запроса"
+          label={b2bStage2[useTranslate(lang)].data[1].label}
         />
         <Field
           control={control}
           name={"government_agency"}
           error={formState.errors.government_agency as FieldError}
           placeholder=""
-          label="Соответствующее государственное учреждение/департамент"
+          label={b2bStage2[useTranslate(lang)].data[2].label}
         />
 
-        <h3 className="h2 mt-4">
-          Информация о компании/организации:
-          {/* Company/Organization Profile: */}
-        </h3>
+        <h2 className="h2 mt-4">{b2bStage2[useTranslate(lang)].secondH2}</h2>
 
         <Field
           control={control}
           name={"sector_industry"}
           error={formState.errors.sector_industry as FieldError}
           placeholder=""
-          // label="Sector sector_industry"
-          label="Отраслевая промышленность"
+          label={b2bStage2[useTranslate(lang)].data[3].label}
         />
         <Field
           control={control}
           name={"key_services"}
           error={formState.errors.key_services as FieldError}
           placeholder=""
-          label="Ключевые услуги/продукты"
-          // label="Key Services/Products"
+          label={b2bStage2[useTranslate(lang)].data[4].label}
         />
         <Field
           control={control}
           name={"government_experience"}
           error={formState.errors.government_experience as FieldError}
           placeholder=""
-          label="Предыдущий опыт работы с правительствами (если применимо)"
-          // label="Previous Experience working with Governments (if applicable)"
+          label={b2bStage2[useTranslate(lang)].data[5].label}
         />
       </div>
 
@@ -82,7 +80,7 @@ export const Stage2: FC<Props> = ({ handleNext, handlePrev }) => {
           variant={"outline"}
           className="text-on_surface"
         >
-          Вернуться назад
+          {lang === Language.RU ? "Вернуться назад" : "Back"}
         </Button>
 
         <Button
@@ -91,7 +89,7 @@ export const Stage2: FC<Props> = ({ handleNext, handlePrev }) => {
           onClick={handleNext}
           className="w-full"
         >
-          Далее
+          {lang === Language.RU ? "Далее" : "Next"}
         </Button>
       </div>
     </motion.div>

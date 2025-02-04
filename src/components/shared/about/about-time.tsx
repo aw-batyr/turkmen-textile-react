@@ -4,7 +4,7 @@ import { Container } from "@/components/layout";
 import { TimeCard } from "../";
 import { useTranslate } from "@/hooks/use-translate";
 import { useLangStore } from "@/store/lang";
-import { times } from "@/data/home-time.data";
+import { times } from "@/data/home/home-time.data";
 
 interface Props {
   className?: string;

@@ -3,7 +3,7 @@ import { Container, Burger } from "./";
 import { MapPin, Smartphone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
-import { Logo } from "../shared";
+import { LangMenu, Logo } from "../shared";
 import { useLangStore } from "@/store/lang";
 import { navData } from "@/data/header.data";
 import { useTranslate } from "@/hooks/use-translate";
@@ -42,7 +42,7 @@ export const Header: FC = () => {
               <h4 className="text-sm ">+99371871812</h4>
             </div>
 
-            {/* <LangMenu /> */}
+            <LangMenu />
           </div>
         </Container>
       </div>

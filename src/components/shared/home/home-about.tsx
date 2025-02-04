@@ -4,28 +4,9 @@ import { Link } from "react-router-dom";
 import useEmblaCarousel from "embla-carousel-react";
 import { Container } from "@/components/layout";
 import { AboutCard } from "../about-card";
-import { aboutData } from "@/data/home-about.data";
+import { aboutData } from "@/data/home/home-about.data";
 import { useTranslate } from "@/hooks/use-translate";
 import { Language, useLangStore } from "@/store/lang";
-
-const data = [
-  {
-    nums: "8,400 m²",
-    text: "выставочной площади",
-  },
-  {
-    nums: "10000+",
-    text: "Посетители посетят выставку",
-  },
-  {
-    nums: "100+",
-    text: "Экспоненты из более чем 30 стран",
-  },
-  {
-    nums: "80%",
-    text: "Участники принимают участие в принятии решений о закупках",
-  },
-];
 
 export const HomeAbout: FC = () => {
   const [ebmblaRef] = useEmblaCarousel();

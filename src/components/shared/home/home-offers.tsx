@@ -2,7 +2,7 @@ import { FC, useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { Container } from "@/components/layout";
 import { EmblaDots, OfferCard } from "../";
-import { offersData } from "@/data/home-offers.data";
+import { offersData } from "@/data/home/home-offers.data";
 import { useTranslate } from "@/hooks/use-translate";
 import { useLangStore } from "@/store/lang";
 

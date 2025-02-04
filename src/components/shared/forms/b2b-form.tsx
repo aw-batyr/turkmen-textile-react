@@ -85,18 +85,16 @@ export const B2bForm: FC<Props> = ({
     try {
       const formData = new FormData();
 
-      // Перебираем все поля
       Object.entries(values).forEach(([key, value]) => {
         if (value instanceof File) {
-          console.log(`Добавляем файл: ${key}`, value); // Отладочный вывод
+          console.log(`Добавляем файл: ${key}`, value);
           formData.append(key, value);
         } else if (value !== undefined) {
-          console.log(`Добавляем поле: ${key}`, value); // Отладочный вывод
+          console.log(`Добавляем поле: ${key}`, value);
           formData.append(key, value as string);
         }
       });
 
-      // Отправляем запрос
       const res = await axios.post(
         "https://turkmentextile.turkmenexpo.com/app/api/v1/form",
         formData,
@@ -108,7 +106,6 @@ export const B2bForm: FC<Props> = ({
       );
 
       if (res.status === 201) {
-        console.log("Форма успешно отправлена!");
         setSuccess(true);
       }
     } catch (error) {
