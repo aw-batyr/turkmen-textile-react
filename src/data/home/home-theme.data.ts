@@ -1,6 +1,8 @@
 export const homeTheme = [
   {
-    h1: "Тематические направления выставки",
+    title: "Тематические направления выставки",
+    bottom_text: `
+    Участники смогут продемонстрировать свои инновационные решения, наладить взаимовыгодные партнерства и выйти на новые рынки.`,
 
     data: [
       {
@@ -40,6 +42,8 @@ export const homeTheme = [
 
   {
     title: "Thematic areas of the exhibition",
+    bottom_text: `
+    Participants will be able to showcase innovative solutions, establish mutually beneficial partnerships, and enter new markets.`,
 
     data: [
       {
