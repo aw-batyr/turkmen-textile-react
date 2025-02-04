@@ -7,14 +7,14 @@ export enum Language {
 }
 
 export interface LangState {
-  lang: "ru" | "en;
+  lang: "ru" | "en";
   setLang: (lang: Language) => void;
 }
 
 export const useLangStore = create<LangState>()(
   persist(
     (set) => ({
-      lang: Language.RU,
+      lang: Language.EN,
       setLang: (lang) => set({ lang }),
     }),
     { name: "lang-storage" }
