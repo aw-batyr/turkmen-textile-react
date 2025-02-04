@@ -29,7 +29,7 @@ export const btns = [
     data: [
       {
         title: "Floor Plan",
-        link: "https://itse.turkmenexpo.com/app/storage/app/media/Floor%20plan/Floor%20plan.pdf",
+        link: "https://turkmentextile.turkmenexpo.com/app/storage/app/media/Floor%20plan/floor%20plan.pdf",
         blank: true,
       },
       {
