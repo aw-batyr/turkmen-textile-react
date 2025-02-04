@@ -4,7 +4,7 @@ import { MapPin, Smartphone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 import { LangMenu, Logo } from "../shared";
-import { useLangStore } from "@/store/lang";
+import { Language, useLangStore } from "@/store/lang";
 import { navData } from "@/data/header.data";
 import { useTranslate } from "@/hooks/use-translate";
 
@@ -76,7 +76,11 @@ export const Header: FC = () => {
 
           <div className="lg:flex hidden items-center gap-2">
             <Link
-              to="https://turkmentextile.turkmenexpo.com/app/storage/app/media/official_support/official_support_ru.pdf"
+              to={
+                lang === Language.RU
+                  ? "https://turkmentextile.turkmenexpo.com/app/storage/app/media/official_support/official_support_ru.pdf"
+                  : "https://turkmentextile.turkmenexpo.com/app/storage/app/media/official_support/official_support_eng.pdf"
+              }
               target="_blank"
             >
               <Button
