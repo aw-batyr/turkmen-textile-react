@@ -6,7 +6,7 @@ import { Container } from "@/components/layout";
 import { useMediaQuery } from "usehooks-ts";
 import { btns } from "@/data/home/home-hero.data";
 import { useTranslate } from "@/hooks/use-translate";
-import { useLangStore } from "@/store/lang";
+import { Language, useLangStore } from "@/store/lang";
 
 export const HomeHero: FC = () => {
   const [embalRef] = useEmblaCarousel();
@@ -15,10 +15,12 @@ export const HomeHero: FC = () => {
   const lg = useMediaQuery("(min-width: 1024px)");
   const md = useMediaQuery("(min-width: 768px)");
 
+  const folder = lang === Language.RU ? Language.RU : Language.EN;
+
   function getBanner() {
-    if (lg) return "/banners/ru/l.jpg";
-    else if (md) return "/banners/ru/m.jpg";
-    else return "/banners/ru/s.jpg";
+    if (lg) return `/banners/${folder}/l.jpg`;
+    else if (md) return `/banners/${folder}/m.jpg`;
+    else return `/banners/${folder}/s.jpg`;
   }
 
   return (
