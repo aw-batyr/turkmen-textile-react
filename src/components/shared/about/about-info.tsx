@@ -1,4 +1,7 @@
 import { Container } from "@/components/layout";
+import { aboutInfo } from "@/data/about/about-info";
+import { useTranslate } from "@/hooks/use-translate";
+import { useLangStore } from "@/store/lang";
 import { FC } from "react";
 
 interface Props {
@@ -6,55 +9,33 @@ interface Props {
 }
 
 export const AboutInfo: FC<Props> = () => {
+  const lang = useLangStore((state) => state.lang);
+
   return (
     <Container className="flex flex-col md:my-20 my-10 gap-16">
       <div className="flex flex-col gap-6">
-        <h3 className="h2">Выставка-ярмарка «TurkmenTextile Expo 2025» </h3>
-        <p className="p">
-          Глобальная выставка и ярмарка текстиля и моды, которая объединит
-          мировых лидеров отрасли, инновационных производителей и творческих
-          дизайнеров. Наша миссия — укрепить позиции Туркменистана как ключевого
-          центра текстильной и модной индустрии. Выставка станет платформой для
-          изучения устойчивых практик, современных технологий и новых
-          дизайнерских решений, вдохновляя на развитие индустрии.{" "}
-        </p>
+        <h2 className="h2">{aboutInfo[useTranslate(lang)].title}</h2>
+
+        <div className="flex flex-col gap-3">
+          {aboutInfo[useTranslate(lang)].p.map((item) => (
+            <p className="p">{item}</p>
+          ))}
+        </div>
       </div>
 
       <div className="flex flex-col gap-6">
-        <h3 className="h2">Перспективы</h3>
+        <h3 className="h2">{aboutInfo[useTranslate(lang)].title_2}</h3>
 
-        <h4 className="p">
-          TurkmenTextile Expo-2025 открывает широкие перспективы для участников:
-        </h4>
-        <ol type="1" className="list-decimal pl-8 flex flex-col gap-3 p">
-          <li>
-            Расширение деловых связей — уникальная возможность для B2B и
-            B2G-встреч, заключения торговых соглашений и установления
-            стратегических партнёрств.
-          </li>
-          <li>
-            Доступ к инновациям — знакомство с передовыми технологиями
-            текстильного производства, экологичными материалами и трендами
-            устойчивого дизайна.
-          </li>
-          <li>
-            Повышение экспортного потенциала — участие в форумах и семинарах,
-            посвящённых продвижению продукции на новые рынки.
-          </li>
-          <li>
-            Обучение и развитие — мастер-классы и лекции от ведущих мировых
-            экспертов помогут участникам углубить знания и освоить современные
-            подходы в области текстильной индустрии.
-          </li>
-          <li>
-            Культурный обмен — возможность продемонстрировать богатое
-            текстильное наследие Туркменистана и вдохновиться культурными
-            традициями других стран.
-          </li>
+        <h4 className="p">{aboutInfo[useTranslate(lang)].subtitle_2} </h4>
+
+        <ol type="1" className="list-decimal pl-8 flex flex-col gap-3 ">
+          {aboutInfo[useTranslate(lang)].p_2.map((item) => (
+            <li className="p">{item}</li>
+          ))}
         </ol>
       </div>
 
-      <div className="flex flex-col gap-6">
+      {/* <div className="flex flex-col gap-6">
         <h3 className="h2">Направления</h3>
 
         <h4 className="p">
@@ -93,29 +74,18 @@ export const AboutInfo: FC<Props> = () => {
           Участники смогут обсудить современные технологии, лучшие практики и
           эффективные стратегии для устойчивого бизнеса.
         </p>
-      </div>
+      </div> */}
 
       <div className="flex flex-col gap-6">
-        <h3 className="h2">Партнёрство и спонсорство</h3>
+        <h2 className="h2">{aboutInfo[useTranslate(lang)].title_3}</h2>
 
-        <h4 className="p">
-          TurkmenTextile Expo-2025 приглашает к сотрудничеству международные
-          организации, ассоциации и бренды для продвижения своих продуктов и
-          услуг. Партнёры получат:
-        </h4>
+        <h3 className="p">{aboutInfo[useTranslate(lang)].subtitle_3}</h3>
+
+        <h3>{aboutInfo[useTranslate(lang)].subtitle_4}</h3>
         <ul className="list-disc pl-8 flex flex-col gap-3 p">
-          <li>
-            Признание на международной арене — участие в масштабном событии,
-            привлекающем ведущих игроков текстильной и модной индустрий.
-          </li>
-          <li>
-            Рекламные возможности — интеграция бренда в маркетинговую кампанию
-            выставки, включая digital и офлайн-каналы.
-          </li>
-          <li>
-            Вклад в развитие индустрии — поддержка инноваций, устойчивых практик
-            и культурного наследия.
-          </li>
+          {aboutInfo[useTranslate(lang)].p_3.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
         </ul>
       </div>
     </Container>

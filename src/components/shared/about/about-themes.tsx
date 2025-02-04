@@ -2,13 +2,17 @@ import { Container } from "@/components/layout";
 import { cn } from "@/lib/utils";
 import { FC } from "react";
 import { ThemeCard } from "../theme-card";
-import { themes } from "../home/home-theme";
+import { useLangStore } from "@/store/lang";
+import { useTranslate } from "@/hooks/use-translate";
+import { homeTheme } from "@/data/home/home-theme.data";
 
 interface Props {
   className?: string;
 }
 
 export const AboutThemes: FC<Props> = ({ className }) => {
+  const lang = useLangStore((state) => state.lang);
+
   return (
     <section
       className={cn("relative w-full bg-[#FDEDEE] -z-10 py-10", className)}
@@ -20,7 +24,7 @@ export const AboutThemes: FC<Props> = ({ className }) => {
         </p>
 
         <div className="grid md:grid-cols-4 grid-cols-2 gap-6">
-          {themes.map((item) => (
+          {homeTheme[useTranslate(lang)].data.map((item) => (
             <ThemeCard className="!bg-[#F5F4F4]" key={item.title} {...item} />
           ))}
         </div>

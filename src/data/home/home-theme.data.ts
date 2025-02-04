@@ -4,35 +4,35 @@ export const homeTheme = [
 
     data: [
       {
-        title: "Пищевая продукция и сельское хозяйство",
+        title: "Текстильные машины и оборудование",
         img: "/theme/1.svg",
       },
       {
-        title: "Товары и услуги",
+        title: "Одежда, обувь, кожаные изделия",
         img: "/theme/2.svg",
       },
       {
-        title: "E-commerce",
+        title: "Переработка натуральных волокон",
         img: "/theme/3.svg",
       },
       {
-        title: "Волокна, текстиль и одежда",
+        title: "Домашний текстиль и эко-текстиль",
         img: "/theme/4.svg",
       },
       {
-        title: "Продукция промышленного производства",
+        title: "Запасные части и вспомогательные материалы",
         img: "/theme/5.svg",
       },
       {
-        title: "Профессиональные услуги",
+        title: "Химические средства и красители",
         img: "/theme/6.svg",
       },
       {
-        title: "Ремесленные производства",
+        title: "Аксессуары и швейная фурнитура",
         img: "/theme/7.svg",
       },
       {
-        title: "Креативные индустрии",
+        title: "Мода и дизайн",
         img: "/theme/8.svg",
       },
     ],
@@ -43,35 +43,35 @@ export const homeTheme = [
 
     data: [
       {
-        title: "Пищевая продукция и сельское хозяйство",
+        title: "Textile machinery and equipment",
         img: "/theme/1.svg",
       },
       {
-        title: "Товары и услуги",
+        title: "Clothing, footwear, leather goods",
         img: "/theme/2.svg",
       },
       {
-        title: "E-commerce",
+        title: "Natural fibre processing",
         img: "/theme/3.svg",
       },
       {
-        title: "Волокна, текстиль и одежда",
+        title: "Home textiles and eco-textiles",
         img: "/theme/4.svg",
       },
       {
-        title: "Продукция промышленного производства",
+        title: "Spare parts and auxiliary materials",
         img: "/theme/5.svg",
       },
       {
-        title: "Профессиональные услуги",
+        title: "Chemicals and dyes",
         img: "/theme/6.svg",
       },
       {
-        title: "Ремесленные производства",
+        title: "Accessories and sewing supplies",
         img: "/theme/7.svg",
       },
       {
-        title: "Креативные индустрии",
+        title: "Fashion and design",
         img: "/theme/8.svg",
       },
     ],
