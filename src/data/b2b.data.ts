@@ -154,7 +154,7 @@ export const b2bStage3 = [
   },
 
   {
-    h2: "Meeting Logistics:",
+    h2: "Приложения:",
     secondH2: "Attachments",
     subtitle: "(Please attach the following documents as applicable)",
 
