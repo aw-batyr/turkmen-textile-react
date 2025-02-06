@@ -39,7 +39,11 @@ export const HomeOffers: FC = () => {
         <div ref={emblaRef} className="embla ">
           <div className="mb-2 flex gap-6 embla__container">
             {offersData[useTranslate(lang)].data.map((item) => (
-              <OfferCard {...item} key={item.title} />
+              <OfferCard
+                {...item}
+                key={item.title}
+                className="embla__slide flex-[0_0_300px] sm:flex-[0_0_600px]"
+              />
             ))}
           </div>
 
