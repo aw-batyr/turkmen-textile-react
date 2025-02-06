@@ -22,15 +22,15 @@ export const times = [
     data: [
       {
         name: "Exhibition assembly",
-        date: "1 — 27 april 2025",
+        date: "12 may — 10 june 2025",
       },
       {
         name: "Exhibition days",
-        date: "29 — 1 may 2025",
+        date: "11–13 june 2025",
       },
       {
         name: "Exhibition dismantling",
-        date: "1 — 2 may 2025",
+        date: "13–14 june 2025",
       },
     ],
   },
