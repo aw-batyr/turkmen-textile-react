@@ -8,7 +8,7 @@ export const aboutBron = [
 
   {
     title: "Invitation to Participate",
-    p: `Ministry of textile industry of Turkmenistan invites the global business community to join this unique event, which will be a significant step toward strengthening Turkmenistan’s position on the global economic stage`,
+    p: `Ministry of Textile Industry of Turkmenistan invites the global business community to join this unique event, which will be a significant step toward strengthening Turkmenistan’s position on the global economic stage`,
     button1: "Book a stand",
     button2: "Become a sponsor",
   },
