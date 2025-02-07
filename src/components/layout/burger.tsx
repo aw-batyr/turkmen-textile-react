@@ -58,7 +58,7 @@ export const Burger: FC<Props> = () => {
               onClick={() => setOpen(false)}
               className="h-10 text-on_surface"
               key={item.title}
-              to={item.link}
+              to={item.link || ""}
             >
               {item.title}
             </Link>

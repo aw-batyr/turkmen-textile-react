@@ -1,8 +1,5 @@
 import { Container } from "@/components/layout";
 import { Button } from "@/components/ui/button";
-import { aboutInfo } from "@/data/about/about-info";
-import { useTranslate } from "@/hooks/use-translate";
-import { useLangStore } from "@/store/lang";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -13,8 +10,6 @@ interface Props {
 
 export const AboutInfo: FC<Props> = () => {
   const { t } = useTranslation("about");
-
-  const lang = useLangStore((state) => state.lang);
 
   const block_1 = t("main.block.texts", { returnObjects: true }) as string[];
   const block_2 = t("main.block_2.texts", { returnObjects: true }) as string[];

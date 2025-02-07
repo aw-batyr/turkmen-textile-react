@@ -7,7 +7,6 @@ import { LangMenu, Logo, Menu } from "../shared";
 import { Language, useLangStore } from "@/store/lang";
 import { navData } from "@/data/header.data";
 import { useTranslate } from "@/hooks/use-translate";
-import { useTranslation } from "react-i18next";
 
 export const Header: FC = () => {
   const lang = useLangStore((state) => state.lang);
