@@ -9,6 +9,8 @@ export { Field } from "./field";
 export { FormSuccesStatus } from "./form-succes-status";
 export { EmblaDots } from "./embla-dots";
 export { LangMenu } from "./lang-menu";
+export { Menu } from "./menu";
+export { Chevron } from "./chevron";
 
 export * from "./about";
 export * from "./home";

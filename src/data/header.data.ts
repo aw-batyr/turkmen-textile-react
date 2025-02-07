@@ -1,16 +1,19 @@
-import { Language } from "@/store/lang";
-
 export const navData = [
   {
-    lang: Language.RU,
     data: [
       {
-        title: "Медиа",
+        title: "Путеводитель",
         link: "",
       },
       {
         title: "Контакты",
         link: "/contacts",
+      },
+      {
+        title: "Новости",
+        dropDown: true,
+
+        dropDownText: "Подписаться на новости",
       },
       {
         title: "О выставке",
@@ -28,16 +31,22 @@ export const navData = [
   },
 
   {
-    lang: Language.EN,
     data: [
       {
-        title: "Media",
+        title: "Guide",
         link: "",
       },
       {
         title: "Contacts",
         link: "/contacts",
       },
+      {
+        title: "News",
+        dropDown: true,
+
+        dropDownText: "Subscribe to the news",
+      },
+
       {
         title: "About exhibition",
         link: "/about",

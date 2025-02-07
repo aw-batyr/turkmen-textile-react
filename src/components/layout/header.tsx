@@ -3,10 +3,11 @@ import { Container, Burger } from "./";
 import { MapPin, Smartphone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
-import { LangMenu, Logo } from "../shared";
+import { LangMenu, Logo, Menu } from "../shared";
 import { Language, useLangStore } from "@/store/lang";
 import { navData } from "@/data/header.data";
 import { useTranslate } from "@/hooks/use-translate";
+import { useTranslation } from "react-i18next";
 
 export const Header: FC = () => {
   const lang = useLangStore((state) => state.lang);
@@ -26,13 +27,19 @@ export const Header: FC = () => {
             </div>
 
             <nav className="flex items-center gap-6">
-              {navData[useTranslate(lang)].data
-                .slice(0, 2)
-                .map(({ title, link }) => (
-                  <Link className="py-2" key={title} to={link}>
-                    {title}
+              {navData[useTranslate(lang)].data.slice(0, 3).map((item) =>
+                !item.dropDown ? (
+                  <Link className="py-2" key={item.title} to={item.link || ""}>
+                    {item.title}
                   </Link>
-                ))}
+                ) : (
+                  <Menu
+                    color={"black"}
+                    dropDownText={item.dropDownText!}
+                    title={item.title}
+                  />
+                )
+              )}
             </nav>
           </div>
 
@@ -55,22 +62,24 @@ export const Header: FC = () => {
             </Link>
 
             <nav className="lg:flex hidden items-center gap-6 text-white">
-              {navData[useTranslate(lang)].data
-                .slice(2, 5)
-                .map(({ title, link }) => (
-                  <Link
-                    key={title}
-                    to={link}
-                    className="flex items-center gap-2"
-                  >
-                    {title} <img src="/chevron.svg" />
+              {navData[useTranslate(lang)].data.slice(3, 6).map((item) =>
+                !item.dropDown ? (
+                  <Link className="py-2" key={item.title} to={item.link || ""}>
+                    {item.title}
                   </Link>
-                ))}
+                ) : (
+                  <Menu
+                    dropDownText={item.dropDownText!}
+                    title={item.title}
+                    color="white"
+                  />
+                )
+              )}
             </nav>
           </div>
 
           <div className="flex items-center">
-            {/* <LangMenu className="lg:hidden" /> */}
+            <LangMenu className="lg:hidden" />
             <Burger />
           </div>
 
