@@ -11,7 +11,7 @@ export const stendData = [
     label_3: "Название должности/позиция",
     number_of_participants: "Количество участников",
     label_4: "Страна",
-    label_5: "E-mail адрес",
+    label_5: "Email адрес",
     label_6: "Номер телефона",
     label_7: "Вебсайт",
 
@@ -23,18 +23,18 @@ export const stendData = [
   },
 
   {
-    cover: "Book your stand",
+    cover: "Book a stand:",
     h2: "Select one of the options:",
 
-    radio: "Space Only",
-    radio_2: "Stand Package",
+    radio: "Stand space only",
+    radio_2: "Prefabricated stand",
 
     label_1: "Company/Organization Name",
     label_2: "Name of Representative",
     label_3: "Job title/Position",
     number_of_participants: "Number of the participants",
     label_4: "Country",
-    label_5: "E-mail address",
+    label_5: "Email address",
     label_6: "Phone number",
     label_7: "Website",
 

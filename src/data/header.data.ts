@@ -6,26 +6,76 @@ export const navData = [
         link: "",
       },
       {
+        title: "Новости",
+        dropDown: true,
+
+        dropDownContent: [
+          {
+            text: "Новости",
+            link: "",
+          },
+          { text: "Подписаться на новости" },
+        ],
+      },
+      {
         title: "Контакты",
         link: "/contacts",
       },
       {
-        title: "Новости",
+        title: "О выставке",
         dropDown: true,
 
-        dropDownText: "Подписаться на новости",
-      },
-      {
-        title: "О выставке",
-        link: "/about",
+        dropDownContent: [
+          {
+            text: "О выставке",
+            link: "/about",
+          },
+          {
+            text: "Медиа",
+            link: "",
+          },
+        ],
       },
       {
         title: "Посетителям",
-        link: "",
+
+        dropDown: true,
+        dropDownContent: [
+          {
+            text: "Почему стоит посетить?",
+            link: "",
+            blank: true,
+          },
+          {
+            text: "Список участников",
+            link: "",
+            blank: true,
+          },
+          {
+            text: "Путеводитель",
+            link: "https://turkmentextile.turkmenexpo.com/app/storage/app/media/travel_guide/Travel_guide_ru.pdf",
+            blank: true,
+          },
+        ],
       },
       {
-        title: "Экспонентам",
-        link: "",
+        title: "Участникам",
+        dropdown: true,
+
+        dropDownContent: [
+          {
+            text: "Забронировать стенд",
+            link: "/stend-form",
+          },
+          {
+            text: "Почему стоить участвовать?",
+            link: "",
+          },
+          {
+            text: "Тематические разделы ",
+            link: "",
+          },
+        ],
       },
     ],
   },
@@ -33,7 +83,7 @@ export const navData = [
   {
     data: [
       {
-        title: "Guide",
+        title: "Travel Guide",
         link: "",
       },
       {
@@ -44,20 +94,70 @@ export const navData = [
         title: "News",
         dropDown: true,
 
-        dropDownText: "Subscribe to the news",
+        dropDownContent: [
+          { text: "News", link: "" },
+          { text: "Subscribe to the news" },
+        ],
       },
 
       {
         title: "About exhibition",
-        link: "/about",
+        dropDown: true,
+
+        dropDownContent: [
+          {
+            text: "About exhibition",
+            link: "/about",
+          },
+          {
+            text: "Media",
+            link: "",
+          },
+        ],
       },
       {
-        title: "To the Visitors",
-        link: "",
+        title: "Visitors",
+        dropDown: true,
+        dropDownContent: [
+          {
+            text: "Why visit?",
+            link: "",
+          },
+          {
+            text: "List of Participants",
+            link: "",
+            blank: true,
+          },
+          {
+            text: "Programme",
+            link: "",
+            blank: true,
+          },
+          {
+            text: "Travel Guide",
+            link: "https://turkmentextile.turkmenexpo.com/app/storage/app/media/travel_guide/Travel_guide_ru.pdf",
+            blank: true,
+          },
+        ],
       },
       {
-        title: "To the Exhibitors",
-        link: "",
+        title: "Exhibitors",
+
+        dropDown: true,
+        dropDownContent: [
+          {
+            text: "Book a stand",
+            link: "/stend-form",
+          },
+          {
+            text: "Why exhibit?",
+            link: "",
+          },
+          {
+            text: "Thematic areas of the exhibition",
+            link: "",
+          },
+        ],
       },
     ],
   },

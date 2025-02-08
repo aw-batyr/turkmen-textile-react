@@ -50,8 +50,8 @@ export const AboutInfo: FC<Props> = () => {
         </ul>
       </div>
 
-      <Link to="/become-sponsor">
-        <Button className="w-full">{t("main.button")}</Button>
+      <Link className="flex justify-center" to="/become-sponsor">
+        <Button>{t("main.button")}</Button>
       </Link>
     </Container>
   );

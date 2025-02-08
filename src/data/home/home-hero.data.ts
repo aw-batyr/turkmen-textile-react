@@ -37,7 +37,7 @@ export const btns = [
         link: "/stend-form",
       },
       {
-        title: "Participants list",
+        title: "List of participants",
         link: "/",
       },
       {

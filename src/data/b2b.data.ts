@@ -18,7 +18,7 @@ export const b2bStage1 = [
         label: "Страна",
       },
       {
-        label: "E-mail адрес",
+        label: "Email адрес",
       },
       {
         label: "Номер телефона",

@@ -11,6 +11,8 @@ import { useTranslate } from "@/hooks/use-translate";
 export const Header: FC = () => {
   const lang = useLangStore((state) => state.lang);
 
+  console.log(navData);
+
   return (
     <header>
       <div className="h-12 hidden lg:flex bg-sur text-surface-bg items-center overflow-hidden">
@@ -33,8 +35,9 @@ export const Header: FC = () => {
                   </Link>
                 ) : (
                   <Menu
+                    key={item.title}
                     color={"black"}
-                    dropDownText={item.dropDownText!}
+                    dropDownContent={item.dropDownContent}
                     title={item.title}
                   />
                 )
@@ -68,7 +71,8 @@ export const Header: FC = () => {
                   </Link>
                 ) : (
                   <Menu
-                    dropDownText={item.dropDownText!}
+                    key={item.title}
+                    dropDownContent={item.dropDownContent}
                     title={item.title}
                     color="white"
                   />

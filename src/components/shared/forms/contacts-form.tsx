@@ -12,12 +12,15 @@ import {
 } from "@/lib/get-contacts-form-details";
 import { postContact } from "@/services/service";
 import { Loader2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   className?: string;
 }
 
 export const ContactsForm: FC<Props> = ({ className }) => {
+  const { t } = useTranslation("contacts");
+
   const [success, setSuccess] = useState(false);
   const form = useForm({
     resolver: zodResolver(contactsSchema),
@@ -40,14 +43,14 @@ export const ContactsForm: FC<Props> = ({ className }) => {
     <div className={cn("bg-primary rounded-[8px] py-8 px-6 ", className)}>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
-          <h2 className="h2 !text-on_primary lg:mb-8 mb-6">Связаться с нами</h2>
+          <h2 className="h2 !text-on_primary lg:mb-8 mb-6">{t("title")}</h2>
 
           <div className="flex flex-col gap-8">
             <Field
               onPrimary
               name="name"
               control={form.control}
-              label="Имя"
+              label={t("name")}
               error={errors.name}
             />
 
@@ -56,14 +59,14 @@ export const ContactsForm: FC<Props> = ({ className }) => {
                 onPrimary
                 name="email"
                 control={form.control}
-                label="E-mail"
+                label="Email"
                 error={errors.email}
               />
               <Field
                 onPrimary
                 name="phone"
                 control={form.control}
-                label="Телефон"
+                label={t("phone")}
                 error={errors.phone}
               />
             </div>
@@ -72,14 +75,14 @@ export const ContactsForm: FC<Props> = ({ className }) => {
               onPrimary
               name="company"
               control={form.control}
-              label="Название компании"
+              label={t("company")}
               error={errors.name}
             />
             <Field
               onPrimary
               textArea
               name="msg"
-              label="Сообщение"
+              label={t("message")}
               control={form.control}
               error={errors.msg}
             />
@@ -89,11 +92,11 @@ export const ContactsForm: FC<Props> = ({ className }) => {
               variant="secondary"
             >
               {success ? (
-                "Форма отправлена"
+                t("submitted")
               ) : form.formState.isSubmitting ? (
                 <Loader2 className="animate-spin text-white" />
               ) : (
-                "Отправить"
+                t("button")
               )}
             </Button>
           </div>

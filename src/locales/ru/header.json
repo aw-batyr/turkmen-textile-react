@@ -2,7 +2,7 @@
   "venue": "Ашхабад, Туркменистан",
 
   "guide": {
-    "title": "Guide"
+    "title": "Гид"
   },
 
   "contacts": {
@@ -13,7 +13,7 @@
   "news": {
     "title": "Новости",
 
-    "item": "Пописаться на новости"
+    "item": ["Пописаться на новости"]
   },
 
   "": "",
@@ -31,22 +31,27 @@
         "link": ""
       },
       {
+        "title": "Список участников",
+        "link": ""
+      },
+      {
         "title": "Программа",
         "link": ""
       },
       {
-        "title": "Список участников",
-        "link": ""
+        "title": "Петеводитель",
+        "link": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/travel_guide/Travel_guide_ru.pdf",
+        "pdf": true
       }
     ]
   },
 
   "exhibitors": {
-    "trigger": "Экспонентам"
+    "trigger": "Участникам"
   },
 
   "participants": {
-    "trigger": "Список участников",
+    "trigger": "Посетителям",
 
     "items": [
       {
