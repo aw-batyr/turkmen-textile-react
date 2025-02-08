@@ -60,7 +60,7 @@ export const navData = [
       },
       {
         title: "Участникам",
-        dropdown: true,
+        dropDown: true,
 
         dropDownContent: [
           {
