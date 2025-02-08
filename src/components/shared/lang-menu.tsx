@@ -27,7 +27,7 @@ export const LangMenu: FC<Props> = ({ className }) => {
   return (
     <Popover open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
       <PopoverTrigger className={cn("flex items-center gap-2", className)}>
-        <img src={lang === Language.RU ? "/ru.svg" : "/en.svg"} alt="" />
+        <img src={lang === Language.RU ? "/ru.svg" : "/english.svg"} alt="" />
         {lang === Language.RU ? "Ру" : "En"}
         <svg
           width="20"
