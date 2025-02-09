@@ -11,8 +11,6 @@ import { useTranslate } from "@/hooks/use-translate";
 export const Header: FC = () => {
   const lang = useLangStore((state) => state.lang);
 
-  console.log(navData);
-
   return (
     <header>
       <div className="h-12 hidden lg:flex bg-sur text-surface-bg items-center overflow-hidden">
@@ -30,7 +28,12 @@ export const Header: FC = () => {
             <nav className="flex items-center gap-6">
               {navData[useTranslate(lang)].data.slice(0, 3).map((item) =>
                 !item.dropDown ? (
-                  <Link className="py-2" key={item.title} to={item.link || ""}>
+                  <Link
+                    target={item.blank ? "_blank" : ""}
+                    className="py-2"
+                    key={item.title}
+                    to={item.link || ""}
+                  >
                     {item.title}
                   </Link>
                 ) : (
