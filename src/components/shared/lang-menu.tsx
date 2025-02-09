@@ -58,7 +58,7 @@ export const LangMenu: FC<Props> = ({ className }) => {
               className="flex gap-3 py-1 items-center cursor-pointer"
             >
               <img
-                src={item.lang === Language.RU ? "/ru.svg" : "/en.svg"}
+                src={item.lang === Language.RU ? "/ru.svg" : "/english.svg"}
                 alt="flag"
               />
               <h5>{item.lang === Language.RU ? "Русский" : "English"}</h5>
