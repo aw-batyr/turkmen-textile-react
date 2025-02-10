@@ -24,7 +24,7 @@ export const b2bStage1 = [
         label: "Номер телефона",
       },
       {
-        label: "Вебсайт",
+        label: "Веб-сайт",
       },
     ],
   },
@@ -48,7 +48,7 @@ export const b2bStage1 = [
         label: "Country",
       },
       {
-        label: "E-mail address",
+        label: "Email",
       },
       {
         label: "Phone number",

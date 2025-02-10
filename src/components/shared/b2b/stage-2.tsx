@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Language, useLangStore } from "@/store/lang";
 import { useTranslate } from "@/hooks/use-translate";
 import { b2bStage2 } from "@/data/b2b.data";
+import { useScrollTop } from "@/hooks/use-scroll-top";
 
 interface Props {
   className?: string;
@@ -14,6 +15,8 @@ interface Props {
 }
 
 export const Stage2: FC<Props> = ({ handleNext, handlePrev }) => {
+  useScrollTop();
+
   const lang = useLangStore((state) => state.lang);
   const { control, formState } = useFormContext();
 

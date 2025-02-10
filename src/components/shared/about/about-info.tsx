@@ -42,7 +42,7 @@ export const AboutInfo: FC<Props> = () => {
       <div className="flex flex-col gap-6">
         <h2 className="h2">{t("main.block_3.title")}</h2>
 
-        <h3>{t("main.block_3.subtitle")}</h3>
+        <h3 className="p">{t("main.block_3.subtitle")}</h3>
         <ul className="list-disc pl-8 flex flex-col gap-3 p">
           {block_3.map((item) => (
             <li key={item}>{item}</li>

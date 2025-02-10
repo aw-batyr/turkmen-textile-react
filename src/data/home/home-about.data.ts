@@ -32,8 +32,9 @@ export const homeAbout = [
   {
     h2: "TurkmenTextile Expo-2025 in Ashgabat",
     p: `An international exhibition will unite global industry leaders, innovative manufacturers, and creative designers.
-    Our mission is to strengthen Turkmenistan's position as a key hub for the textile and fashion industry. The exhibition will serve as a platform to explore sustainable practices, modern technologies, and design solutions, inspiring the development of the industry.
+    Our mission is to strengthen Turkmenistan's position as a key hub for the textile and fashion industry. 
     `,
+    p_2: "The exhibition will serve as a platform to explore sustainable practices, modern technologies, and design solutions, inspiring the development of the industry.",
 
     data: [
       {
