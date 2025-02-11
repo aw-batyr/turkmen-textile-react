@@ -33,7 +33,7 @@ export const HomeAbout: FC = () => {
           </div>
 
           <video
-            src="https://itse.turkmenexpo.com/app/storage/app/media/video/Textile2025.mp4"
+            src="https://turkmentextile.turkmenexpo.com/app/storage/app/media/video/Textile2025.mp4"
             muted
             controls
             autoPlay
