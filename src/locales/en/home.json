@@ -1,4 +1,10 @@
 {
+  "banners": {
+    "lg": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/banners/en/l.jpg",
+    "md": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/banners/en/m.jpg",
+    "sm": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/banners/en/s.jpg"
+  },
+
   "about": {
     "buttons": [
       {

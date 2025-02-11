@@ -6,23 +6,23 @@ import { Container } from "@/components/layout";
 import { useMediaQuery } from "usehooks-ts";
 import { btns } from "@/data/home/home-hero.data";
 import { useTranslate } from "@/hooks/use-translate";
-import { Language, useLangStore } from "@/store/lang";
+import { useLangStore } from "@/store/lang";
+import { useTranslation } from "react-i18next";
 
 export const HomeHero: FC = () => {
   const [embalRef] = useEmblaCarousel();
   const lang = useLangStore((state) => state.lang);
 
+  const { t } = useTranslation("home");
+
   const lg = useMediaQuery("(min-width: 1024px)");
   const md = useMediaQuery("(min-width: 768px)");
 
-  const folder = lang === Language.RU ? Language.RU : Language.EN;
-
   function getBanner() {
-    if (lg) return `/banners/${folder}/l.jpg`;
-    else if (md) return `/banners/${folder}/m.jpg`;
-    else return `/banners/${folder}/s.jpg`;
+    if (lg) return t("banners.lg");
+    else if (md) return t("banners.md");
+    else return t("banners.sm");
   }
-
   return (
     <section className="flex flex-col gap-5">
       <div ref={embalRef} className="embla">
