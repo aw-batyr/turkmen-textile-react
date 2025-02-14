@@ -1,1 +1,0 @@
-import{j as e,b as s,c as o,d as m,e as a,f as x}from"./ui-library-BGU_JXnA.js";import"./react-vendor-OnsDvTPE.js";function f(){return e.jsxs("div",{className:"flex flex-col gap-20",children:[e.jsx(s,{}),e.jsx(o,{}),e.jsx(m,{}),e.jsx(a,{}),e.jsx(x,{})]})}export{f as default};

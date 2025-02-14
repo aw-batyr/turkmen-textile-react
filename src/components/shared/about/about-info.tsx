@@ -5,6 +5,7 @@ import { useLangStore } from "@/store/lang";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { Loader } from "../loader";
 
 interface Props {
   className?: string;
@@ -14,7 +15,7 @@ export const AboutInfo: FC<Props> = () => {
   const lang = useLangStore((state) => state.lang);
   const { t } = useTranslation("about");
 
-  const { data } = useStaticWords("2");
+  const { data, isPending } = useStaticWords("2");
 
   const title_1 = data?.find((item) => item.key === "about_1")?.text;
   const block_1 = data?.find((item) => item.key === "about_2")?.text;
@@ -27,6 +28,8 @@ export const AboutInfo: FC<Props> = () => {
   const title_3 = data?.find((item) => item.key === "about_6")?.text;
   const subtitle_3 = data?.find((item) => item.key === "about_7")?.text;
   const block_3 = data?.find((item) => item.key === "about_8")?.list;
+
+  if (isPending) return <Loader />;
 
   return (
     <Container className="flex flex-col md:my-20 my-10 gap-16">
