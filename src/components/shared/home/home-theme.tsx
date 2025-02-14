@@ -4,9 +4,16 @@ import { Container } from "@/components/layout";
 import { useLangStore } from "@/store/lang";
 import { homeTheme } from "@/data/home/home-theme.data";
 import { useTranslate } from "@/hooks/use-translate";
+import { useIndustries } from "@/hooks/tanstack/use-industries";
+import { Loader } from "../loader";
 
 export const HomeTheme: FC = () => {
   const lang = useLangStore((state) => state.lang);
+
+  const { data, isPending } = useIndustries();
+
+  if (isPending) return <Loader />;
+
   return (
     <section className="">
       <Container>
@@ -15,12 +22,8 @@ export const HomeTheme: FC = () => {
         </h2>
 
         <div className="grid md:grid-cols-4 grid-cols-2 gap-6">
-          {homeTheme[useTranslate(lang)].data.map((item) => (
-            <ThemeCard
-              key={item.title}
-              {...item}
-              iconClassName="bg-teritary_04"
-            />
+          {data?.map((item, i) => (
+            <ThemeCard key={i} {...item} />
           ))}
         </div>
       </Container>

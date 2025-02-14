@@ -3,11 +3,12 @@ import { FC } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Container } from "@/components/layout";
-import { ContactCard, TimeCard } from "../";
+import { ContactCard, Loader, TimeCard } from "../";
 import { useTranslate } from "@/hooks/use-translate";
 import { Language, useLangStore } from "@/store/lang";
 import { times } from "@/data/home/home-time.data";
-import { contacts } from "@/data/contacts.data";
+import { useExhibitionTime } from "@/hooks/tanstack/use-exhibition-time";
+import { useHomeContacts } from "@/hooks/tanstack/use-home-contacts";
 
 interface Props {
   className?: string;
@@ -16,6 +17,11 @@ interface Props {
 export const HomeTime: FC<Props> = ({ className }) => {
   const lang = useLangStore((state) => state.lang);
 
+  const { data, isPending } = useExhibitionTime();
+  const { data: contacts } = useHomeContacts();
+
+  if (isPending) return <Loader />;
+
   return (
     <section className={cn("bg-surface_high pt-10 pb-20", className)}>
       <Container>
@@ -23,14 +29,14 @@ export const HomeTime: FC<Props> = ({ className }) => {
 
         <div className="flex flex-col gap-6">
           <div className="flex flex-col md:flex-row items-center gap-6">
-            {times[useTranslate(lang)].data.map((item) => (
-              <TimeCard {...item} key={item.name} className="w-full" />
+            {data?.map((item, i) => (
+              <TimeCard {...item} key={i} className="w-full" />
             ))}
           </div>
 
           <div className="md:p-10 pt-16 flex flex-col md:flex-row items-center gap-6">
-            {contacts[useTranslate(lang)].data.map((item) => (
-              <ContactCard {...item} key={item.title} className="w-full" />
+            {contacts?.map((item, i) => (
+              <ContactCard {...item} key={i} className="w-full" />
             ))}
           </div>
 

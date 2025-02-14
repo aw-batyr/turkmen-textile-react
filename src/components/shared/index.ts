@@ -11,6 +11,7 @@ export { EmblaDots } from "./embla-dots";
 export { LangMenu } from "./lang-menu";
 export { Menu } from "./menu";
 export { Chevron } from "./chevron";
+export { Loader } from "./loader";
 
 export * from "./about";
 export * from "./home";

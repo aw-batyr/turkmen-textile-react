@@ -7,25 +7,35 @@ import { AboutCard } from "../about-card";
 import { homeAbout } from "@/data/home/home-about.data";
 import { useTranslate } from "@/hooks/use-translate";
 import { useLangStore } from "@/store/lang";
+import { useStats } from "@/hooks/tanstack/use-stats";
+import { useStaticWords } from "@/hooks/tanstack/use-static-words";
+import { Loader } from "../";
 
 export const HomeAbout: FC = () => {
   const [ebmblaRef] = useEmblaCarousel();
   const lang = useLangStore((state) => state.lang);
+
+  const { data, isPending } = useStaticWords("1");
+
+  const { data: stats } = useStats();
+
+  const title = data?.find((item) => item.key === "index_1")?.text;
+  const text = data?.find((item) => item.key === "index_2")?.text;
+
+  if (isPending) return <Loader />;
 
   return (
     <section>
       <Container className="flex flex-col gap-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
           <div className="flex flex-col gap-6">
-            <h2 className="h2 text-left ">
-              {homeAbout[useTranslate(lang)].h2}
-            </h2>
-            <div className="md:text-base flex flex-col gap-6 text-sm normal text-left  text-[#454545]">
-              <p>{homeAbout[useTranslate(lang)].p}</p>
-              <p>{homeAbout[useTranslate(lang)].p_2}</p>
-            </div>
+            <h2 className="h2 text-left">{title}</h2>
+            <div
+              dangerouslySetInnerHTML={{ __html: text ? text : "" }}
+              className="md:text-base flex flex-col gap-6 text-sm normal text-left text-[#454545]"
+            />
 
-            <Link to="/about" className="">
+            <Link to="/about" className="w-fit">
               <Button variant={"outline"}>
                 {homeAbout[useTranslate(lang)].button}
               </Button>
@@ -44,7 +54,7 @@ export const HomeAbout: FC = () => {
 
         <div ref={ebmblaRef} className="embla overflow-hidden">
           <div className="flex embla__container items-center gap-6">
-            {homeAbout[useTranslate(lang)].data.map((item) => (
+            {stats?.map((item) => (
               <AboutCard
                 key={item.text}
                 {...item}

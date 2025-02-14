@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { FC } from "react";
 
 interface Props {
-  img: string;
+  image: { path: string };
   title: string;
   className?: string;
   iconClassName?: string;
@@ -10,7 +10,7 @@ interface Props {
 
 export const ThemeCard: FC<Props> = ({
   className,
-  img,
+  image,
   title,
   iconClassName,
 }) => {
@@ -25,7 +25,7 @@ export const ThemeCard: FC<Props> = ({
       <div
         className={cn("md:size-[84px] size-12 bg-teritary p-3", iconClassName)}
       >
-        <img src={img} alt="theme icon" />
+        <img src={image.path} alt="theme icon" />
       </div>
       <h3 className="md:mt-6 mt-2 md:text-xl text-sm">{title}</h3>
     </article>

@@ -1,10 +1,11 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Container } from "@/components/layout";
 import { useLang } from "@/hooks/use-lang";
 import { Button } from "@/components/ui/button";
+import { postSubscribe } from "@/services/service";
 
 interface Props {
   className?: string;
@@ -17,6 +18,8 @@ const schema = z.object({
 export type SubscribeType = z.infer<typeof schema>;
 
 export const SubscribeForm: FC<Props> = () => {
+  const [success, setSuccess] = useState(false);
+
   const form = useForm<SubscribeType>({
     resolver: zodResolver(schema),
     defaultValues: {
@@ -25,7 +28,14 @@ export const SubscribeForm: FC<Props> = () => {
   });
 
   async function onSubmit(data: SubscribeType) {
-    console.log(data);
+    try {
+      const status = await postSubscribe(data);
+
+      form.reset();
+      setSuccess(status);
+    } catch (error) {
+      console.error("POST subscribe", error);
+    }
   }
 
   return (
@@ -49,8 +59,14 @@ export const SubscribeForm: FC<Props> = () => {
           </span>
         </div>
 
-        <Button className="xl:w-[288px] lg:w-[220px] w-full">
-          {useLang("Подписаться", "Subscribe")}
+        <Button
+          loading={form.formState.isSubmitting}
+          disabled={success}
+          className="xl:w-[288px] lg:w-[220px] w-full"
+        >
+          {success
+            ? useLang("Отправлено", "Submitted")
+            : useLang("Подписаться", "Subscribe")}
         </Button>
       </Container>
     </form>

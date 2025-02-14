@@ -54,7 +54,7 @@ export const Header: FC = () => {
               <h4 className="text-sm">+99371871812</h4>
             </div>
 
-            <LangMenu />
+            <LangMenu className="!text-on_surface" />
           </div>
         </Container>
       </div>
@@ -85,7 +85,7 @@ export const Header: FC = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <LangMenu className="lg:hidden" />
+            <LangMenu className="lg:hidden" light />
             <Burger />
           </div>
 

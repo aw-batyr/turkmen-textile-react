@@ -3,8 +3,8 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.tsx";
 import "./index.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-// Импортируем страницы с `webpackPrefetch`
 const Home = lazy(() => import(/* webpackPrefetch: true */ "./pages/home"));
 const About = lazy(() => import(/* webpackPrefetch: true */ "./pages/about"));
 const B2b = lazy(() => import(/* webpackPrefetch: true */ "./pages/b2b"));
@@ -18,7 +18,6 @@ const Contacts = lazy(
   () => import(/* webpackPrefetch: true */ "./pages/contacts")
 );
 
-// Настраиваем маршруты
 const router = createBrowserRouter([
   {
     element: <App />,
@@ -34,8 +33,12 @@ const router = createBrowserRouter([
   },
 ]);
 
+const queryClient = new QueryClient();
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </StrictMode>
 );
