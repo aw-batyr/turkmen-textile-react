@@ -25,7 +25,7 @@ export const offersData = [
         title: "Hotels, transfer, visas;",
         btnText: "Download Travel Guide",
         text: `For inquiries regarding hotel accommodations, visa support, transportation, and tour services, please refer to the travel guide;`,
-        link: "https://turkmentextile.turkmenexpo.com/app/storage/app/media/travel_guide/Travel_guide_ru.pdf",
+        link: "https://turkmentextile.turkmenexpo.com/app/storage/app/media/travel_guide/Travel_guide_eng.pdf",
       },
       {
         img: "/offer-2.png",
