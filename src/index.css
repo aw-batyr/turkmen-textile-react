@@ -46,7 +46,7 @@
   }
 
   .h2 {
-    @apply md:text-3xl text-2xl  text-[#171717];
+    @apply md:text-[28px] text-2xl  text-[#171717];
   }
 
   .p {

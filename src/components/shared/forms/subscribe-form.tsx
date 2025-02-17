@@ -6,9 +6,11 @@ import { Container } from "@/components/layout";
 import { useLang } from "@/hooks/use-lang";
 import { Button } from "@/components/ui/button";
 import { postSubscribe } from "@/services/service";
+import { cn } from "@/lib/utils";
 
 interface Props {
   className?: string;
+  modal?: boolean;
 }
 
 const schema = z.object({
@@ -17,7 +19,7 @@ const schema = z.object({
 
 export type SubscribeType = z.infer<typeof schema>;
 
-export const SubscribeForm: FC<Props> = () => {
+export const SubscribeForm: FC<Props> = ({ modal = false }) => {
   const [success, setSuccess] = useState(false);
 
   const form = useForm<SubscribeType>({
@@ -41,10 +43,18 @@ export const SubscribeForm: FC<Props> = () => {
   return (
     <form
       onSubmit={form.handleSubmit(onSubmit)}
-      className="py-8 bg-bg_surface_container"
+      className={cn(
+        "py-8",
+        modal ? "max-w-[392px] mx-auto" : "bg-surface_container"
+      )}
     >
-      <Container className="flex lg:flex-row flex-col gap-6 lg:items-center justify-between">
-        <h2 className="h2">
+      <Container
+        className={cn(
+          "flex gap-8 justify-between",
+          modal ? "flex-col w-full" : "lg:flex-row flex-col lg:items-center"
+        )}
+      >
+        <h2 className="h2 !text-left">
           {useLang("Подпишитесь на новости:", "Subscribe to the news:")}
         </h2>
 
@@ -52,7 +62,10 @@ export const SubscribeForm: FC<Props> = () => {
           <input
             {...form.register("email")}
             placeholder="Email"
-            className="input xl:w-[392px] lg:w-[320px] w-full"
+            className={cn("input", {
+              "w-full": modal,
+              "xl:w-[392px] lg:w-[320px] w-full": !modal,
+            })}
           />
           <span className="text-error absolute text-red-600 -bottom-6 text-sm left-0">
             {form.formState.errors?.email?.message}
@@ -62,7 +75,10 @@ export const SubscribeForm: FC<Props> = () => {
         <Button
           loading={form.formState.isSubmitting}
           disabled={success}
-          className="xl:w-[288px] lg:w-[220px] w-full"
+          className={cn({
+            "xl:w-[288px] lg:w-[220px] w-full": !modal,
+            "w-full": modal,
+          })}
         >
           {success
             ? useLang("Отправлено", "Submitted")

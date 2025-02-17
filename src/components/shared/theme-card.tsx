@@ -17,7 +17,7 @@ export const ThemeCard: FC<Props> = ({
   return (
     <article
       className={cn(
-        "bg-bg_surface_container relative hover:bg-teritary_surface_container transition-all md:px-6 px-2 md:h-[224px] h-[124px]",
+        "bg-surface_container relative hover:bg-teritary_surface_container transition-all md:px-6 px-2 md:h-[224px] h-[124px]",
         className
       )}
     >

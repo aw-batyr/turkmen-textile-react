@@ -14,7 +14,7 @@ export default function Contacts() {
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-6">
           <ContactsForm />
 
-          <div className="p-6 bg-bg_surface_container rounded-[8px]">
+          <div className="p-6 bg-surface_container rounded-[8px]">
             <h2 className="h2 mb-10 xl:mb-8">{t("title_2")}</h2>
 
             <div className="flex flex-col gap-20">

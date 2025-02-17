@@ -17,9 +17,7 @@ export const AboutTime: FC<Props> = ({ className }) => {
   const { data, isPending } = useExhibitionTime();
 
   return (
-    <section
-      className={cn("bg-bg_surface_container py-10 md:py-20", className)}
-    >
+    <section className={cn("bg-surface_container py-10 md:py-20", className)}>
       <Container>
         {isPending ? (
           <Loader />

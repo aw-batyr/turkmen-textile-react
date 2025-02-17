@@ -46,7 +46,7 @@ export default {
         outline: "#A1A7B2",
         outline_v: "#D0D3D8",
         background: "#F9F9FA",
-        bg_surface_container: "#EEEDF4",
+        surface_container: "#EEEDF4",
       },
     },
   },
