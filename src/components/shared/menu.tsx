@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Modal } from "./modal";
 import { DropDownContent } from "@/locales/types/nav.type";
 import { cn } from "@/lib/utils";
+import { useUiStore } from "@/store/ui";
 
 interface Props {
   className?: string;
@@ -22,6 +23,7 @@ export const Menu: FC<Props> = ({
   triggerClassName,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const setSheet = useUiStore((state) => state.setSheet);
 
   return (
     <Popover open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
@@ -37,7 +39,10 @@ export const Menu: FC<Props> = ({
           dropDownContent.map((item) =>
             item.link ? (
               <Link
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  setSheet(false);
+                }}
                 className="h-14 px-3 flex gap-3 items-center hover:bg-slate-300/50 transition-all"
                 key={item.text}
                 target={item.blank ?? ""}
@@ -54,6 +59,7 @@ export const Menu: FC<Props> = ({
                 className="h-14 px-3 flex items-center hover:bg-slate-300/50 transition-all"
                 onClick={() => {
                   setIsOpen(false);
+                  setSheet(false);
                 }}
               >
                 {item.text}
