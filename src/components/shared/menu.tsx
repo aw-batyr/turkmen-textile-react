@@ -3,28 +3,31 @@ import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Chevron } from "./";
 import { Link } from "react-router-dom";
 import { Modal } from "./modal";
+import { DropDownContent } from "@/locales/types/nav.type";
+import { cn } from "@/lib/utils";
 
 interface Props {
   className?: string;
   title: string;
   color?: string;
+  triggerClassName?: string;
 
-  onMenu?: VoidFunction;
-
-  dropDownContent?: {
-    modal?: boolean;
-    text: string;
-    link?: string;
-    blank?: boolean;
-  }[];
+  dropDownContent?: DropDownContent[];
 }
 
-export const Menu: FC<Props> = ({ title, dropDownContent, color, onMenu }) => {
+export const Menu: FC<Props> = ({
+  title,
+  dropDownContent,
+  color,
+  triggerClassName,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Popover open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
-      <PopoverTrigger className="flex items-center gap-2">
+      <PopoverTrigger
+        className={cn("flex items-center gap-2", triggerClassName)}
+      >
         {title}
         <Chevron color={color} />
       </PopoverTrigger>
@@ -37,7 +40,7 @@ export const Menu: FC<Props> = ({ title, dropDownContent, color, onMenu }) => {
                 onClick={() => setIsOpen(false)}
                 className="h-14 px-3 flex gap-3 items-center hover:bg-slate-300/50 transition-all"
                 key={item.text}
-                target={item.blank ? "_blank" : ""}
+                target={item.blank ?? ""}
                 to={item.link}
               >
                 {item.text}
@@ -51,7 +54,6 @@ export const Menu: FC<Props> = ({ title, dropDownContent, color, onMenu }) => {
                 className="h-14 px-3 flex items-center hover:bg-slate-300/50 transition-all"
                 onClick={() => {
                   setIsOpen(false);
-                  onMenu?.();
                 }}
               >
                 {item.text}

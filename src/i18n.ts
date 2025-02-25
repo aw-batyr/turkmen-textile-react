@@ -4,6 +4,9 @@ import { initReactI18next } from "react-i18next";
 import headerEn from "./locales/en/header.json";
 import headerRu from "./locales/ru/header.json";
 
+import navEn from "./locales/en/nav.json";
+import navRu from "./locales/ru/nav.json";
+
 import homeEn from "./locales/en/home.json";
 import homeRu from "./locales/ru/home.json";
 
@@ -20,12 +23,14 @@ const initialLanguage = useLangStore.getState().lang;
 i18n.use(initReactI18next).init({
   resources: {
     en: {
+      nav: navEn,
       header: headerEn,
       home: homeEn,
       about: aboutEn,
       contacts: contactsEn,
     },
     ru: {
+      nav: navRu,
       header: headerRu,
       home: homeRu,
       about: aboutRu,
@@ -34,7 +39,7 @@ i18n.use(initReactI18next).init({
   },
   lng: initialLanguage, // Язык по умолчанию
   fallbackLng: "en",
-  ns: ["home", "about", "header", "contacts"], // список namespaces
+  ns: ["home", "about", "header", "contacts", "nav"], // список namespaces
   defaultNS: "home", // namespace по умолчанию (можно менять в компонентах)
   interpolation: {
     escapeValue: false, // React уже экранирует значения

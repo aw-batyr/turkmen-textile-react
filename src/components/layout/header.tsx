@@ -5,11 +5,15 @@ import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 import { LangMenu, Logo, Menu } from "../shared";
 import { Language, useLangStore } from "@/store/lang";
-import { navData } from "@/data/header.data";
-import { useTranslate } from "@/hooks/use-translate";
+import { Navigation } from "@/locales/types/nav.type";
+import { useTranslation } from "react-i18next";
 
 export const Header: FC = () => {
   const lang = useLangStore((state) => state.lang);
+
+  const { t } = useTranslation("nav");
+
+  const nav = t("navigation", { returnObjects: true }) as Navigation[];
 
   return (
     <header>
@@ -26,8 +30,8 @@ export const Header: FC = () => {
             </div>
 
             <nav className="flex items-center gap-6">
-              {navData[useTranslate(lang)].data.slice(0, 3).map((item) =>
-                !item.dropDown ? (
+              {nav.slice(0, 3).map((item) =>
+                !item.drop ? (
                   <Link
                     target={item.blank ? "_blank" : ""}
                     className="py-2"
@@ -67,8 +71,8 @@ export const Header: FC = () => {
             </Link>
 
             <nav className="lg:flex hidden items-center gap-6 text-white">
-              {navData[useTranslate(lang)].data.slice(3, 6).map((item) =>
-                !item.dropDown ? (
+              {nav.slice(3, 6).map((item) =>
+                !item.drop ? (
                   <Link className="py-2" key={item.title} to={item.link || ""}>
                     {item.title}
                   </Link>
