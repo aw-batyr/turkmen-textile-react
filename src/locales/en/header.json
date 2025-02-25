@@ -10,10 +10,15 @@
     "link": "/contacts"
   },
 
+  "support": {
+    "text": "Official Support",
+    "link": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/official_support/official_support_eng.pdf"
+  },
+
   "news": {
     "trigger": "News",
 
-    "item": "Subscribe to the news"
+    "item": ["Subscribe to the news"]
   },
 
   "": "",

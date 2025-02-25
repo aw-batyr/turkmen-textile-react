@@ -12,6 +12,7 @@ import { useTranslation } from "react-i18next";
 import { Navigation } from "@/locales/types/nav.type";
 import { Menu } from "../shared";
 import { useUiStore } from "@/store/ui";
+import { Language, useLangStore } from "@/store/lang";
 
 interface Props {
   className?: string;
@@ -19,6 +20,7 @@ interface Props {
 
 export const Burger: FC<Props> = () => {
   const { t } = useTranslation("nav");
+  const lang = useLangStore((state) => state.lang);
 
   const sheet = useUiStore((state) => state.sheet);
   const setSheet = useUiStore((state) => state.setSheet);
@@ -39,19 +41,29 @@ export const Burger: FC<Props> = () => {
         <SheetClose />
 
         <SheetHeader className="mt-16 flex flex-col gap-2">
-          <Link to="">
+          <Link
+            to={
+              lang === Language.RU
+                ? "https://turkmentextile.turkmenexpo.com/app/storage/app/media/official_support/official_support_ru.pdf"
+                : "https://turkmentextile.turkmenexpo.com/app/storage/app/media/official_support/official_support_eng.pdf"
+            }
+          >
             <Button
               variant={"secondary"}
               size={"sm"}
               className="bg-teritary w-full text-on_teritary hover:bg-teritary/90"
             >
-              Официальная поддержка
+              {lang === "ru" ? "Официальная поддержка" : "Official Support"}
             </Button>
           </Link>
 
-          <Link to="/B2B-B2G" onClick={() => setSheet(false)}>
-            <Button className="text-base w-full" size={"sm"}>
-              B2B | B2G встречи
+          <Link to="/become-sponsor">
+            <Button
+              variant={"secondary"}
+              size={"sm"}
+              className="bg-primary w-full text-white hover:bg-primary/90"
+            >
+              {lang === "ru" ? "Стать спонсором" : "Become a sponsor"}
             </Button>
           </Link>
         </SheetHeader>
