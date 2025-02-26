@@ -5,6 +5,11 @@
     "sm": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/banners/en/s.jpg"
   },
 
+  "partners": {
+    "title": "Partners",
+    "button": ""
+  },
+
   "about": {
     "buttons": [
       {
