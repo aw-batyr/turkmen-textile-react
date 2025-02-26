@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
-import { FC, useCallback } from "react";
+import { FC } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout";
 import Autoplay from "embla-carousel-autoplay";
 import { usePartners } from "@/hooks/tanstack/use-partners";
