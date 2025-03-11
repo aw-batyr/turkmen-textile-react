@@ -10,6 +10,7 @@ import { StaticType } from "@/hooks/tanstack/use-static-words";
 import { IndustriesType } from "@/hooks/tanstack/use-industries";
 import { TimeType } from "@/hooks/tanstack/use-exhibition-time";
 import { PartnersType } from "@/hooks/tanstack/use-partners";
+import { NewsInnerType, NewsType } from "./types/news.type";
 
 const axios_url = axios.create({
   baseURL: "https://turkmentextile.turkmenexpo.com/app/api/v1/",
@@ -107,6 +108,26 @@ export const getIndustries = async (lang: LangState["lang"]) => {
 
 export const getExhibitionTime = async (lang: LangState["lang"]) => {
   const data = axios_url.get<TimeType>(`exhibition_time`, {
+    headers: {
+      "Accept-Language": lang,
+    },
+  });
+
+  return data;
+};
+
+export const getNews = async (lang: "ru" | "en") => {
+  const data = axios_url.get<NewsType>(`news`, {
+    headers: {
+      "Accept-Language": lang,
+    },
+  });
+
+  return data;
+};
+
+export const getNewsInner = async (id: number, lang: string) => {
+  const data = axios_url.get<NewsInnerType>(`news/${id}`, {
     headers: {
       "Accept-Language": lang,
     },

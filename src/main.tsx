@@ -17,6 +17,10 @@ const StendForm = lazy(
 const Contacts = lazy(
   () => import(/* webpackPrefetch: true */ "./pages/contacts")
 );
+const News = lazy(() => import(/* webpackPrefetch: true */ "./pages/news"));
+const NewsInner = lazy(
+  () => import(/* webpackPrefetch: true */ "./pages/news-inner")
+);
 
 const router = createBrowserRouter([
   {
@@ -29,6 +33,8 @@ const router = createBrowserRouter([
       { element: <BecomeSponsor />, path: "/become-sponsor" },
       { element: <StendForm />, path: "/stend-form" },
       { element: <Contacts />, path: "/contacts" },
+      { element: <News />, path: "/news" },
+      { element: <NewsInner />, path: "/news/:id" },
     ],
   },
 ]);
