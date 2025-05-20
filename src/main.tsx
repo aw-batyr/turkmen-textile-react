@@ -21,6 +21,10 @@ const News = lazy(() => import(/* webpackPrefetch: true */ "./pages/news"));
 const NewsInner = lazy(
   () => import(/* webpackPrefetch: true */ "./pages/news-inner")
 );
+const Participants = lazy(
+  () => import(/* webpackPrefetch: true */ "./pages/participants")
+);
+const Media = lazy(() => import(/* webpackPrefetch: true */ "./pages/media"));
 
 const router = createBrowserRouter([
   {
@@ -35,6 +39,8 @@ const router = createBrowserRouter([
       { element: <Contacts />, path: "/contacts" },
       { element: <News />, path: "/news" },
       { element: <NewsInner />, path: "/news/:id" },
+      { element: <Participants />, path: "/participants" },
+      { element: <Media />, path: "/media" },
     ],
   },
 ]);

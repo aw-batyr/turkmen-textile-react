@@ -11,6 +11,9 @@ import { IndustriesType } from "@/hooks/tanstack/use-industries";
 import { TimeType } from "@/hooks/tanstack/use-exhibition-time";
 import { PartnersType } from "@/hooks/tanstack/use-partners";
 import { NewsInnerType, NewsType } from "./types/news.type";
+import { ParticipantsType } from "./types/participants.type";
+import { PhotoTypes } from "./types/photo.type";
+import { VideoTypes } from "./types/videos.type";
 
 const axios_url = axios.create({
   baseURL: "https://turkmentextile.turkmenexpo.com/app/api/v1/",
@@ -132,6 +135,28 @@ export const getNewsInner = async (id: number, lang: string) => {
       "Accept-Language": lang,
     },
   });
+
+  return data;
+};
+
+export const getParticipants = async (lang: LangState["lang"]) => {
+  const data = axios_url<ParticipantsType>("participants", {
+    headers: {
+      "Accept-Language": lang,
+    },
+  });
+
+  return data;
+};
+
+export const getPhotos = async (id: number) => {
+  const data = axios_url<PhotoTypes>("photos/category/" + id);
+
+  return data;
+};
+
+export const getVideos = async (id: number) => {
+  const data = axios_url<VideoTypes>("videos/category/" + id);
 
   return data;
 };

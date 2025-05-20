@@ -25,7 +25,7 @@
         { "text": "About exhibition", "link": "/about" },
         {
           "text": "Media",
-          "link": ""
+          "link": "/media"
         }
       ]
     },
@@ -36,7 +36,7 @@
         { "text": "Why visit?", "link": "" },
         {
           "text": "List of Participants",
-          "link": ""
+          "link": "/participants"
         },
         {
           "text": "Programme",

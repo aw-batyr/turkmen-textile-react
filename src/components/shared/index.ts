@@ -12,6 +12,9 @@ export { LangMenu } from "./lang-menu";
 export { Menu } from "./menu";
 export { Chevron } from "./chevron";
 export { Loader } from "./loader";
+export { Tabs } from "./tabs";
+export { ParticipantItem } from "./participant-item";
+export { MediaModal } from "./media-modal";
 
 export * from "./about";
 export * from "./home";
