@@ -1,30 +1,21 @@
-import { StrictMode, lazy } from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.tsx";
 import "./index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
-const Home = lazy(() => import(/* webpackPrefetch: true */ "./pages/home"));
-const About = lazy(() => import(/* webpackPrefetch: true */ "./pages/about"));
-const B2b = lazy(() => import(/* webpackPrefetch: true */ "./pages/b2b"));
-const BecomeSponsor = lazy(
-  () => import(/* webpackPrefetch: true */ "./pages/become-sponsor")
-);
-const StendForm = lazy(
-  () => import(/* webpackPrefetch: true */ "./pages/stend-form")
-);
-const Contacts = lazy(
-  () => import(/* webpackPrefetch: true */ "./pages/contacts")
-);
-const News = lazy(() => import(/* webpackPrefetch: true */ "./pages/news"));
-const NewsInner = lazy(
-  () => import(/* webpackPrefetch: true */ "./pages/news-inner")
-);
-const Participants = lazy(
-  () => import(/* webpackPrefetch: true */ "./pages/participants")
-);
-const Media = lazy(() => import(/* webpackPrefetch: true */ "./pages/media"));
+import {
+  About,
+  B2b,
+  BecomeSponsor,
+  Contacts,
+  Home,
+  Media,
+  News,
+  NewsInner,
+  Participants,
+  StendForm,
+} from "./pages";
 
 const router = createBrowserRouter([
   {
