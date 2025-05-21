@@ -1,0 +1,1 @@
+import{j as s,b as e,c as o,d as m,e as a,f as x,g as r}from"./ui-library-D22_KSBG.js";import"./react-vendor-Y0eyvj1J.js";function f(){return s.jsxs("div",{className:"flex flex-col gap-20",children:[s.jsx(e,{}),s.jsx(o,{}),s.jsx(m,{}),s.jsx(a,{}),s.jsx(x,{}),s.jsx(r,{})]})}export{f as default};
