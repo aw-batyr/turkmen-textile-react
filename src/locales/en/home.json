@@ -23,7 +23,7 @@
       },
       {
         "title": "Participants list",
-        "link": ""
+        "link": "/participants"
       },
       {
         "title": "B2B | B2G meetings",
@@ -57,5 +57,9 @@
     ],
 
     "button": "More about the exhibition"
+  },
+
+  "sponsors": {
+    "title": "Sponsors and partners"
   }
 }

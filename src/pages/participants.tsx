@@ -4,12 +4,14 @@ import { useLangStore } from "@/store/lang";
 import { Container } from "@/components/layout";
 import { Loader, ParticipantItem, Tabs } from "@/components/shared";
 import { useParticipants } from "@/hooks/tanstack/use-participants";
+import { useScrollTop } from "@/hooks/use-scroll-top";
 
 interface Props {
   className?: string;
 }
 
 const Participants: FC<Props> = ({ className }) => {
+  useScrollTop();
   const lang = useLangStore((state) => state.lang);
 
   const { data, isPending } = useParticipants();

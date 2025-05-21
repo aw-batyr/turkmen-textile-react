@@ -15,7 +15,7 @@ export const btns = [
       },
       {
         title: "Список участников",
-        link: "",
+        link: "/participants",
       },
       {
         title: "B2B | B2G встречи",
@@ -38,7 +38,7 @@ export const btns = [
       },
       {
         title: "List of participants",
-        link: "/",
+        link: "/participants",
       },
       {
         title: "B2B | B2G meetings",

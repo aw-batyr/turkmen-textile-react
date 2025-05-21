@@ -40,9 +40,11 @@ export default function StendForm() {
 
   useEffect(() => {
     window.scrollTo({ behavior: "smooth", top: 0 });
-  }, [status]);
+  }, []);
 
   const { errors } = form.formState;
+
+  const translate = useTranslate(lang);
 
   return (
     <div>
@@ -64,7 +66,7 @@ export default function StendForm() {
                 render={({ field }) => (
                   <FormItem className="space-y-5">
                     <FormLabel className="text-xl">
-                      {stendData[useTranslate(lang)].h2}
+                      {stendData[translate].h2}
                     </FormLabel>
 
                     <FormControl>
@@ -81,7 +83,7 @@ export default function StendForm() {
                             />
                           </FormControl>
                           <FormLabel className="text-base">
-                            {stendData[useTranslate(lang)].radio}
+                            {stendData[translate].radio}
                           </FormLabel>
                         </FormItem>
 
@@ -93,7 +95,7 @@ export default function StendForm() {
                             />
                           </FormControl>
                           <FormLabel className="text-base">
-                            {stendData[useTranslate(lang)].radio_2}
+                            {stendData[translate].radio_2}
                           </FormLabel>
                         </FormItem>
                       </RadioGroup>
@@ -103,51 +105,51 @@ export default function StendForm() {
               />
 
               <Field
-                label={stendData[useTranslate(lang)].label_1}
+                label={stendData[translate].label_1}
                 name="company_name"
                 control={form.control}
                 error={errors.company_name}
               />
               <Field
-                label={stendData[useTranslate(lang)].label_2}
+                label={stendData[translate].label_2}
                 name="rep_name"
                 control={form.control}
                 error={errors.rep_name}
               />
               <Field
-                label={stendData[useTranslate(lang)].label_3}
+                label={stendData[translate].label_3}
                 name="job_title"
                 control={form.control}
                 error={errors.job_title}
               />
               <Field
-                label={stendData[useTranslate(lang)].number_of_participants}
+                label={stendData[translate].number_of_participants}
                 type="number"
                 name="participants_number"
                 control={form.control}
                 error={errors.participants_number}
               />
               <Field
-                label={stendData[useTranslate(lang)].label_4}
+                label={stendData[translate].label_4}
                 name="country"
                 control={form.control}
                 error={errors.country}
               />
               <Field
-                label={stendData[useTranslate(lang)].label_5}
+                label={stendData[translate].label_5}
                 name="email"
                 control={form.control}
                 error={errors.email}
               />
               <Field
-                label={stendData[useTranslate(lang)].label_6}
+                label={stendData[translate].label_6}
                 name="phone"
                 control={form.control}
                 error={errors.phone}
               />
 
               <Field
-                label={stendData[useTranslate(lang)].label_7}
+                label={stendData[translate].label_7}
                 name="website"
                 control={form.control}
               />
@@ -158,7 +160,7 @@ export default function StendForm() {
                 render={({ field }) => (
                   <FormItem className="space-y-5">
                     <FormLabel className="text-xl">
-                      {stendData[useTranslate(lang)].visa}
+                      {stendData[translate].visa}
                     </FormLabel>
 
                     <FormControl>
@@ -175,7 +177,7 @@ export default function StendForm() {
                             />
                           </FormControl>
                           <FormLabel className="text-base">
-                            {stendData[useTranslate(lang)].visa_radio}
+                            {stendData[translate].visa_radio}
                           </FormLabel>
                         </FormItem>
 
@@ -187,7 +189,7 @@ export default function StendForm() {
                             />
                           </FormControl>
                           <FormLabel className="text-base">
-                            {stendData[useTranslate(lang)].visa_radio_2}
+                            {stendData[translate].visa_radio_2}
                           </FormLabel>
                         </FormItem>
                       </RadioGroup>
@@ -200,7 +202,7 @@ export default function StendForm() {
                 {form.formState.isSubmitting ? (
                   <Loader className="animate-spin" />
                 ) : (
-                  stendData[useTranslate(lang)].button
+                  stendData[translate].button
                 )}
               </Button>
             </motion.form>

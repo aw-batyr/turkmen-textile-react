@@ -22,6 +22,8 @@ export const HomeAbout: FC = () => {
   const title = data?.find((item) => item.key === "index_1")?.text;
   const text = data?.find((item) => item.key === "index_2")?.text;
 
+  const translate = useTranslate(lang);
+
   if (isPending) return <Loader />;
 
   return (
@@ -36,9 +38,7 @@ export const HomeAbout: FC = () => {
             />
 
             <Link to="/about" className="w-fit">
-              <Button variant={"outline"}>
-                {homeAbout[useTranslate(lang)].button}
-              </Button>
+              <Button variant={"outline"}>{homeAbout[translate].button}</Button>
             </Link>
           </div>
 
