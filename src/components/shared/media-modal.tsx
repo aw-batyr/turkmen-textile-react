@@ -69,7 +69,7 @@ export const MediaModal: FC<Props> = ({ className, setIsOpen, activeItem }) => {
       : videos?.videos?.map((item) => (
           <div
             key={item.id}
-            className="embla__slide flex-[0_0_100%] h-[350px] md:h-[500px] lg:h-[700px] lg:px-[20%] flex items-center justify-center"
+            className="embla__slide flex-[0_0_100%] h-[80vh] lg:px-[20%] flex items-center justify-center"
           >
             <video
               src={item?.video?.path ?? ""}
@@ -87,13 +87,13 @@ export const MediaModal: FC<Props> = ({ className, setIsOpen, activeItem }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className={cn(
-        "fixed z-[100] top-0 left-0 pb-40 pt-28 lg:px-28 px-6 overflow-hidden min-h-screen w-full bg-black/90",
+        "fixed z-[100] top-0 left-0 pb-40 pt-20 lg:px-28 px-6 overflow-hidden min-h-screen w-full bg-black/90",
         className
       )}
     >
       <X
         onClick={() => setIsOpen(false)}
-        className="absolute top-10 right-6 p-3 md:size-20 size-16  cursor-pointer z-50 text-white hover:scale-110 transition-all duration-300"
+        className="absolute top-6 right-6 p-3 md:size-20 size-16  cursor-pointer z-50 text-white hover:scale-110 transition-all duration-300"
       />
       {
         <div className="hidden md:block">
