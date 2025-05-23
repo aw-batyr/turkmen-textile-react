@@ -35,9 +35,13 @@ export const HomeActions: FC<Props> = ({ className }) => {
         </h2>
 
         <div className="grid grid-cols-3 gap-6">
-          {items.map((item) =>
+          {items.map((item, i) =>
             !item.dropdown ? (
-              <Link to={item.link ?? ""} target={item.blank ? "_blank" : ""}>
+              <Link
+                key={i}
+                to={item.link ?? ""}
+                target={item.blank ? "_blank" : ""}
+              >
                 <Button
                   variant={"teritary"}
                   size={"lg"}
@@ -49,7 +53,7 @@ export const HomeActions: FC<Props> = ({ className }) => {
             ) : (
               <Link
                 target={item.blank ? "_blank" : ""}
-                key={title}
+                key={i}
                 to={item.link ?? ""}
                 className="w-full"
               >
