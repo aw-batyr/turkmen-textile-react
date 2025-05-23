@@ -17,6 +17,11 @@
     url(../fonts/Gilroy-Semibold.woff2) format("woff2");
   font-weight: 600;
 }
+@font-face {
+  font-family: "Gilroy-Black";
+  src: local("Gilroy-Black"), url(../fonts/Gilroy-Black.woff2) format("woff2");
+  font-weight: 900;
+}
 
 @tailwind base;
 @tailwind components;
@@ -33,6 +38,14 @@
 }
 
 @layer utilities {
+  .container {
+    @apply w-full mx-auto max-w-[1240px] px-4;
+  }
+
+  .section-y {
+    @apply py-20;
+  }
+
   .normal {
     @apply font-["Gilroy-Regular"] font-normal;
   }
@@ -41,12 +54,16 @@
     @apply font-["Gilroy-Semibold"] font-semibold;
   }
 
+  .black {
+    @apply font-['Gilroy-Black'];
+  }
+
   .h1 {
     @apply text-[28px] leading-[130%] font-medium;
   }
 
   .h2 {
-    @apply md:text-[28px] text-2xl  text-[#171717];
+    @apply md:text-[28px] text-[32px]  text-[#171717];
   }
 
   .p {

@@ -15,6 +15,8 @@ export { Loader } from "./loader";
 export { Tabs } from "./tabs";
 export { ParticipantItem } from "./participant-item";
 export { MediaModal } from "./media-modal";
+export { DesignerCard } from "./designer-card";
+export { TimerItem } from "./timer-item";
 
 export * from "./about";
 export * from "./home";

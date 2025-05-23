@@ -20,7 +20,7 @@ export const HomeNews: FC = () => {
           {lang === "en" ? "News" : "Новости"}
         </h2>
         <div className="grid md:grid-cols-3 grid-cols-1 gap-6">
-          {data?.map((item) => (
+          {data?.slice(0, 3).map((item) => (
             <NewsCard {...item} key={item.title} />
           ))}
         </div>

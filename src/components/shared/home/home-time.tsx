@@ -20,12 +20,14 @@ export const HomeTime: FC<Props> = ({ className }) => {
   const { data, isPending } = useExhibitionTime();
   const { data: contacts } = useHomeContacts();
 
+  const translate = useTranslate(lang);
+
   if (isPending) return <Loader />;
 
   return (
     <section className={cn("bg-surface_high pt-10 pb-20", className)}>
       <Container>
-        <h2 className="h2 mb-6">{times[useTranslate(lang)].title}</h2>
+        <h2 className="h2 mb-6">{times[translate].title}</h2>
 
         <div className="flex flex-col gap-6">
           <div className="flex flex-col md:flex-row items-center gap-6">

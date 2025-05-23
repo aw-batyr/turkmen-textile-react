@@ -10,6 +10,7 @@ import {
   BecomeSponsor,
   Contacts,
   Home,
+  Impressions,
   Media,
   News,
   NewsInner,
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
       { element: <NewsInner />, path: "news/:id" },
       { element: <Participants />, path: "participants" },
       { element: <Media />, path: "media" },
+      { element: <Impressions />, path: "impressions" },
     ],
   },
 ]);

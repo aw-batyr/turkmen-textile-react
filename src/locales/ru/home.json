@@ -5,6 +5,66 @@
     "sm": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/ru/s.jpg"
   },
 
+  "timer": {
+    "title": "Событие начнется через",
+
+    "days": "дней",
+    "hours": "часов",
+    "minutes": "минут",
+    "seconds": "секунд"
+  },
+
+  "buttons": {
+    "title": "Быстрые действия",
+    "items": [
+      {
+        "text": "План выставки",
+        "link": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/Floor%20plan/floor%20plan.pdf",
+        "blank": true
+      },
+      {
+        "text": "Забронировать стенд",
+        "link": "/stend-form"
+      },
+      {
+        "text": "Список участников",
+        "link": "/participants"
+      },
+      {
+        "text": "B2B | B2G встречи",
+        "link": "/B2B-B2G"
+      },
+      {
+        "text": "Модные показы",
+        "dropdown": true,
+        "items": [
+          {
+            "text": "Зарубежных дизайнеров",
+            "link": ""
+          },
+          {
+            "text": "Туркменских дизайнеров",
+            "link": ""
+          }
+        ]
+      },
+      {
+        "title": "Мастер-классы",
+        "dropdown": true,
+        "items": [
+          {
+            "text": "Для дизайнеров",
+            "link": ""
+          },
+          {
+            "text": "Для посетителей ",
+            "link": ""
+          }
+        ]
+      }
+    ]
+  },
+
   "partners": {
     "title": "Партнёры",
     "button": ""

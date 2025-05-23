@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, PropsWithChildren, useState } from "react";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Chevron } from "./";
 import { Link } from "react-router-dom";
@@ -9,18 +9,19 @@ import { useUiStore } from "@/store/ui";
 
 interface Props {
   className?: string;
-  title: string;
+  title?: string;
   color?: string;
   triggerClassName?: string;
 
   dropDownContent?: DropDownContent[];
 }
 
-export const Menu: FC<Props> = ({
+export const Menu: FC<PropsWithChildren<Props>> = ({
   title,
   dropDownContent,
   color,
   triggerClassName,
+  children,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const setSheet = useUiStore((state) => state.setSheet);
@@ -31,7 +32,8 @@ export const Menu: FC<Props> = ({
         className={cn("flex items-center gap-2", triggerClassName)}
       >
         {title}
-        <Chevron color={color} />
+        {children}
+        {!children && <Chevron color={color} />}
       </PopoverTrigger>
 
       <PopoverContent className="w-fit px-0 py-2 cursor-pointer bg-surface_container">

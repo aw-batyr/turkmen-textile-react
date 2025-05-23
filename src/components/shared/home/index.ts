@@ -4,3 +4,6 @@ export { HomeAbout } from "./home-about";
 export { HomeTheme } from "./home-theme";
 export { HomeOffers } from "./home-offers";
 export { HomeSponsors } from "./home-sponsors";
+export { HomeNews } from "./home-news";
+export { HomeTimer } from "./home-timer";
+export { HomeActions } from "./home-actions";

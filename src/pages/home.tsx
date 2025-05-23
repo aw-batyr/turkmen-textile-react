@@ -1,17 +1,19 @@
 import {
   HomeAbout,
+  HomeActions,
   HomeHero,
+  HomeNews,
   HomeOffers,
   HomeSponsors,
   HomeTheme,
   HomeTime,
 } from "@/components/shared";
-import { HomeNews } from "@/components/shared/home/home-news";
 
 export default function Home() {
   return (
     <div className="flex flex-col gap-20">
       <HomeHero />
+      <HomeActions />
       <HomeAbout />
       <HomeSponsors />
       <HomeOffers />
