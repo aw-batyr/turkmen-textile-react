@@ -37,7 +37,7 @@ export const HomeActions: FC<Props> = ({ className }) => {
         <div className="grid grid-cols-3 gap-6">
           {items.map((item) =>
             !item.dropdown ? (
-              <Link to={item.link ?? ""}>
+              <Link to={item.link ?? ""} target={item.blank ? "_blank" : ""}>
                 <Button
                   variant={"teritary"}
                   size={"lg"}
