@@ -63,7 +63,7 @@
   }
 
   .h2 {
-    @apply md:text-[28px] text-[32px]  text-[#171717];
+    @apply text-[24px] md:text-[32px]  text-[#171717];
   }
 
   .p {

@@ -36,7 +36,7 @@ export const Menu: FC<PropsWithChildren<Props>> = ({
         {!children && <Chevron color={color} />}
       </PopoverTrigger>
 
-      <PopoverContent className="w-fit px-0 py-2 cursor-pointer bg-surface_container">
+      <PopoverContent className="w-fit px-0 cursor-pointer bg-surface_container">
         {dropDownContent &&
           dropDownContent.map((item) =>
             item.link ? (
@@ -58,7 +58,7 @@ export const Menu: FC<PropsWithChildren<Props>> = ({
             ) : (
               <div
                 key={item.text}
-                className="h-14 px-3 flex items-center hover:bg-slate-300/50 transition-all"
+                className="h-14 px-3 py-2 flex items-center hover:bg-slate-300/50 transition-all"
                 onClick={() => {
                   setIsOpen(false);
                   setSheet(false);

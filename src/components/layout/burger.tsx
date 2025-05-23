@@ -84,7 +84,7 @@ export const Burger: FC<Props> = () => {
             ) : (
               <Menu
                 className="w-full"
-                triggerClassName="justify-between"
+                triggerClassName="justify-between py-2"
                 key={item.title}
                 color={"black"}
                 dropDownContent={item.dropDownContent}
