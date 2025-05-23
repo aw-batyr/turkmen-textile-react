@@ -63,7 +63,7 @@ export const HomeActions: FC<Props> = ({ className }) => {
                     variant={"teritary"}
                     className="w-full drop-shadow-sm shadow-md text-xl bg-teritary text-on_teritary hover:bg-teritary/90"
                   >
-                    {title}
+                    {item.text}
                     <Chevron w={"40"} h={"40"} color="white" />
                   </Button>
                 </Menu>
