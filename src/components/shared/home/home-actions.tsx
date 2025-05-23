@@ -34,7 +34,7 @@ export const HomeActions: FC<Props> = ({ className }) => {
           {title}
         </h2>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
           {items.map((item, i) =>
             !item.dropdown ? (
               <Link
@@ -45,7 +45,7 @@ export const HomeActions: FC<Props> = ({ className }) => {
                 <Button
                   variant={"teritary"}
                   size={"lg"}
-                  className="w-full drop-shadow-sm shadow-md text-xl bg-teritary text-on_teritary hover:bg-teritary/90"
+                  className="w-full drop-shadow-sm shadow-md md:text-xl text-lg bg-teritary text-on_teritary hover:bg-teritary/90"
                 >
                   {item.text}
                 </Button>
@@ -65,7 +65,7 @@ export const HomeActions: FC<Props> = ({ className }) => {
                   <Button
                     size={"lg"}
                     variant={"teritary"}
-                    className="w-full drop-shadow-sm shadow-md text-xl bg-teritary text-on_teritary hover:bg-teritary/90"
+                    className="w-full drop-shadow-sm shadow-md md:text-xl text-lg bg-teritary text-on_teritary hover:bg-teritary/90"
                   >
                     {item.text}
                     <Chevron w={"40"} h={"40"} color="white" />
