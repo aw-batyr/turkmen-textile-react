@@ -5,6 +5,66 @@
     "sm": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/en/s.jpg"
   },
 
+  "timer": {
+    "title": "The event will start in",
+
+    "days": "days",
+    "hours": "hours",
+    "minutes": "minutes",
+    "seconds": "seconds"
+  },
+
+  "buttons": {
+    "title": "Quick actions",
+    "items": [
+      {
+        "text": "Floor plan",
+        "link": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/Floor%20plan/floor%20plan.pdf",
+        "blank": true
+      },
+      {
+        "text": "Book a stand",
+        "link": "/stend-form"
+      },
+      {
+        "text": "List of participants",
+        "link": "/participants"
+      },
+      {
+        "text": "B2B | B2G meetings",
+        "link": "/B2B-B2G"
+      },
+      {
+        "text": "Fashion shows",
+        "dropdown": true,
+        "items": [
+          {
+            "text": "Foreign designers",
+            "link": ""
+          },
+          {
+            "text": "Turkmen designers",
+            "link": ""
+          }
+        ]
+      },
+      {
+        "title": "Master classes",
+        "dropdown": true,
+        "items": [
+          {
+            "text": "For designers",
+            "link": ""
+          },
+          {
+            "text": "For visitors",
+            "link": ""
+          }
+        ]
+      }
+    ]
+  },
+
   "partners": {
     "title": "Partners",
     "button": ""
