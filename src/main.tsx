@@ -17,23 +17,36 @@ import {
   Participants,
   StendForm,
 } from "./pages";
+import { Error } from "./components/layout/error.tsx";
 
 const router = createBrowserRouter([
   {
     element: <App />,
     path: "/",
     children: [
-      { element: <Home />, path: "" },
-      { element: <About />, path: "about" },
-      { element: <B2b />, path: "B2B-B2G" },
-      { element: <BecomeSponsor />, path: "become-sponsor" },
-      { element: <StendForm />, path: "stend-form" },
-      { element: <Contacts />, path: "contacts" },
-      { element: <News />, path: "news" },
-      { element: <NewsInner />, path: "news/:id" },
-      { element: <Participants />, path: "participants" },
-      { element: <Media />, path: "media" },
-      { element: <Impressions />, path: "impressions" },
+      { element: <Home />, path: "", errorElement: <Error /> },
+      { element: <About />, path: "about", errorElement: <Error /> },
+      { element: <B2b />, path: "B2B-B2G", errorElement: <Error /> },
+      {
+        element: <BecomeSponsor />,
+        path: "become-sponsor",
+        errorElement: <Error />,
+      },
+      { element: <StendForm />, path: "stend-form", errorElement: <Error /> },
+      { element: <Contacts />, path: "contacts", errorElement: <Error /> },
+      { element: <News />, path: "news", errorElement: <Error /> },
+      { element: <NewsInner />, path: "news/:id", errorElement: <Error /> },
+      {
+        element: <Participants />,
+        path: "participants",
+        errorElement: <Error />,
+      },
+      { element: <Media />, path: "media", errorElement: <Error /> },
+      {
+        element: <Impressions />,
+        path: "impressions",
+        errorElement: <Error />,
+      },
     ],
   },
 ]);
