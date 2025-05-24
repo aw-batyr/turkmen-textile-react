@@ -25,7 +25,7 @@ export const HomeTime: FC<Props> = ({ className }) => {
   if (isPending) return <Loader />;
 
   return (
-    <section className={cn("bg-surface_high pt-10 pb-20", className)}>
+    <section className={cn("bg-surface_high my-20 pt-10 pb-20", className)}>
       <Container>
         <h2 className="h2 mb-6">{times[translate].title}</h2>
 

@@ -34,7 +34,7 @@ export const HomeOffers: FC = () => {
   }, [emblaApi]);
 
   return (
-    <section className="bg-surface_high py-10 relative overflow-hidden">
+    <section className="bg-surface_high py-10 my-20 relative overflow-hidden">
       <Container>
         <div ref={emblaRef} className="embla ">
           <div className="mb-2 flex gap-6 embla__container">

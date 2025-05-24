@@ -1,12 +1,9 @@
-import useEmblaCarousel from "embla-carousel-react";
 import { FC } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { useTranslation } from "react-i18next";
 import { HomeTimer } from "./";
 
 export const HomeHero: FC = () => {
-  const [embalRef] = useEmblaCarousel();
-
   const { t } = useTranslation("home");
 
   const lg = useMediaQuery("(min-width: 1024px)");
@@ -20,8 +17,8 @@ export const HomeHero: FC = () => {
 
   return (
     <div>
-      <section className="flex flex-col gap-5">
-        <div ref={embalRef} className="embla">
+      <section className="flex flex-col gap-5 ">
+        <div className="embla ">
           <div className="embla__container">
             <div className="embla__slide">
               <img
@@ -32,9 +29,11 @@ export const HomeHero: FC = () => {
             </div>
           </div>
         </div>
-      </section>
 
-      <HomeTimer />
+        <div className="relative container">
+          <HomeTimer className="absolute sm:bottom-12 bottom-28 right-5" />
+        </div>
+      </section>
     </div>
   );
 };

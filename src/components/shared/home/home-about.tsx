@@ -27,7 +27,7 @@ export const HomeAbout: FC = () => {
   if (isPending) return <Loader />;
 
   return (
-    <section>
+    <section className="py-20">
       <Container className="flex flex-col gap-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
           <div className="flex flex-col gap-6">

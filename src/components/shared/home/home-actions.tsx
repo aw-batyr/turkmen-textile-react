@@ -14,8 +14,7 @@ interface Props {
 export const HomeActions: FC<Props> = ({ className }) => {
   const { t } = useTranslation("home");
 
-  const { title, items } = t("buttons", { returnObjects: true }) as {
-    title: string;
+  const { items } = t("buttons", { returnObjects: true }) as {
     items: {
       text: string;
       link?: string;
@@ -25,15 +24,9 @@ export const HomeActions: FC<Props> = ({ className }) => {
     }[];
   };
 
-  console.log(items);
-
   return (
-    <section className={cn("bg-teritary_container py-10", className)}>
+    <section className={cn("", className)}>
       <Container>
-        <h2 className="h2 text-center mb-10 !text-on_teritary_container">
-          {title}
-        </h2>
-
         <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
           {items.map((item, i) =>
             !item.dropdown ? (
