@@ -30,8 +30,8 @@ export const HomeHero: FC = () => {
           </div>
         </div>
 
-        <div className="relative container">
-          <HomeTimer className="absolute sm:bottom-12 bottom-28 right-5" />
+        <div className="relative">
+          <HomeTimer className="absolute sm:bottom-12 bottom-28 2xl:right-[10%] xl:right-[13%] lg:right-[15%] right-10" />
         </div>
       </section>
     </div>
