@@ -73,7 +73,6 @@ export const HomeTimer: FC<Props> = ({ className }) => {
   }, [targetDate]); // Убрали зависимость от timeLeft
 
   const {
-    title,
     days: daysLabel,
     hours: hoursLabel,
     minutes: minutesLabel,
@@ -81,19 +80,14 @@ export const HomeTimer: FC<Props> = ({ className }) => {
   } = t("timer", {
     returnObjects: true,
   }) as {
-    title: string;
     days: string;
     hours: string;
     minutes: string;
     seconds: string;
   };
   return (
-    <section className={cn("", className)}>
-      <h3 className="sm:text-[28px] text-base sm:leading-8 text-right mb-6 !text-[#FAD8DB]">
-        {title}
-      </h3>
-
-      <div className="grid grid-cols-4 max-w-[392px] gap-6 items-end place-items-center">
+    <section className={cn("2xl:w-[600px] xl:w-[450px] w-[350px]", className)}>
+      <div className="grid grid-cols-4 w-full mr-[50%] gap-6 items-end place-items-center">
         <TimerItem
           value={timeLeft.days}
           prevValue={prevValues.days || timeLeft.days}
