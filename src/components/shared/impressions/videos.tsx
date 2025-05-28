@@ -9,9 +9,11 @@ const Videos = () => {
   return (
     <section className="bg-[url('/impressions/videos-block-bg.png')] py-20">
       <Container>
-        <h2 className="mb-10 text-5xl leading-[120%] text-white">{title}</h2>
+        <h2 className="mb-10 text-5xl leading-[120%] text-white text-center">
+          {title}
+        </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_32.5%] gap-4 text-white overflow-hidden h-auto md:h-[497px]">
+        <div className="grid grid-cols-1 md:grid-cols-1 mx-48 gap-4 text-white overflow-hidden h-auto md:h-[497px]">
           {/* FIRST BLOCK */}
           <div className="bg-gray_10 p-2 rounded-[8px] border border-gray_09 flex flex-col h-full">
             <div className="max-h-[453px]">
@@ -24,16 +26,16 @@ const Videos = () => {
                 className="w-full size-full mb-2 rounded"
               />
             </div>
-            <div className="flex items-center justify-between mt-auto">
+            {/* <div className="flex items-center justify-between mt-auto">
               <h3 className="text-sm">
                 Алена Ахмадуллина | 'Царевна-Лебедь' (74 симв.)
               </h3>
               <span className="text-xs normal">1/10</span>
-            </div>
+            </div> */}
           </div>
 
           {/* SECOND BLOCK */}
-          <div className="bg-gray_10 px-2 pt-2 rounded-[8px] border border-gray_09 flex flex-col h-full min-h-0">
+          {/* <div className="bg-gray_10 px-2 pt-2 rounded-[8px] border border-gray_09 flex flex-col h-full min-h-0">
             <div className="flex items-center justify-between mb-2">
               <h3 className="text-sm">Смотрите также</h3>
               <span className="text-xs normal">1/10</span>
@@ -59,7 +61,8 @@ const Videos = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
+          {/* SECOND BLOCK */}
         </div>
       </Container>
     </section>
