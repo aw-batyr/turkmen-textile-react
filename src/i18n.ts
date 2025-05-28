@@ -13,6 +13,9 @@ import homeRu from "./locales/ru/home.json";
 import aboutEn from "./locales/en/about.json";
 import aboutRu from "./locales/ru/about.json";
 
+import mainEn from "./locales/en/main.json";
+import mainRu from "./locales/ru/main.json";
+
 import contactsEn from "./locales/en/contacts.json";
 import contactsRu from "./locales/ru/contacts.json";
 
@@ -28,6 +31,7 @@ i18n.use(initReactI18next).init({
       home: homeEn,
       about: aboutEn,
       contacts: contactsEn,
+      main: mainEn,
     },
     ru: {
       nav: navRu,
@@ -35,11 +39,12 @@ i18n.use(initReactI18next).init({
       home: homeRu,
       about: aboutRu,
       contacts: contactsRu,
+      main: mainRu,
     },
   },
   lng: initialLanguage, // Язык по умолчанию
   fallbackLng: "en",
-  ns: ["home", "about", "header", "contacts", "nav"], // список namespaces
+  ns: ["home", "about", "header", "contacts", "nav", "main"], // список namespaces
   defaultNS: "home", // namespace по умолчанию (можно менять в компонентах)
   interpolation: {
     escapeValue: false, // React уже экранирует значения

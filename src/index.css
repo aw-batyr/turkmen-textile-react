@@ -35,6 +35,9 @@
     font-family: "Gilroy-Medium";
     @apply bg-background;
   }
+  .c-scrollbar .c-scrollbar_thumb {
+    background-color: #99101d !important;
+  }
 }
 
 @layer utilities {

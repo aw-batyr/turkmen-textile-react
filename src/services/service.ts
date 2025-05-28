@@ -14,6 +14,7 @@ import { NewsInnerType, NewsType } from "./types/news.type";
 import { ParticipantsType } from "./types/participants.type";
 import { PhotoTypes } from "./types/photo.type";
 import { VideoTypes } from "./types/videos.type";
+import { DesignersType } from "./types/designers.type";
 
 const axios_url = axios.create({
   baseURL: "https://turkmentextile.turkmenexpo.com/app/api/v1/",
@@ -160,8 +161,19 @@ export const getVideos = async (id: number) => {
 
   return data;
 };
+
 export const getSponsors = async (lang: LangState["lang"]) => {
   const data = axios_url<PartnersType>("sponsors_and_partners", {
+    headers: {
+      "Accept-Language": lang,
+    },
+  });
+
+  return data;
+};
+
+export const getDesigners = async (lang: LangState["lang"], id: number) => {
+  const data = axios_url<DesignersType>("designers/category/" + id, {
     headers: {
       "Accept-Language": lang,
     },
