@@ -126,7 +126,10 @@ export const DesignerCard: FC<Props> = ({
 
         <div className="">
           <h3 className="text-xl mb-2.5">Работы дизайнера</h3>
-          <div ref={null} className="embla overflow-hidden">
+          <div
+            ref={images?.length > 8 ? emblaRef : null}
+            className="embla overflow-hidden"
+          >
             <div className="embla__container items-center flex gap-4">
               {canScrollPrev && (
                 <ChevronLeftIcon
