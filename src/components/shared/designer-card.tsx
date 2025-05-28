@@ -115,7 +115,7 @@ export const DesignerCard: FC<Props> = ({
               Вернуться назад
             </button>
 
-            <div className="h-[35vh] bg-[#f4f4f4]">
+            <div className="2xl:h-[50vh] h-[40vh] bg-[#f4f4f4]">
               <img
                 src={images?.[activePhoto]?.path}
                 className="size-full object-contain"

@@ -1,6 +1,7 @@
 import { Container } from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const { t } = useTranslation("main");
@@ -14,7 +15,7 @@ const Hero = () => {
       <img
         src="/impressions-cover.png"
         alt=""
-        className="w-full object-contain max-h-[610px]"
+        className="w-full object-cover object-top max-h-[610px]"
       />
       <h1 className="absolute opacity-0 top-0 left-0">Показы</h1>
 
@@ -28,9 +29,15 @@ const Hero = () => {
           </div>
 
           <div className="flex items-center gap-6 mt-6">
-            <Button size={"sm"} className="w-full">
-              {button}
-            </Button>
+            <Link
+              target="_blank"
+              to="https://turkmentextile.turkmenexpo.com/app/storage/app/media/ICS%20file/TurkmenTextile%20Expo-2025.ics"
+              className="w-full"
+            >
+              <Button size={"sm"} className="w-full">
+                {button}
+              </Button>
+            </Link>
             <Button size={"sm"} className="w-full">
               {button2}
             </Button>
