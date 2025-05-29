@@ -24,7 +24,9 @@ const Hero = () => {
           <h2 className="text-5xl leading-[120%] mb-10">{title}</h2>
           <div className="text-on_surface_v flex flex-col gap-3">
             {texts.map((item, i) => (
-              <p key={i}>{item}</p>
+              <p className="text-lg" key={i}>
+                {item}
+              </p>
             ))}
           </div>
 
@@ -38,9 +40,15 @@ const Hero = () => {
                 {button}
               </Button>
             </Link>
-            <Button size={"sm"} className="w-full">
-              {button2}
-            </Button>
+            <Link
+              to="https://turkmentextile.turkmenexpo.com/app/storage/app/media/agenda/agenda_ru.pdf"
+              target="_blank"
+              className="w-full"
+            >
+              <Button size={"sm"} className="w-full">
+                {button2}
+              </Button>
+            </Link>
           </div>
         </Container>
       </div>

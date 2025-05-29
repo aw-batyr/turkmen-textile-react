@@ -11,4 +11,9 @@ export interface DropDownContent {
   link?: string;
   modal?: boolean;
   blank?: string;
+  hover?: boolean;
+  hoverItems?: {
+    text: "string";
+    link?: "string";
+  }[];
 }

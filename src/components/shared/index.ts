@@ -17,6 +17,7 @@ export { ParticipantItem } from "./participant-item";
 export { MediaModal } from "./media-modal";
 export { DesignerCard } from "./designer-card";
 export { TimerItem } from "./timer-item";
+export { HoverMenu } from "./hover-menu";
 
 export * from "./about";
 export * from "./home";

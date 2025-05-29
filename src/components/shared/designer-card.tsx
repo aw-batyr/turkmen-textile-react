@@ -40,8 +40,8 @@ export const DesignerCard: FC<Props> = ({
       setCanScrollNext(emblaApi.canScrollNext());
     };
 
-    emblaApi.on("select", onSelect);
     onSelect();
+    emblaApi.on("select", onSelect);
 
     return () => {
       emblaApi.off("select", onSelect);
@@ -51,18 +51,10 @@ export const DesignerCard: FC<Props> = ({
   return (
     <Dialog>
       <DialogTrigger
-        className={cn(
-          "relative bg-[url('/impressions/card-bg.png')] group bg-no-repeat h-[326px] overflow-hidden",
-          className
-        )}
+        className={cn("relative group h-[326px] overflow-hidden", className)}
       >
-        <article>
-          <img
-            src="/impressions/card-bg-bg.png"
-            className="absolute top-2.5 left-2.5 -z-10 size-full"
-          />
-
-          <div className="flex gap-4">
+        <article className="z-50 size-full bg-[url('/impressions/card-bg.png')] bg-no-repeat overflow-hidden">
+          <div className="flex gap-4 h-[316px] overflow-hidden">
             <img
               src={image?.path}
               alt={name}
@@ -79,6 +71,11 @@ export const DesignerCard: FC<Props> = ({
             </div>
           </div>
         </article>
+
+        <img
+          src="/impressions/card-bg-bg.png"
+          className="absolute top-2.5 left-2.5 -z-10 size-full"
+        />
       </DialogTrigger>
 
       <DialogContent
@@ -86,7 +83,7 @@ export const DesignerCard: FC<Props> = ({
       >
         {activePhoto === 100 ? (
           <>
-            <div className="flex gap-4 overflow-y-auto">
+            <div className="flex gap-4">
               <div className="flex-1 h-[345px]">
                 <img
                   src={image?.path}
@@ -94,11 +91,11 @@ export const DesignerCard: FC<Props> = ({
                   className="size-full object-cover"
                 />
               </div>
-              <div className="flex-[0_0_70%] overflow-y-auto">
+              <div className="flex-[0_0_70%] ">
                 <div className="text-2xl mb-4">{name}</div>
                 <hr />
                 <div
-                  className="mt-4 flex flex-col gap-3 normal"
+                  className="mt-4 flex flex-col gap-3 normal overflow-y-auto max-h-[45vh]"
                   dangerouslySetInnerHTML={{ __html: biography ?? "" }}
                 />
               </div>
