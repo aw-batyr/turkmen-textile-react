@@ -25,34 +25,35 @@ export const DesignerCard: FC<Props> = ({
   image,
   images,
 }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({});
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
   const lang = useLangStore((state) => state.lang);
 
   const [activePhoto, setActivePhoto] = useState(100);
 
-  useEffect(() => {
-    if (!emblaApi) return;
-
-    const onSelect = () => {
-      setCanScrollPrev(emblaApi.canScrollPrev());
-      setCanScrollNext(emblaApi.canScrollNext());
-    };
-
-    onSelect();
-    emblaApi.on("select", onSelect);
-
-    return () => {
-      emblaApi.off("select", onSelect);
-    };
-  }, [emblaApi]);
-
   const Works = ({ className }: { className?: string }) => {
+    const [emblaRef, emblaApi] = useEmblaCarousel({});
+
+    useEffect(() => {
+      if (!emblaApi) return;
+
+      const onSelect = () => {
+        setCanScrollPrev(emblaApi.canScrollPrev());
+        setCanScrollNext(emblaApi.canScrollNext());
+      };
+
+      onSelect();
+      emblaApi.on("select", onSelect);
+
+      return () => {
+        emblaApi.off("select", onSelect);
+      };
+    }, [emblaApi]);
+
     return (
       <div className={cn("", className)}>
         <h3 className="text-xl mb-2.5">Работы дизайнера</h3>
-        <div ref={null} className="embla overflow-hidden">
+        <div ref={emblaRef} className="embla overflow-hidden">
           <div className="embla__container items-center flex gap-4">
             {canScrollPrev && (
               <ChevronLeftIcon
