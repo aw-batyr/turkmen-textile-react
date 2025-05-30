@@ -43,7 +43,7 @@ export const HoverMenu: FC<Props> = ({
               <NavigationMenuLink
                 key={i}
                 onClick={() => setIsOpen(false)}
-                className="h-14 py-2 flex items-center justify-center w-40 cursor-pointer px-4 hover:bg-slate-300/50  transition-all"
+                className="h-14 py-2 flex items-center  w-40 cursor-pointer px-4 hover:bg-slate-300/50  transition-all"
               >
                 <Link to={item.link ?? ""}>{item.text}</Link>
               </NavigationMenuLink>

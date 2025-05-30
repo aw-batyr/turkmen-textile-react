@@ -1,10 +1,12 @@
 import { Container } from "@/components/layout";
 import { Button } from "@/components/ui/button";
+import { useLangStore } from "@/store/lang";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
   const { t } = useTranslation("main");
+  const lang = useLangStore((state) => state.lang);
 
   const { title, texts, button, button2 } = t("impressions.hero", {
     returnObjects: true,
@@ -13,24 +15,28 @@ const Hero = () => {
   return (
     <section className="">
       <img
-        src="/impressions-cover.png"
+        src={
+          lang === "ru" ? "/impressions-cover.png" : "/impressions-cover-en.png"
+        }
         alt=""
         className="w-full object-cover object-top max-h-[610px]"
       />
       <h1 className="absolute opacity-0 top-0 left-0">Показы</h1>
 
       <div className="bg-[url('/impressions-bg.png')]">
-        <Container className="py-20">
-          <h2 className="text-5xl leading-[120%] mb-10">{title}</h2>
+        <Container className="md:py-20 py-10">
+          <h2 className="md:text-5xl text-2xl leading-[120%] md:mb-10 mb-6">
+            {title}
+          </h2>
           <div className="text-on_surface_v flex flex-col gap-3">
             {texts.map((item, i) => (
-              <p className="text-lg" key={i}>
+              <p className="md:text-lg !normal" key={i}>
                 {item}
               </p>
             ))}
           </div>
 
-          <div className="flex items-center gap-6 mt-6">
+          <div className="flex md:flex-row flex-col  items-center gap-6 mt-6">
             <Link
               target="_blank"
               to="https://turkmentextile.turkmenexpo.com/app/storage/app/media/ICS%20file/TurkmenTextile%20Expo-2025.ics"

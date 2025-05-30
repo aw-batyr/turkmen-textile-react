@@ -48,12 +48,48 @@ export const DesignerCard: FC<Props> = ({
     };
   }, [emblaApi]);
 
+  const Works = ({ className }: { className?: string }) => {
+    return (
+      <div className={cn("", className)}>
+        <h3 className="text-xl mb-2.5">Работы дизайнера</h3>
+        <div ref={null} className="embla overflow-hidden">
+          <div className="embla__container items-center flex gap-4">
+            {canScrollPrev && (
+              <ChevronLeftIcon
+                onClick={() => canScrollPrev && emblaApi?.scrollPrev()}
+                className={cn("cursor-pointer", !canScrollPrev && "opacity-20")}
+              />
+            )}
+            <div className="flex items-center gap-4">
+              {images?.map((item, i) => (
+                <div className="lg:size-[140px] size-[70px] overflow-hidden">
+                  <img
+                    key={i}
+                    onClick={() => setActivePhoto(i)}
+                    src={item?.path}
+                    className="size-full hover:scale-105 transition-all cursor-pointer overflow-hidden object-cover object-top"
+                  />
+                </div>
+              ))}
+            </div>
+            {canScrollNext && (
+              <ChevronRightIcon
+                onClick={() => canScrollPrev && emblaApi?.scrollNext()}
+                className={cn("cursor-pointer", !canScrollNext && "opacity-20")}
+              />
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <Dialog>
       <DialogTrigger
         className={cn("relative group h-[326px] overflow-hidden", className)}
       >
-        <article className="z-50 size-full bg-[url('/impressions/card-bg.png')] bg-no-repeat overflow-hidden">
+        <article className="z-50 size-full bg-[url('/impressions/card-bg.png')]  bg-no-repeat overflow-hidden">
           <div className="flex gap-4 h-[316px] overflow-hidden">
             <img
               src={image?.path}
@@ -79,28 +115,46 @@ export const DesignerCard: FC<Props> = ({
       </DialogTrigger>
 
       <DialogContent
-        className={cn("p-6 flex flex-col gap-4 xl:!w-[1224px] max-h-[80vh]")}
+        className={cn(
+          "p-6 flex flex-col gap-4 xl:!w-[1224px] md:!w-[688px] w-[336px] max-h-[100vh] overflow-hidden"
+        )}
       >
         {activePhoto === 100 ? (
           <>
-            <div className="flex gap-4">
+            <div className="gap-4 md:!flex !hidden">
               <div className="flex-1 h-[345px]">
                 <img
                   src={image?.path}
                   alt=""
-                  className="size-full object-cover"
+                  className="size-full float-left object-cover"
                 />
               </div>
-              <div className="flex-[0_0_70%] ">
+              <div className="flex-[0_0_70%]">
                 <div className="text-2xl mb-4">{name}</div>
                 <hr />
                 <div
-                  className="mt-4 flex flex-col gap-3 normal overflow-y-auto max-h-[45vh]"
+                  className="mt-4 flex flex-col gap-3 normal overflow-y-auto max-h-[40vh]"
                   dangerouslySetInnerHTML={{ __html: biography ?? "" }}
                 />
               </div>
             </div>
-            <hr />
+            <hr className="hidden md:block" />
+
+            <div className="flex flex-col gap-4 md:hidden overflow-auto h-full">
+              <h3 className="text-xl">{name}</h3>
+              <img src={image?.path} alt={name} />
+
+              <hr />
+
+              <Works />
+
+              <hr />
+
+              <div
+                className="mt-4 flex flex-col gap-3 normal"
+                dangerouslySetInnerHTML={{ __html: biography ?? "" }}
+              />
+            </div>
           </>
         ) : (
           <div className="">
@@ -121,46 +175,7 @@ export const DesignerCard: FC<Props> = ({
           </div>
         )}
 
-        <div className="">
-          <h3 className="text-xl mb-2.5">Работы дизайнера</h3>
-          <div
-            ref={images?.length > 8 ? emblaRef : null}
-            className="embla overflow-hidden"
-          >
-            <div className="embla__container items-center flex gap-4">
-              {canScrollPrev && (
-                <ChevronLeftIcon
-                  onClick={() => canScrollPrev && emblaApi?.scrollPrev()}
-                  className={cn(
-                    "cursor-pointer",
-                    !canScrollPrev && "opacity-20"
-                  )}
-                />
-              )}
-              <div className="flex items-center gap-4">
-                {images?.map((item, i) => (
-                  <div className="size-[140px] overflow-hidden">
-                    <img
-                      key={i}
-                      onClick={() => setActivePhoto(i)}
-                      src={item?.path}
-                      className="size-full hover:scale-105 transition-all cursor-pointer overflow-hidden object-cover object-top"
-                    />
-                  </div>
-                ))}
-              </div>
-              {canScrollNext && (
-                <ChevronRightIcon
-                  onClick={() => canScrollPrev && emblaApi?.scrollNext()}
-                  className={cn(
-                    "cursor-pointer",
-                    !canScrollNext && "opacity-20"
-                  )}
-                />
-              )}
-            </div>
-          </div>
-        </div>
+        {<Works className="hidden md:block" />}
       </DialogContent>
     </Dialog>
   );

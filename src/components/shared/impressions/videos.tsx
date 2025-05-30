@@ -7,16 +7,16 @@ const Videos = () => {
   const title = t("impressions.videosTitle");
 
   return (
-    <section className="bg-[url('/impressions/videos-block-bg.png')] py-20">
+    <section className="bg-[url('/impressions/videos-block-bg.png')] md:py-20 py-10">
       <Container>
-        <h2 className="mb-10 text-5xl leading-[120%] text-white text-center">
+        <h2 className="mb-10 md:text-5xl text-2xl leading-[120%] text-white text-center">
           {title}
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-1 mx-48 gap-4 text-white overflow-hidden h-auto md:h-[497px]">
+        <div className="grid grid-cols-1 md:grid-cols-1 mx-0 lg:mx-48 gap-4 text-white overflow-hidden h-auto md:h-[497px]">
           {/* FIRST BLOCK */}
           <div className="bg-gray_10 p-2 rounded-[8px] border border-gray_09 flex flex-col h-full">
-            <div className="max-h-[453px]">
+            <div className="maxh-[453px]">
               <video
                 src="https://turkmentextile.turkmenexpo.com/app/storage/app/media/video/Textile2025.mp4"
                 muted

@@ -54,10 +54,10 @@ const Designers = () => {
   const { data, isPending } = useDesigners(1);
 
   return (
-    <section className="py-20">
-      <Container className="flex flex-col gap-10">
-        <h2 className="text-5xl leading-[120%]">{title}</h2>
-        <p className="text-xl normal text-on_surface_v">{text}</p>
+    <section className="md:py-20 py-10">
+      <Container className="flex flex-col md:gap-10 gap-6">
+        <h2 className="md:text-5xl text-2xl leading-[120%]">{title}</h2>
+        <p className="md:text-xl text-lg normal text-on_surface_v">{text}</p>
 
         <div ref={emblaRef} className="embla">
           <div className="flex embla__container">
