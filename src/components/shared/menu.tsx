@@ -46,7 +46,7 @@ export const Menu: FC<PropsWithChildren<Props>> = ({
         {dropDownContent &&
           dropDownContent.map((item, i) =>
             item.hover ? (
-              <HoverMenu key={i} {...item} />
+              <HoverMenu setIsOpen={setIsOpen} key={i} {...item} />
             ) : item.link ? (
               <Link
                 onClick={() => {

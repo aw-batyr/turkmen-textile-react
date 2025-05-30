@@ -17,9 +17,15 @@ interface Props {
     text: string;
     link?: string;
   }[];
+  setIsOpen: (val: boolean) => void;
 }
 
-export const HoverMenu: FC<Props> = ({ className, text, hoverItems }) => {
+export const HoverMenu: FC<Props> = ({
+  className,
+  text,
+  hoverItems,
+  setIsOpen,
+}) => {
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -32,9 +38,13 @@ export const HoverMenu: FC<Props> = ({ className, text, hoverItems }) => {
           >
             {text}
           </NavigationMenuTrigger>
-          <NavigationMenuContent className="bg-surface_container shadow flex flex-col pb-2 rounded-[2px] w-40 items-center justify-center px-4 pt-2">
+          <NavigationMenuContent className="bg-surface_container shadow flex flex-col pb-2 rounded-[2px] w-40 items-center justify-center pt-2">
             {hoverItems?.map((item, i) => (
-              <NavigationMenuLink key={i} className="h-14 py-2 w-full">
+              <NavigationMenuLink
+                key={i}
+                onClick={() => setIsOpen(false)}
+                className="h-14 py-2 flex items-center justify-center w-40 cursor-pointer px-4 hover:bg-slate-300/50  transition-all"
+              >
                 <Link to={item.link ?? ""}>{item.text}</Link>
               </NavigationMenuLink>
             ))}

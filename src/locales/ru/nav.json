@@ -25,6 +25,20 @@
         {
           "text": "Медиа",
           "link": "/media"
+        },
+        {
+          "text": "Модные показы",
+          "hover": true,
+          "hoverItems": [
+            {
+              "text": "Зарубежные дизайнеры",
+              "link": "/impressions"
+            },
+            {
+              "text": "Туркменские дизайнеры",
+              "link": ""
+            }
+          ]
         }
       ]
     },
@@ -46,6 +60,20 @@
           "text": "Путеводитель",
           "link": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/travel_guide/Travel_guide_ru.pdf",
           "blank": "blank"
+        },
+        {
+          "text": "Матстер классы",
+          "hover": true,
+          "hoverItems": [
+            {
+              "text": "Для дизайнеров",
+              "link": "/impressions"
+            },
+            {
+              "text": "Для посетителей",
+              "link": ""
+            }
+          ]
         }
       ]
     },
