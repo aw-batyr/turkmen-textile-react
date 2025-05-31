@@ -1,16 +1,22 @@
 import { Container } from "@/components/layout";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 
 const Videos = () => {
   const { t } = useTranslation("main");
+  const { pathname } = useLocation();
 
-  const title = t("impressions.videosTitle");
+  const { videosTitle, videosTitle2 } = t("impressions", {
+    returnObjects: true,
+  }) as { videosTitle: string; videosTitle2: string };
+
+  const filter = () => (pathname !== "/impressions" ? true : false);
 
   return (
     <section className="bg-[url('/impressions/videos-block-bg.png')] md:py-20 py-10">
       <Container>
         <h2 className="mb-10 md:text-5xl text-2xl leading-[120%] text-white text-center">
-          {title}
+          {filter() ? videosTitle : videosTitle2}
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-1 mx-0 lg:mx-48 gap-4 text-white overflow-hidden h-auto md:h-[497px]">

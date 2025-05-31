@@ -6,8 +6,15 @@ import { useTranslation } from "react-i18next";
 import { useCallback, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLocation } from "react-router-dom";
 
 const Designers = () => {
+  const { pathname } = useLocation();
+
+  const filter = () => (pathname !== "/impressions" ? true : false);
+
+  const { data, isPending } = useDesigners(filter() ? 2 : 1);
+
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "center",
     skipSnaps: true,
@@ -44,20 +51,24 @@ const Designers = () => {
     };
   }, [emblaApi]);
 
-  const { title, text } = t("impressions.designers", {
+  const { title, text, title2, text2 } = t("impressions.designers", {
     returnObjects: true,
   }) as {
     title: string;
+    title2: string;
     text: string;
+    text2: string;
   };
-
-  const { data, isPending } = useDesigners(1);
 
   return (
     <section className="md:py-20 py-10">
       <Container className="flex flex-col md:gap-10 gap-6">
-        <h2 className="md:text-5xl text-2xl leading-[120%]">{title}</h2>
-        <p className="md:text-xl text-lg normal text-on_surface_v">{text}</p>
+        <h2 className="md:text-5xl text-2xl leading-[120%]">
+          {filter() ? title : title2}
+        </h2>
+        <p className="md:text-xl text-lg normal text-on_surface_v">
+          {filter() ? text : text2}
+        </p>
 
         <div ref={emblaRef} className="embla">
           <div className="flex embla__container">

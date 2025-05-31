@@ -11,6 +11,7 @@ import {
   Contacts,
   Home,
   Impressions,
+  ImpressionsTm,
   Media,
   News,
   NewsInner,
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
       {
         element: <Impressions />,
         path: "impressions",
+        errorElement: <Error />,
+      },
+      {
+        element: <ImpressionsTm />,
+        path: "impressions-tm",
         errorElement: <Error />,
       },
     ],
