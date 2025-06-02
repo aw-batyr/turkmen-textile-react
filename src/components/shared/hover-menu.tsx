@@ -9,6 +9,7 @@ import {
 } from "../ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
+import { useUiStore } from "@/store/ui";
 
 interface Props {
   className?: string;
@@ -26,6 +27,8 @@ export const HoverMenu: FC<Props> = ({
   hoverItems,
   setIsOpen,
 }) => {
+  const setSheet = useUiStore((state) => state.setSheet);
+
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -42,7 +45,10 @@ export const HoverMenu: FC<Props> = ({
             {hoverItems?.map((item, i) => (
               <NavigationMenuLink
                 key={i}
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  setSheet(false);
+                }}
                 className="h-14 py-2 flex items-center  w-40 cursor-pointer px-4 hover:bg-slate-300/50  transition-all"
               >
                 <Link to={item.link ?? ""}>{item.text}</Link>
