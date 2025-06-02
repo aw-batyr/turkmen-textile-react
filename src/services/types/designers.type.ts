@@ -27,7 +27,7 @@ export interface Designer {
   updated_at: string;
   category_designer_id: number;
   achievements: Achievement[];
-  order_id: number | null;
+  order_id: number;
   image: DesignerImage;
   images: DesignerImage[];
 }

@@ -68,6 +68,7 @@ export const Menu: FC<PropsWithChildren<Props>> = ({
                 onMouseEnter={() => setIsHover(item.hover ? true : false)}
                 onMouseLeave={() => setIsHover(false)}
                 className="relative"
+                key={i}
               >
                 <div
                   key={item.text}

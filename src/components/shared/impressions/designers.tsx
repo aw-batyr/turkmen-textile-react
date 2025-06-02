@@ -60,6 +60,10 @@ const Designers = () => {
     text2: string;
   };
 
+  const sortedItems = [...(data?.designers ?? [])]?.sort(
+    (a, b) => a?.order_id - b?.order_id
+  );
+
   return (
     <section className="md:py-20 py-10">
       <Container className="flex flex-col md:gap-10 gap-6">
@@ -75,7 +79,7 @@ const Designers = () => {
             {isPending ? (
               <Loader />
             ) : (
-              data?.designers?.map((item, i) => (
+              sortedItems?.map((item, i) => (
                 <DesignerCard
                   key={i}
                   {...item}
