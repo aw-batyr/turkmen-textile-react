@@ -18,7 +18,7 @@ const Designers = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "center",
     skipSnaps: true,
-    slidesToScroll: 3,
+    slidesToScroll: 2,
     dragFree: true,
   });
   const [activeIndex, setActiveIndex] = useState(0);
@@ -64,6 +64,8 @@ const Designers = () => {
     (a, b) => a?.order_id - b?.order_id
   );
 
+  console.log(sortedItems);
+
   return (
     <section className="md:py-20 py-10">
       <Container className="flex flex-col md:gap-10 gap-6">
@@ -101,7 +103,11 @@ const Designers = () => {
             </button>
 
             <div className="flex items-center gap-2">
-              {[...Array(3)].map((_, i) => (
+              {[
+                ...Array(
+                  sortedItems?.length ? Math.round(sortedItems?.length / 2) : 5
+                ),
+              ].map((_, i) => (
                 <div
                   key={i}
                   onClick={() => scrollToSnap?.(i)}
