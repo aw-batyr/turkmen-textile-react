@@ -2,31 +2,60 @@ import { FC } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { useTranslation } from "react-i18next";
 import { HomeTimer } from "./";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import { Link } from "react-router-dom";
 
 export const HomeHero: FC = () => {
   const { t } = useTranslation("home");
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+    Autoplay({
+      delay: 5000,
+      stopOnInteraction: false,
+    }),
+  ]);
 
   const lg = useMediaQuery("(min-width: 1024px)");
   const md = useMediaQuery("(min-width: 768px)");
 
+  const lgBanners = t("banners.lg", { returnObjects: true }) as string[];
+  const mdBanners = t("banners.lg", { returnObjects: true }) as string[];
+  const smBanners = t("banners.lg", { returnObjects: true }) as string[];
+
   function getBanner() {
-    if (lg) return t("banners.lg");
-    else if (md) return t("banners.md");
-    else return t("banners.sm");
+    if (lg) return lgBanners;
+    else if (md) mdBanners;
+    else return smBanners;
   }
 
   return (
     <div>
-      <section className="flex flex-col gap-5 ">
-        <div className="embla ">
-          <div className="embla__container">
-            <div className="embla__slide">
-              <img
-                src={getBanner()}
-                alt=""
-                className="size-full object-cover lg:max-h-[600px] lg:min-h-[320px]"
-              />
-            </div>
+      <section className="flex flex-col gap-5">
+        <div ref={emblaRef} className="embla overflow-hidden">
+          <div className="embla__container flex">
+            {getBanner()?.map((item, i) =>
+              i === 0 ? (
+                <div key={i} className="embla__slide flex-[0_0_100%]">
+                  <img
+                    src={item}
+                    alt=""
+                    className="size-full object-cover lg:max-h-[600px] lg:min-h-[320px]"
+                  />
+                </div>
+              ) : (
+                <Link
+                  key={i}
+                  to={`/impressions${i === 1 ? "-tm" : ""}`}
+                  className="embla__slide flex-[0_0_100%]"
+                >
+                  <img
+                    src={item}
+                    alt=""
+                    className="size-full object-cover lg:max-h-[600px] lg:min-h-[320px]"
+                  />
+                </Link>
+              )
+            )}
           </div>
         </div>
 

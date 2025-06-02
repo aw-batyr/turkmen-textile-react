@@ -32,18 +32,6 @@ export const MediaModal: FC<Props> = ({ className, setIsOpen, activeItem }) => {
 
   useEffect(() => {
     if (!emblaApi) return;
-
-    const onSelect = () => {
-      setCanScrollPrev(emblaApi.canScrollPrev());
-      setCanScrollNext(emblaApi.canScrollNext());
-    };
-
-    emblaApi.on("select", onSelect);
-    onSelect();
-
-    return () => {
-      emblaApi.off("select", onSelect);
-    };
   }, [emblaApi]);
 
   useEffect(() => {
