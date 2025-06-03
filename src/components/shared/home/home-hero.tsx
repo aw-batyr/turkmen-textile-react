@@ -18,22 +18,20 @@ export const HomeHero: FC = () => {
   const lg = useMediaQuery("(min-width: 1024px)");
   const md = useMediaQuery("(min-width: 768px)");
 
-  const lgBanners = t("banners.lg", { returnObjects: true }) as string[];
-  const mdBanners = t("banners.lg", { returnObjects: true }) as string[];
-  const smBanners = t("banners.lg", { returnObjects: true }) as string[];
-
-  function getBanner() {
-    if (lg) return lgBanners;
-    else if (md) mdBanners;
-    else return smBanners;
+  function getBanners() {
+    if (lg) return t("banners.lg", { returnObjects: true }) as string[];
+    if (md) return t("banners.md", { returnObjects: true }) as string[];
+    return t("banners.sm", { returnObjects: true }) as string[];
   }
+
+  const banners = getBanners();
 
   return (
     <div>
       <section className="flex flex-col gap-5">
         <div ref={emblaRef} className="embla overflow-hidden">
           <div className="embla__container flex">
-            {getBanner()?.map((item, i) =>
+            {banners?.map((item, i) =>
               i === 0 ? (
                 <div key={i} className="embla__slide flex-[0_0_100%]">
                   <img
