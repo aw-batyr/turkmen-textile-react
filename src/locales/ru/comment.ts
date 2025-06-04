@@ -27,3 +27,12 @@
 //       }
 //     ]
 //   }
+
+// "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/Turkmen%20Designers/ru/L%20Rus.png",
+// "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/International%20Designers/Rus.png"
+
+//   "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/Turkmen%20Designers/ru/M%20Rus.png",
+//   "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/International%20Designers/Rus.png"
+
+// "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/Turkmen%20Designers/ru/S%20Rus.png",
+// "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/International%20Designers/Rus.png"
