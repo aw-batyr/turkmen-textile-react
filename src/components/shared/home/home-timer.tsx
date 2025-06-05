@@ -1,5 +1,4 @@
 import { FC, useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
 import { TimerItem } from "../";
 
@@ -7,7 +6,7 @@ interface Props {
   className?: string;
 }
 
-export const HomeTimer: FC<Props> = ({ className }) => {
+export const HomeTimer: FC<Props> = () => {
   const { t } = useTranslation("home");
 
   const [timeLeft, setTimeLeft] = useState({
