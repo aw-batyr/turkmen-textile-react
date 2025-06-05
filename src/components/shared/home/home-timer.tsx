@@ -86,29 +86,27 @@ export const HomeTimer: FC<Props> = ({ className }) => {
     seconds: string;
   };
   return (
-    <section className={cn("2xl:w-[600px] xl:w-[450px] w-[350px]", className)}>
-      <div className="grid grid-cols-4 w-full mr-[50%] gap-6 items-end place-items-center">
-        <TimerItem
-          value={timeLeft.days}
-          prevValue={prevValues.days || timeLeft.days}
-          label={daysLabel}
-        />
-        <TimerItem
-          value={timeLeft.hours}
-          prevValue={prevValues.hours || timeLeft.hours}
-          label={hoursLabel}
-        />
-        <TimerItem
-          value={timeLeft.minutes}
-          prevValue={prevValues.minutes || timeLeft.minutes}
-          label={minutesLabel}
-        />
-        <TimerItem
-          value={timeLeft.seconds}
-          prevValue={prevValues.seconds || timeLeft.seconds}
-          label={secondsLabel}
-        />
-      </div>
-    </section>
+    <div className="flex flex-col fixed left-0 top-1/3 gap-2 bg-[#E7E5E5] py-4 pr-4 rounded drop-shadow-md  z-[100]">
+      <TimerItem
+        value={timeLeft.days}
+        prevValue={prevValues.days || timeLeft.days}
+        label={daysLabel}
+      />
+      <TimerItem
+        value={timeLeft.hours}
+        prevValue={prevValues.hours || timeLeft.hours}
+        label={hoursLabel}
+      />
+      <TimerItem
+        value={timeLeft.minutes}
+        prevValue={prevValues.minutes || timeLeft.minutes}
+        label={minutesLabel}
+      />
+      <TimerItem
+        value={timeLeft.seconds}
+        prevValue={prevValues.seconds || timeLeft.seconds}
+        label={secondsLabel}
+      />
+    </div>
   );
 };

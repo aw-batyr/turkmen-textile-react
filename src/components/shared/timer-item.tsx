@@ -7,24 +7,24 @@ export const TimerItem = ({
   label: string;
   prevValue: string;
 }) => (
-  <div className="timer-item flex flex-col items-center">
-    <div className="relative sm:h-14 h-6 w-16 overflow-hidden font-bold">
+  <div className="timer-item flex flex-col items-center justify-center bg-teritary p-1 rounded-[2px]">
+    <div className="relative font-bold h-10 ">
       <span
-        className={`absolute left-1/2 -translate-x-1/2 black bg-gradient-to-t from-white to-surface_high text-transparent bg-clip-text sm:text-5xl text-xl leading-none transition-all duration-300 ${
+        className={`absolute -translate-x-1/2 black flex text-center text-white text-transparent size-10 sm:text-3xl text-xl leading-none transition-all duration-300 ${
           prevValue !== value ? " opacity-0" : " opacity-100"
         }`}
       >
         {prevValue}
       </span>
       <span
-        className={`absolute left-1/2 -translate-x-1/2 black bg-gradient-to-t from-white to-surface_high text-transparent bg-clip-text  sm:text-5xl text-xl leading-none transition-all duration-300 ${
+        className={`absolute -translate-x-1/2 black text-center bg-gradient-to-t from-white to-surface_high text-transparent bg-clip-text  sm:text-3xl text-xl leading-none transition-all duration-300 ${
           prevValue !== value ? "opacity-100" : "opacity-0"
         }`}
       >
         {value}
       </span>
     </div>
-    <div className="label normal sm:text-lg text-base text-[#FAD8DB]">
+    <div className="label normal sm:text-lg text-base text-[#FACFAE] text-center">
       {label}
     </div>
   </div>
