@@ -43,7 +43,7 @@ export const HomeHero: FC = () => {
               ) : (
                 <Link
                   key={i}
-                  to={`/impressions${i === 1 ? "-tm" : ""}`}
+                  to={"/impressions"}
                   className="embla__slide flex-[0_0_100%]"
                 >
                   <img
