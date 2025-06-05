@@ -85,7 +85,7 @@ export const HomeTimer: FC<Props> = () => {
     seconds: string;
   };
   return (
-    <div className="flex flex-col fixed left-0 top-1/3 gap-2 bg-[#E7E5E5] py-4 pr-4 rounded drop-shadow-md  z-[100]">
+    <div className="flex flex-col scale-[0.7] fixed -left-4 top-1/3 gap-2 bg-[#E7E5E5] py-4 pr-4 rounded drop-shadow-md  z-[100]">
       <TimerItem
         value={timeLeft.days}
         prevValue={prevValues.days || timeLeft.days}
