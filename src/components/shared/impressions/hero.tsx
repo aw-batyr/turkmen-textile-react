@@ -65,7 +65,11 @@ const Hero = () => {
               </Button>
             </Link>
             <Link
-              to="https://turkmentextile.turkmenexpo.com/app/storage/app/media/agenda/agenda_ru.pdf"
+              to={
+                lang === "ru"
+                  ? "https://turkmentextile.turkmenexpo.com/app/storage/app/media/agenda/agenda_ru.pdf"
+                  : "https://turkmentextile.turkmenexpo.com/app/storage/app/media/agenda/agenda_en.pdf"
+              }
               target="_blank"
               className="w-full"
             >
