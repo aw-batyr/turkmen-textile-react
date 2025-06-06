@@ -55,7 +55,7 @@ export const Menu: FC<PropsWithChildren<Props>> = ({
                 }}
                 className="h-14 px-3 flex gap-3 justify-between cursor-pointer items-center hover:bg-slate-300/50 transition-all"
                 key={item.text}
-                target={item.blank ?? ""}
+                target={item.blank ? "_blank" : ""}
                 to={item.link}
               >
                 {item.text}
@@ -81,13 +81,7 @@ export const Menu: FC<PropsWithChildren<Props>> = ({
                   {item.text}
                 </div>
                 {isHover && (
-                  <div
-                    onMouseEnter={() => setIsHover(true)}
-                    onMouseLeave={() =>
-                      setTimeout(() => setIsHover(false), 1000)
-                    }
-                    className="absolute bottom-0 flex flex-col -right-40 bg-surface_container"
-                  >
+                  <div className="absolute bottom-0 flex flex-col -right-40 bg-surface_container">
                     {item.hoverItems?.map((item, i) => (
                       <Link
                         key={i}

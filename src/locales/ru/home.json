@@ -63,11 +63,13 @@
         "items": [
           {
             "text": "Для дизайнеров",
-            "link": ""
+            "link": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/Masterclasses_d/Masterclasses_ru.pdf",
+            "blank": true
           },
           {
-            "text": "Для посетителей ",
-            "link": ""
+            "text": "Для посетителей",
+            "link": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/Masterclasses_v/Masterclasses_ru.pdf",
+            "blank": true
           }
         ]
       }
