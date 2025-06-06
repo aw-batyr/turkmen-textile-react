@@ -44,27 +44,21 @@ export const HomeActions: FC<Props> = ({ className }) => {
                 </Button>
               </Link>
             ) : (
-              <Link
-                target={item.blank ? "_blank" : ""}
+              <Menu
                 key={i}
-                to={item.link ?? ""}
-                className="w-full"
+                dropDownContent={item.items}
+                triggerClassName="w-full"
+                className="!w-full"
               >
-                <Menu
-                  dropDownContent={item.items}
-                  triggerClassName="w-full"
-                  className="!w-full"
+                <Button
+                  size={"lg"}
+                  variant={"teritary"}
+                  className="w-full drop-shadow-sm shadow-md md:text-xl text-lg bg-teritary text-on_teritary hover:bg-teritary/90"
                 >
-                  <Button
-                    size={"lg"}
-                    variant={"teritary"}
-                    className="w-full drop-shadow-sm shadow-md md:text-xl text-lg bg-teritary text-on_teritary hover:bg-teritary/90"
-                  >
-                    {item.text}
-                    <Chevron w={"40"} h={"40"} color="white" />
-                  </Button>
-                </Menu>
-              </Link>
+                  {item.text}
+                  <Chevron w={"40"} h={"40"} color="white" />
+                </Button>
+              </Menu>
             )
           )}
         </div>

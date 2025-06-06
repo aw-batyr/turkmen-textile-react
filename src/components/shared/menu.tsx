@@ -24,7 +24,6 @@ export const Menu: FC<PropsWithChildren<Props>> = ({
   children,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isHover, setIsHover] = useState(false);
   const setSheet = useUiStore((state) => state.setSheet);
 
   return (
@@ -49,14 +48,15 @@ export const Menu: FC<PropsWithChildren<Props>> = ({
               <HoverMenu setIsOpen={setIsOpen} key={i} {...item} />
             ) : item.link ? (
               <Link
+                key={i}
+                to={item.link ?? ""}
                 onClick={() => {
                   setIsOpen(false);
                   setSheet(false);
                 }}
-                className="h-14 px-3 flex gap-3 justify-between cursor-pointer items-center hover:bg-slate-300/50 transition-all"
-                key={item.text}
-                target={item.blank ? "_blank" : ""}
-                to={item.link}
+                className="h-14 px-3 flex gap-3 relative justify-between cursor-pointer items-center hover:bg-slate-300/50 transition-all"
+                target={item.blank ? "_blank" : undefined}
+                rel={item.blank ? "noopener noreferrer" : undefined}
               >
                 {item.text}
                 {item.blank && <img src="/pdf.svg" />}
@@ -64,14 +64,8 @@ export const Menu: FC<PropsWithChildren<Props>> = ({
             ) : item.modal ? (
               <Modal key={item.text} title={item.text} />
             ) : (
-              <div
-                onMouseEnter={() => setIsHover(item.hover ? true : false)}
-                onMouseLeave={() => setIsHover(false)}
-                className="relative"
-                key={i}
-              >
+              <div className="relative" key={i}>
                 <div
-                  key={item.text}
                   className="h-14 px-3 py-2 flex items-center cursor-pointer hover:bg-slate-300/50 transition-all"
                   onClick={() => {
                     setIsOpen(false);
@@ -80,19 +74,6 @@ export const Menu: FC<PropsWithChildren<Props>> = ({
                 >
                   {item.text}
                 </div>
-                {isHover && (
-                  <div className="absolute bottom-0 flex flex-col -right-40 bg-surface_container">
-                    {item.hoverItems?.map((item, i) => (
-                      <Link
-                        key={i}
-                        to={item.link ?? ""}
-                        className="h-14 px-3 py-2"
-                      >
-                        {item.text}
-                      </Link>
-                    ))}
-                  </div>
-                )}
               </div>
             )
           )}

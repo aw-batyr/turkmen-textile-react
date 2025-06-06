@@ -54,7 +54,7 @@
         },
         {
           "text": "Programme",
-          "link": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/agenda/agenda_ru.pdf",
+          "link": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/agenda/agenda_en.pdf",
           "blank": "blank"
         },
         {
@@ -68,11 +68,13 @@
           "hoverItems": [
             {
               "text": "For designers",
-              "link": "/impressions"
+              "link": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/Masterclasses_d/Masterclasses_eng.pdf",
+              "blank": true
             },
             {
               "text": "For visitors",
-              "link": ""
+              "link": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/Masterclasses_v/Masterclasses_eng.pdf",
+              "blank": true
             }
           ]
         }

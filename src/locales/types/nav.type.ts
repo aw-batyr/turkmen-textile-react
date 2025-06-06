@@ -10,7 +10,7 @@ export interface DropDownContent {
   text: string;
   link?: string;
   modal?: boolean;
-  blank?: string;
+  blank?: boolean;
   hover?: boolean;
   hoverItems?: {
     text: "string";

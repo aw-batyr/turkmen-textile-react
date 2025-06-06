@@ -3,7 +3,7 @@
     {
       "title": "Путеводитель",
       "link": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/travel_guide/Travel_guide_ru.pdf",
-      "blank": "blank"
+      "blank": true
     },
     {
       "title": "Новости",
@@ -54,12 +54,12 @@
         {
           "text": "Программа",
           "link": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/agenda/agenda_ru.pdf",
-          "blank": "blank"
+          "blank": true
         },
         {
           "text": "Путеводитель",
           "link": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/travel_guide/Travel_guide_ru.pdf",
-          "blank": "blank"
+          "blank": true
         },
         {
           "text": "Матстер классы",
@@ -67,11 +67,13 @@
           "hoverItems": [
             {
               "text": "Для дизайнеров",
-              "link": "/impressions"
+              "link": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/Masterclasses_d/Masterclasses_ru.pdf",
+              "blank": true
             },
             {
               "text": "Для посетителей",
-              "link": ""
+              "link": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/Masterclasses_v/Masterclasses_ru.pdf",
+              "blank": true
             }
           ]
         }

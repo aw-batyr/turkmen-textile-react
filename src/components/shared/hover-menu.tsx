@@ -17,6 +17,7 @@ interface Props {
   hoverItems?: {
     text: string;
     link?: string;
+    blank?: boolean;
   }[];
   setIsOpen: (val: boolean) => void;
 }
@@ -51,7 +52,9 @@ export const HoverMenu: FC<Props> = ({
                 }}
                 className="h-14 py-2 flex items-center  w-40 cursor-pointer px-4 hover:bg-slate-300/50  transition-all"
               >
-                <Link to={item.link ?? ""}>{item.text}</Link>
+                <Link target={item.blank ? "_blank" : ""} to={item.link ?? ""}>
+                  {item.text}
+                </Link>
               </NavigationMenuLink>
             ))}
           </NavigationMenuContent>
