@@ -32,13 +32,19 @@ const Hero = () => {
 
   return (
     <section className="">
-      <img
-        src={
-          lang === "ru" ? "/impressions-cover.png" : "/impressions-cover-en.png"
-        }
-        alt=""
-        className="w-full object-cover object-top max-h-[610px]"
-      />
+      {pathname === "/imressions-tm" ? (
+        <img
+          src={
+            lang === "ru"
+              ? "/impressions-cover.png"
+              : "/impressions-cover-en.png"
+          }
+          alt=""
+          className="w-full object-cover object-top max-h-[610px]"
+        />
+      ) : (
+        <img src={t("impressions.banner")} />
+      )}
       <h1 className="absolute opacity-0 top-0 left-0">Модные показы</h1>
 
       <div className="bg-[url('/impressions-bg.png')]">

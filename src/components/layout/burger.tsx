@@ -37,7 +37,7 @@ export const Burger: FC<Props> = () => {
         </div>
       </SheetTrigger>
 
-      <SheetContent className="overflow-y-auto">
+      <SheetContent className="overflow-y-auto z-[100]">
         <SheetClose />
 
         <SheetHeader className="mt-16 flex flex-col gap-2">
