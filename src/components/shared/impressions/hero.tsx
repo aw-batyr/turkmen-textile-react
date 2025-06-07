@@ -32,7 +32,7 @@ const Hero = () => {
 
   return (
     <section className="">
-      {pathname === "/imressions-tm" ? (
+      {pathname === "/impressions-tm" ? (
         <img
           src={
             lang === "ru"
