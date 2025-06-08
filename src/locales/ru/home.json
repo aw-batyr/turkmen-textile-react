@@ -1,16 +1,58 @@
 {
   "banners": {
     "lg": [
-      "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/ru/l.jpg",
-      "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/new/web_ru.jpg"
+      {
+        "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/ru/l.jpg",
+        "link": ""
+      },
+      {
+        "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/new/web_ru.jpg",
+        "link": "/impressions"
+      },
+      {
+        "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/new2/eng1.jpg",
+        "link": "/impressions-tm"
+      },
+      {
+        "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/new2/eng2.jpg",
+        "link": "/impressions-tm"
+      }
     ],
     "md": [
-      "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/ru/m.jpg",
-      "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/new/web_ru.jpg"
+      {
+        "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/ru/m.jpg",
+        "link": ""
+      },
+      {
+        "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/new/web_ru.jpg",
+        "link": "/impressions"
+      },
+      {
+        "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/new2/eng1.jpg",
+        "link": "/impressions-tm"
+      },
+      {
+        "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/new2/eng2.jpg",
+        "link": "/impressions-tm"
+      }
     ],
     "sm": [
-      "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/ru/s.jpg",
-      "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/new/web_ru.jpg"
+      {
+        "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/ru/s.jpg",
+        "link": ""
+      },
+      {
+        "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/new/web_ru.jpg",
+        "link": "/impressions"
+      },
+      {
+        "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/new2/eng1.jpg",
+        "link": "/impressions-tm"
+      },
+      {
+        "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/new2/eng2.jpg",
+        "link": "/impressions-tm"
+      }
     ]
   },
 
