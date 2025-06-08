@@ -36,3 +36,8 @@
 
 // "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/Turkmen%20Designers/en/S%20Eng.png",
 // "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/International%20Designers/Eng.png"
+
+//   {
+//     "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/en/l.jpg",
+//     "link": ""
+//   },
