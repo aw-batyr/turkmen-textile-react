@@ -1,6 +1,8 @@
 import { Container } from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import { useLangStore } from "@/store/lang";
+import Autoplay from "embla-carousel-autoplay";
+import useEmblaCarousel from "embla-carousel-react";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 
@@ -8,6 +10,17 @@ const Hero = () => {
   const { t } = useTranslation("main");
   const lang = useLangStore((state) => state.lang);
   const { pathname } = useLocation();
+  const [emblaRef] = useEmblaCarousel(
+    {
+      loop: true,
+    },
+    [
+      Autoplay({
+        delay: 5000,
+        stopOnInteraction: false,
+      }),
+    ]
+  );
 
   const { title, texts, button, button2 } = t("impressions.hero", {
     returnObjects: true,
@@ -30,18 +43,26 @@ const Hero = () => {
     else return value2;
   };
 
+  const banners = [
+    "https://turkmentextile.turkmenexpo.com/app/storage/app/media/new2/eng1.jpg",
+    "https://turkmentextile.turkmenexpo.com/app/storage/app/media/new2/eng2.jpg",
+  ];
+
   return (
     <section className="">
       {pathname === "/impressions-tm" ? (
-        <img
-          src={
-            lang === "ru"
-              ? "/impressions-cover.png"
-              : "/impressions-cover-en.png"
-          }
-          alt=""
-          className="w-full object-cover object-top max-h-[610px]"
-        />
+        <div ref={emblaRef} className="embla overflow-hidden">
+          <div className="flex">
+            {banners.map((banner, i) => (
+              <img
+                key={i}
+                src={banner}
+                alt="imperssions"
+                className="w-full object-cover flex-[0_0_100%] object-top max-h-[610px]"
+              />
+            ))}
+          </div>
+        </div>
       ) : (
         <img src={t("impressions.banner")} />
       )}
