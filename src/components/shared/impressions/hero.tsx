@@ -43,17 +43,25 @@ const Hero = () => {
     else return value2;
   };
 
-  const banners = [
-    "https://turkmentextile.turkmenexpo.com/app/storage/app/media/new2/eng1.jpg",
-    "https://turkmentextile.turkmenexpo.com/app/storage/app/media/new2/eng2.jpg",
-  ];
+  const banners = {
+    en: [
+      "https://turkmentextile.turkmenexpo.com/app/storage/app/media/new2/web_eng1.jpg",
+      "https://turkmentextile.turkmenexpo.com/app/storage/app/media/new2/web_eng2.jpg",
+    ],
+    ru: [
+      "https://turkmentextile.turkmenexpo.com/app/storage/app/media/new2/web_ru1.jpg",
+      "https://turkmentextile.turkmenexpo.com/app/storage/app/media/new2/web_ru2.jpg",
+    ],
+  };
+
+  const getBanners = () => (lang === "ru" ? banners.ru : banners.en);
 
   return (
     <section className="">
       {pathname === "/impressions-tm" ? (
         <div ref={emblaRef} className="embla overflow-hidden">
           <div className="flex">
-            {banners.map((banner, i) => (
+            {getBanners().map((banner, i) => (
               <img
                 key={i}
                 src={banner}
