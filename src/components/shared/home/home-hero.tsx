@@ -19,9 +19,20 @@ export const HomeHero: FC = () => {
   const md = useMediaQuery("(min-width: 768px)");
 
   function getBanners() {
-    if (lg) return t("banners.lg", { returnObjects: true }) as string[];
-    if (md) return t("banners.md", { returnObjects: true }) as string[];
-    return t("banners.sm", { returnObjects: true }) as string[];
+    if (lg)
+      return t("banners.lg", { returnObjects: true }) as {
+        path: string;
+        link: string;
+      }[];
+    if (md)
+      return t("banners.md", { returnObjects: true }) as {
+        path: string;
+        link: string;
+      }[];
+    return t("banners.sm", { returnObjects: true }) as {
+      path: string;
+      link: string;
+    }[];
   }
 
   const banners = getBanners();
@@ -32,23 +43,21 @@ export const HomeHero: FC = () => {
         <div ref={emblaRef} className="embla overflow-hidden">
           <div className="embla__container flex">
             {banners?.map((item, i) =>
-              i === 0 ? (
+              !item.link ? (
                 <div key={i} className="embla__slide flex-[0_0_100%]">
                   <img
-                    src={item}
-                    alt=""
+                    src={item.path}
                     className="size-full object-cover lg:max-h-[600px] lg:min-h-[320px]"
                   />
                 </div>
               ) : (
                 <Link
                   key={i}
-                  to={"/impressions"}
+                  to={item.link}
                   className="embla__slide flex-[0_0_100%]"
                 >
                   <img
-                    src={item}
-                    alt=""
+                    src={item.path}
                     className="size-full object-cover lg:max-h-[600px] lg:min-h-[320px]"
                   />
                 </Link>
