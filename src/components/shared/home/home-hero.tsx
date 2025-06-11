@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { useTranslation } from "react-i18next";
-import { HomeTimer } from "./";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Link } from "react-router-dom";
@@ -38,7 +37,7 @@ export const HomeHero: FC = () => {
   const banners = getBanners();
 
   return (
-    <div>
+    <div className="mb-6">
       <section className="flex flex-col gap-5">
         <div ref={emblaRef} className="embla overflow-hidden">
           <div className="embla__container flex">
@@ -66,9 +65,9 @@ export const HomeHero: FC = () => {
           </div>
         </div>
 
-        <div className="relative">
+        {/* <div className="relative">
           <HomeTimer className="absolute sm:bottom-12 bottom-28 2xl:right-[10%] xl:right-[13%] lg:right-[15%] right-10" />
-        </div>
+        </div> */}
       </section>
     </div>
   );
