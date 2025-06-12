@@ -79,7 +79,9 @@ const Media: FC<Props> = ({ className }) => {
               getLoading(state)
             ) : (
               <>
-                <h3 className="md:text-3xl text-2xl mb-6">2025</h3>
+                <h3 className="md:text-3xl text-2xl mb-6">
+                  TurkmenTextile Expo-2025
+                </h3>
                 <div className="grid lg:grid-cols-4 lg:gap-y-4 lg:gap-x-6 md:gap-6 gap-4 grid-cols-2 place-items-center">
                   {state === 0
                     ? data?.photos
