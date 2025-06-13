@@ -13,8 +13,8 @@ import { PartnersType } from "@/hooks/tanstack/use-partners";
 import { NewsInnerType, NewsType } from "./types/news.type";
 import { ParticipantsType } from "./types/participants.type";
 import { PhotoTypes } from "./types/photo.type";
-import { VideoTypes } from "./types/videos.type";
 import { DesignersType } from "./types/designers.type";
+import { VideoTypes } from "./types/videos.type";
 
 const axios_url = axios.create({
   baseURL: "https://turkmentextile.turkmenexpo.com/app/api/v1/",

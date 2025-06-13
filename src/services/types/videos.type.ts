@@ -1,38 +1,42 @@
-export interface VideoTypes {
-  status: string;
-  data: Data;
-}
-
-export interface Data {
-  id: number;
-  name: string;
-  created_at: Date;
-  updated_at: Date;
-  videos: VideoElement[];
-}
-
-export interface VideoElement {
-  id: number;
-  name: string;
-  category_video_media_id: number;
-  created_at: Date;
-  updated_at: Date;
-  video: VideoPhotoClass;
-  video_photo: VideoPhotoClass;
-}
-
-export interface VideoPhotoClass {
+type VideoFile = {
   id: number;
   disk_name: string;
   file_name: string;
   file_size: number;
   content_type: string;
-  title: null;
-  description: null;
+  title: string | null;
+  description: string | null;
   field: string;
   sort_order: number;
-  created_at: Date;
-  updated_at: Date;
+  created_at: string;
+  updated_at: string;
   path: string;
   extension: string;
-}
+};
+
+type VideoItem = {
+  id: number;
+  category_video_media_id: number;
+  name: string;
+  created_at: string;
+  updated_at: string;
+  sections: string[] | string; // может быть строкой или массивом строк
+  fashion_shows_order_id: number;
+  title: string;
+  text: string;
+  video: VideoFile;
+  video_photo: VideoFile;
+};
+
+type TurkmentextileData = {
+  id: number;
+  name: string;
+  created_at: string;
+  updated_at: string;
+  videos: VideoItem[];
+};
+
+export type VideoTypes = {
+  status: "success" | "error";
+  data: TurkmentextileData;
+};
