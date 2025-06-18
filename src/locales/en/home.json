@@ -2,6 +2,10 @@
   "banners": {
     "lg": [
       {
+        "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/en/l.jpg",
+        "link": ""
+      },
+      {
         "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/new/web_eng.jpg",
         "link": "/impressions"
       },
@@ -16,6 +20,10 @@
     ],
     "md": [
       {
+        "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/en/m.jpg",
+        "link": ""
+      },
+      {
         "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/new/web_eng.jpg",
         "link": "/impressions"
       },
@@ -29,6 +37,11 @@
       }
     ],
     "sm": [
+      {
+        "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/en/s.jpg",
+        "link": ""
+      },
+
       {
         "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/new/web_eng.jpg",
         "link": "/impressions"
