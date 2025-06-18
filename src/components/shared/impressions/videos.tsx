@@ -45,12 +45,7 @@ const Videos = () => {
                 className="w-full size-full mb-2 rounded"
               />
             </div>
-            <div className="flex items-center justify-between mt-auto">
-              {/* <h3 className="text-sm">
-                Алена Ахмадуллина | 'Царевна-Лебедь' (74 симв.)
-              </h3> */}
-              {/* <span className="text-xs normal">1/10</span> */}
-            </div>
+            <div className="flex items-center justify-between mt-auto"></div>
           </div>
 
           {/* SECOND BLOCK */}
@@ -65,12 +60,12 @@ const Videos = () => {
                 <div
                   key={i}
                   onClick={() => setActiveVideo(i + 1)}
-                  className="basis-[80px] cursor-pointer hover:scale-105 transition-transform overflow-hidden"
+                  className="basis-[70px] w-[80%] cursor-pointer mx-auto  overflow-hidden"
                 >
                   <img
                     src={item?.video_photo?.path}
                     alt=""
-                    className="object-contain size-full rounded-tl rounded-bl"
+                    className="object-cover size-full rounded-tl hover:scale-105 transition-transform  rounded-bl"
                   />
                 </div>
               ))}
