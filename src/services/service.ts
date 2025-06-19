@@ -121,7 +121,7 @@ export const getExhibitionTime = async (lang: LangState["lang"]) => {
 };
 
 export const getNews = async (lang: "ru" | "en") => {
-  const data = axios_url.get<NewsType>(`news`, {
+  const data = axios_url.get<NewsType>(`news?per_page=100`, {
     headers: {
       "Accept-Language": lang,
     },
