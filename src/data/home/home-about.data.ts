@@ -27,6 +27,7 @@ export const homeAbout = [
     ],
 
     button: "Подробнее о выставке",
+    button2: "Каталог",
   },
 
   {
@@ -55,5 +56,6 @@ export const homeAbout = [
       },
     ],
     button: "More about the exhibition",
+    button2: "Catalog",
   },
 ];

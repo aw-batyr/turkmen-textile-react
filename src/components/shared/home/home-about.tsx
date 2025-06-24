@@ -37,9 +37,21 @@ export const HomeAbout: FC = () => {
               className="md:text-base flex flex-col gap-6 text-sm normal text-left text-[#454545]"
             />
 
-            <Link to="/about" className="w-fit">
-              <Button variant={"outline"}>{homeAbout[translate].button}</Button>
-            </Link>
+            <div className="flex w-full gap-8">
+              <Link to="/about" className="w-fit">
+                <Button variant={"outline"}>
+                  {homeAbout[translate].button}
+                </Button>
+              </Link>
+              <Link
+                target="_blank"
+                to="https://turkmentextile.turkmenexpo.com/app/storage/app/media/Catalogue/catalogue.pdf"
+              >
+                <Button variant={"outline"} className="px-16">
+                  {homeAbout[translate].button2}
+                </Button>
+              </Link>
+            </div>
           </div>
 
           <video
