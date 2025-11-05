@@ -8,8 +8,11 @@ import {
   HomeTheme,
   HomeTime,
 } from "@/components/shared";
+import { useScrollTop } from "@/hooks/use-scroll-top";
 
 export default function Home() {
+  useScrollTop();
+
   return (
     <div className="flex flex-col">
       <HomeHero />

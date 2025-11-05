@@ -12,6 +12,7 @@ import { Language, useLangStore } from "@/store/lang";
 
 export default function About() {
   useScrollTop();
+
   const lang = useLangStore((state) => state.lang);
 
   return (

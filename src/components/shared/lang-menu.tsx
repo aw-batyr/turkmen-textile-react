@@ -50,7 +50,7 @@ export const LangMenu: FC<Props> = ({ className, light = false }) => {
         </svg>
       </PopoverTrigger>
 
-      <PopoverContent className="flex flex-col gap-6">
+      <PopoverContent className="flex flex-col gap-6 w-fit relative z-[200] py-2 px-4 bg-surface_container">
         {langs
           .filter((item) => item.lang !== lang)
           .map((item, i) => (
@@ -60,7 +60,7 @@ export const LangMenu: FC<Props> = ({ className, light = false }) => {
                 setIsOpen(false);
               }}
               key={i}
-              className="flex gap-3 py-1  items-center cursor-pointer"
+              className="flex gap-3 py-2 items-center cursor-pointer"
             >
               <img
                 src={item.lang === Language.RU ? "/ru.svg" : "/english.svg"}

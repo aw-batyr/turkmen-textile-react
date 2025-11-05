@@ -4,6 +4,7 @@ import { NewsCard } from "@/components/shared/news-card";
 import { useNews } from "@/hooks/tanstack/use-news";
 import { useNewsInner } from "@/hooks/tanstack/use-news-inner";
 import { useScrollTop } from "@/hooks/use-scroll-top";
+
 import { useLangStore } from "@/store/lang";
 import { useParams } from "react-router-dom";
 

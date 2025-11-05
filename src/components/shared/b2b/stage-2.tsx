@@ -83,7 +83,7 @@ export const Stage2: FC<Props> = ({ handleNext, handlePrev }) => {
           variant={"outline"}
           className="text-on_surface"
         >
-          {lang === Language.RU ? "Вернуться назад" : "Back"}
+          {lang === Language.RU ? "Назад" : "Back"}
         </Button>
 
         <Button

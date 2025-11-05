@@ -87,10 +87,8 @@ export const B2bForm: FC<Props> = ({
 
       Object.entries(values).forEach(([key, value]) => {
         if (value instanceof File) {
-          console.log(`Добавляем файл: ${key}`, value);
           formData.append(key, value);
         } else if (value !== undefined) {
-          console.log(`Добавляем поле: ${key}`, value);
           formData.append(key, value as string);
         }
       });

@@ -21,6 +21,7 @@ const Designers = () => {
     slidesToScroll: 2,
     dragFree: true,
   });
+
   const [activeIndex, setActiveIndex] = useState(0);
   const { t } = useTranslation("main");
 

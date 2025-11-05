@@ -2,11 +2,13 @@ import { Cover } from "@/components/layout";
 import { B2bFormProgress } from "@/components/shared";
 import { B2bForm } from "@/components/shared/forms/b2b-form";
 import { useScrollTop } from "@/hooks/use-scroll-top";
+
 import { Language, useLangStore } from "@/store/lang";
 import { useState } from "react";
 
 export default function B2b() {
   useScrollTop();
+
   const lang = useLangStore((state) => state.lang);
 
   const [stage, setStage] = useState(1);

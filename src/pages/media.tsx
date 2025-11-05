@@ -9,6 +9,7 @@ import { Play } from "lucide-react";
 import { Container, Cover } from "@/components/layout";
 import { usePhotos } from "@/hooks/tanstack/use-photos";
 import { useVideos } from "@/hooks/tanstack/use-videos";
+import { useScrollTop } from "@/hooks/use-scroll-top";
 
 interface Props {
   className?: string;
@@ -28,6 +29,8 @@ const momentsTabs = [
 ];
 
 const Media: FC<Props> = ({ className }) => {
+  useScrollTop();
+
   const [state, setState] = useState(0);
   const { data, isPending, status } = usePhotos(1);
   const { data: videos } = useVideos(1);

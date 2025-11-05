@@ -16,6 +16,10 @@
       {
         "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/new2/web_eng2.jpg",
         "link": "/impressions-tm"
+      },
+      {
+        "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/05112025/EN_l.jpg",
+        "link": ""
       }
     ],
     "md": [
@@ -34,6 +38,10 @@
       {
         "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/new2/web_eng2.jpg",
         "link": "/impressions-tm"
+      },
+      {
+        "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/05112025/EN_m.jpg",
+        "link": ""
       }
     ],
     "sm": [
@@ -53,6 +61,10 @@
       {
         "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/new2/web_eng2.jpg",
         "link": "/impressions-tm"
+      },
+      {
+        "path": "https://turkmentextile.turkmenexpo.com/app/storage/app/media/surat/05112025/EN_s.jpg",
+        "link": ""
       }
     ]
   },
@@ -170,7 +182,7 @@
       }
     ],
 
-    "button": "More about the exhibition"
+    "button": "More"
   },
 
   "sponsors": {

@@ -3,10 +3,12 @@ import { Loader } from "@/components/shared";
 import { NewsCard } from "@/components/shared/news-card";
 import { useNews } from "@/hooks/tanstack/use-news";
 import { useScrollTop } from "@/hooks/use-scroll-top";
+
 import { useLangStore } from "@/store/lang";
 
 export default function News() {
   useScrollTop();
+
   const lang = useLangStore((state) => state.lang);
 
   const { data, isPending } = useNews(lang);

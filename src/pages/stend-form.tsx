@@ -23,8 +23,11 @@ import { postStend } from "@/services/service";
 import { stendData } from "@/data/stend.data";
 import { useTranslate } from "@/hooks/use-translate";
 import { useLangStore } from "@/store/lang";
+import { useScrollTop } from "@/hooks/use-scroll-top";
 
 export default function StendForm() {
+  useScrollTop();
+
   const lang = useLangStore((state) => state.lang);
   const [success, setSuccess] = useState(false);
   const form = useForm<StandFormType>({

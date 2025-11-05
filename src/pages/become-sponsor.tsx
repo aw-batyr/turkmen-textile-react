@@ -20,11 +20,12 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Loader } from "lucide-react";
 import { postSponsor } from "@/services/service";
-import { useScrollTop } from "@/hooks/use-scroll-top";
+
 import { Cover } from "@/components/layout";
 import { Language, useLangStore } from "@/store/lang";
 import { stendData } from "@/data/stend.data";
 import { useTranslate } from "@/hooks/use-translate";
+import { useScrollTop } from "@/hooks/use-scroll-top";
 
 export default function BecomeSponsor() {
   useScrollTop();
