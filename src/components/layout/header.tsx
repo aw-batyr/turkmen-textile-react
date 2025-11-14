@@ -68,10 +68,10 @@ export const Header: FC = () => {
           <Container className="flex items-center justify-between ">
             <div className="flex items-center gap-8">
               <Link to="/">
-                <Logo />
+                <Logo className="" />
               </Link>
 
-              <nav className="lg:flex hidden items-center gap-6 text-white">
+              <nav className="lg:flex hidden items-center gap-3 xl:gap-6 text-white">
                 {nav.slice(3, 6).map((item) =>
                   !item.drop ? (
                     <Link
@@ -110,7 +110,7 @@ export const Header: FC = () => {
                 <Button
                   variant={"secondary"}
                   size={"sm"}
-                  className="bg-white text-primary hover:bg-white/90"
+                  className="bg-white text-primary hover:bg-white/90 h-12 w-fit"
                 >
                   {lang === "ru" ? "Официальная поддержка" : "Official Support"}
                 </Button>
@@ -120,7 +120,7 @@ export const Header: FC = () => {
                 <Button
                   variant={"secondary"}
                   size={"sm"}
-                  className="bg-teritary text-white hover:bg-teritary/90"
+                  className="bg-teritary text-white hover:bg-teritary/90 h-12 w-fit"
                 >
                   {lang === "ru" ? "Стать спонсором" : "Become a sponsor"}
                 </Button>
