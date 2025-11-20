@@ -26,7 +26,7 @@ export const homeAbout = [
       },
     ],
 
-    button: "Подробнее",
+    button: "Отчет",
     button2: "Каталог",
   },
 
@@ -55,7 +55,7 @@ export const homeAbout = [
         text: "Participants are top-management",
       },
     ],
-    button: "More",
+    button: "Report",
     button2: "Catalog",
   },
 ];
