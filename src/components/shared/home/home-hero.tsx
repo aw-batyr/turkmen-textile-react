@@ -43,7 +43,11 @@ export const HomeHero: FC = () => {
           <div className="embla__container flex lg:max-h-[600px] lg:min-h-[320px]">
             {banners?.map((item, i) =>
               item.path.includes(".mp4") ? (
-                <Link to="" key={i} className="embla__slide flex-[0_0_100%]">
+                <Link
+                  to={item?.link ?? ""}
+                  key={i}
+                  className="embla__slide flex-[0_0_100%]"
+                >
                   <video
                     autoPlay
                     controls={false}
