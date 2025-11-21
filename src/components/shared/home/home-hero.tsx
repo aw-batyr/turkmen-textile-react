@@ -40,14 +40,21 @@ export const HomeHero: FC = () => {
     <div className="mb-6">
       <section className="flex flex-col gap-5">
         <div ref={emblaRef} className="embla overflow-hidden">
-          <div className="embla__container flex">
+          <div className="embla__container flex lg:max-h-[600px] lg:min-h-[320px]">
             {banners?.map((item, i) =>
-              !item.link ? (
-                <div key={i} className="embla__slide flex-[0_0_100%]">
-                  <img
+              item.path.includes(".mp4") ? (
+                <Link to="" key={i} className="embla__slide flex-[0_0_100%]">
+                  <video
+                    autoPlay
+                    controls={false}
+                    muted
                     src={item.path}
-                    className="size-full object-cover lg:max-h-[600px] lg:min-h-[320px]"
+                    className="size-full object-cover"
                   />
+                </Link>
+              ) : !item.link ? (
+                <div key={i} className="embla__slide flex-[0_0_100%]">
+                  <img src={item.path} className="size-full object-cover" />
                 </div>
               ) : (
                 <Link
@@ -55,10 +62,7 @@ export const HomeHero: FC = () => {
                   to={item.link}
                   className="embla__slide flex-[0_0_100%]"
                 >
-                  <img
-                    src={item.path}
-                    className="size-full object-cover lg:max-h-[600px] lg:min-h-[320px]"
-                  />
+                  <img src={item.path} className="size-full object-cover" />
                 </Link>
               )
             )}
