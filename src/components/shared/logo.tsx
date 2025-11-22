@@ -8,7 +8,7 @@ interface Props {
 export const Logo: FC<Props> = ({ className }) => {
   return (
     <div className={cn("xl:h-14 h-10 w-auto", className)}>
-      <img src="/logo.svg" alt="logo" className="size-full object-cover" />
+      <img src="/logo.svg" alt="logo" className="size-full object-contain" />
     </div>
   );
 };
