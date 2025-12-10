@@ -10,10 +10,12 @@ import { useLangStore } from "@/store/lang";
 import { useStats } from "@/hooks/tanstack/use-stats";
 import { useStaticWords } from "@/hooks/tanstack/use-static-words";
 import { Loader } from "../";
+import { useTranslation } from "react-i18next";
 
 export const HomeAbout: FC = () => {
   const [ebmblaRef] = useEmblaCarousel();
   const lang = useLangStore((state) => state.lang);
+  const { t } = useTranslation("home");
 
   const { data, isPending } = useStaticWords("1");
 
@@ -38,11 +40,7 @@ export const HomeAbout: FC = () => {
             />
 
             <div className="flex w-full gap-8">
-              <Link
-                to="https://turkmentextile.turkmenexpo.com/app/storage/app/media/Report/report.pdf"
-                target="_blank"
-                className="w-fit"
-              >
+              <Link to={t("reportLink")} target="_blank" className="w-fit">
                 <Button variant={"outline"}>
                   {homeAbout[translate].button}
                 </Button>
