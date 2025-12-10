@@ -42,7 +42,7 @@ export const HomeHero: FC = () => {
         <div ref={emblaRef} className="embla overflow-hidden">
           <div className="embla__container flex lg:max-h-[600px] lg:min-h-[320px]">
             {banners?.map((item, i) =>
-              item.path.includes(".mp4") ? (
+              item.path.includes(".webm") ? (
                 <Link
                   to={item?.link ?? ""}
                   key={i}
@@ -53,7 +53,7 @@ export const HomeHero: FC = () => {
                     controls={false}
                     muted
                     src={item.path}
-                    className="size-full object-cover"
+                    className="size-full object-contain"
                   />
                 </Link>
               ) : !item.link ? (
