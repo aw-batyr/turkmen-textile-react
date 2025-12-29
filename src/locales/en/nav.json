@@ -85,6 +85,14 @@
       "drop": true,
       "dropDownContent": [
         {
+          "text": "Participation Options",
+          "link": "/participation-options"
+        },
+        {
+          "text": "Partnership Opportunities",
+          "link": "/partner-opportunities"
+        },
+        {
           "text": "Book a stand",
           "link": "/stend-form"
         },

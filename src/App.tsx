@@ -8,7 +8,7 @@ function App() {
     <ReactLenis
       root
       options={{
-        lerp: 0.07,
+        lerp: 0.1,
       }}
     >
       <Header />

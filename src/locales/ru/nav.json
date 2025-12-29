@@ -83,6 +83,15 @@
       "title": "Участникам",
       "drop": true,
       "dropDownContent": [
+        {
+          "text": "Варианты участия",
+          "link": "/participation-options"
+        },
+        {
+          "text": "Партнерские возможности",
+          "link": "/partner-opportunities"
+        },
+
         { "text": "Забронировать стенд", "link": "/stend-form" },
         {
           "text": "Почему стоит учатсвовать",

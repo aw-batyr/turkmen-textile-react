@@ -12,6 +12,8 @@ import {
   News,
   NewsInner,
   Participants,
+  ParticipationOptions,
+  PartnerOpportunities,
   StendForm,
 } from "./pages";
 
@@ -46,6 +48,16 @@ export const routes = [
       {
         element: <ImpressionsTm />,
         path: "impressions-tm",
+        errorElement: <Error />,
+      },
+      {
+        element: <ParticipationOptions />,
+        path: "participation-options",
+        errorElement: <Error />,
+      },
+      {
+        element: <PartnerOpportunities />,
+        path: "partner-opportunities",
         errorElement: <Error />,
       },
     ],

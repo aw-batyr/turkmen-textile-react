@@ -10,3 +10,5 @@ export { default as Participants } from "./participants";
 export { default as StendForm } from "./stend-form";
 export { default as Impressions } from "./impressions";
 export { default as ImpressionsTm } from "./impressions-tm";
+export { default as ParticipationOptions } from "./participation-options";
+export { default as PartnerOpportunities } from "./partner-opportunities";
