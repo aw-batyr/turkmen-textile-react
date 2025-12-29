@@ -20,12 +20,10 @@ export default function PartnerOpportunities() {
       <Cover title="Партнерские возможности" />
 
       <Container className="page-padding text-sm!">
-        <div className="mx-auto max-w-[900px] text-on_surface">
-          <h2 className="mb-3 text-[15px] font-medium">
-            Партнерские возможности
-          </h2>
+        <div className="mx-auto max-w-[900px]">
+          <h2 className="mb-3 text-2xl font-medium">Партнерские возможности</h2>
 
-          <div className="mb-4 rounded-sm bg-surface_container px-4 py-3 text-[11px] leading-relaxed text-on_surface_v">
+          <div className="mb-4 rounded-sm bg-surface_container px-4 py-3 text-sm leading-relaxed text-on_surface_v">
             Предлагаем Вам воспользоваться комплексными возможностями —
             партнерскими пакетами, разработанными под различные маркетинговые
             задачи компании-участника, которые позволят максимально использовать
@@ -33,7 +31,7 @@ export default function PartnerOpportunities() {
             бесспорно повысят эффективность продвижения Вашей компании.
           </div>
 
-          <p className="mb-4 text-[11px] leading-relaxed text-on_surface_v">
+          <p className="mb-4 text-sm leading-relaxed text-on_surface_v">
             Партнерство выставки — это всегда больше, чем просто участие. Это
             прекрасная возможность выгодно подать Вашу продукцию широкой публике
             в соответствии с Вашими основными целями и задачами. В каждом
@@ -42,10 +40,10 @@ export default function PartnerOpportunities() {
             передаете обращение к целевой аудитории.
           </p>
 
-          <h3 className="mb-2 text-[12px] font-medium">
+          <h3 className="mb-2 text-base font-medium">
             Партнерство выставки Turkmen Textile позволит:
           </h3>
-          <ul className="mb-4 list-disc pl-5 text-[11px] leading-relaxed text-on_surface_v">
+          <ul className="mb-4 list-disc pl-5 text-sm leading-relaxed text-on_surface_v">
             <li>Укрепить позиции Вашей компании на рынке.</li>
             <li>Обеспечить существенное преимущество в конкурентной среде.</li>
             <li>Закрепить имидж успешного бренда Вашей компании.</li>
@@ -61,14 +59,14 @@ export default function PartnerOpportunities() {
             считали ключевым игроком на рынке? Тогда заявите о себе громче всех!
           </div>
 
-          <h3 className="mb-2 text-[12px] font-medium">
+          <h3 className="mb-2 text-base font-medium">
             Варианты партнерских пакетов:
           </h3>
           <ul className="mb-4 border-t border-outline_v">
             {partnerPackages.map((item) => (
               <li
                 key={item}
-                className="flex items-center gap-2 border-b border-outline_v py-2 text-[11px] text-on_surface_v"
+                className="flex items-center gap-2 border-b border-outline_v py-2 text-sm text-on_surface_v"
               >
                 <span className="text-xs text-primary">✓</span>
                 <span>{item}</span>
@@ -76,12 +74,12 @@ export default function PartnerOpportunities() {
             ))}
           </ul>
 
-          <p className="text-[10px] leading-relaxed text-on_surface_v">
+          <p className="text-sm leading-relaxed text-on_surface_v">
             Данные опции являются базовыми, но мы всегда готовы обсудить вопрос
             о специальных проектах в рамках партнерства выставки, которые будут
             соответствовать Вашему бюджету, потребностям и целям.
           </p>
-          <p className="text-[10px] leading-relaxed text-on_surface_v">
+          <p className="text-sm leading-relaxed text-on_surface_v">
             По вопросам цен и дополнительных опций партнерских пакетов выставки
             KIFT, пожалуйста, обращайтесь к{" "}
             <span className="text-primary underline">ОРГАНИЗАТОРАМ</span>

@@ -140,12 +140,12 @@ export default function ParticipationOptions() {
 
           <Button
             variant={"outline"}
-            className="w-full mb-10 border border-primary py-1 text-center text-[11px] text-primary md:text-sm"
+            className="w-full mb-10 border border-primary py-1 text-center text-sm text-primary md:text-sm"
           >
             {getText(participationOptionsContent.spaceOnly)}
           </Button>
 
-          <p className="mb-5 text-center text-lg text-[11px]">
+          <p className="mb-5 text-center text-lg">
             {getText(participationOptionsContent.example)}
           </p>
 
@@ -157,20 +157,20 @@ export default function ParticipationOptions() {
             />
           </div>
 
-          <div className="mt-5 text-center text-[11px] leading-relaxed">
+          <div className="mt-5 text-center text-sm leading-relaxed">
             <p>{getText(participationOptionsContent.spaceOnlyDescription)}</p>
           </div>
 
           <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
             <div className="w-full flex flex-col items-center gap-2 text-primary">
               <ArrowIcon />
-              <div className="w-full border border-primary py-1 text-center text-[11px] text-primary md:text-sm">
+              <div className="w-full border border-primary py-1 text-center text-sm text-primary md:text-sm">
                 {getText(participationOptionsContent.standardBooth)}
               </div>
             </div>
             <div className="flex flex-col items-center gap-2 text-primary">
               <ArrowIcon />
-              <div className="w-full border border-primary py-1 text-center text-[11px] text-primary md:text-sm">
+              <div className="w-full border border-primary py-1 text-center text-sm text-primary md:text-sm">
                 {getText(participationOptionsContent.customBooth)}
               </div>
             </div>
@@ -178,7 +178,7 @@ export default function ParticipationOptions() {
 
           <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
-              <p className="mb-5 text-[11px]">
+              <p className="mb-5 text-sm">
                 {getText(participationOptionsContent.example)}:
               </p>
               <img
@@ -186,12 +186,12 @@ export default function ParticipationOptions() {
                 alt={getText(participationOptionsContent.standardExampleAlt)}
                 className="h-[160px] w-full rounded-sm object-cover md:h-[190px]"
               />
-              <p className="mt-2 text-[11px] leading-relaxed">
+              <p className="mt-2 text-sm leading-relaxed">
                 {getText(participationOptionsContent.boothExampleDescription)}
               </p>
             </div>
             <div>
-              <p className="mb-5 text-[11px]">
+              <p className="mb-5 text-sm">
                 {getText(participationOptionsContent.example)}:
               </p>
               <img
@@ -199,7 +199,7 @@ export default function ParticipationOptions() {
                 alt={getText(participationOptionsContent.customExampleAlt)}
                 className="h-[160px] w-full rounded-sm object-cover md:h-[190px]"
               />
-              <p className="mt-2 text-[11px] leading-relaxed">
+              <p className="mt-2 text-sm leading-relaxed">
                 {getText(participationOptionsContent.boothExampleDescription)}
               </p>
             </div>
@@ -208,7 +208,7 @@ export default function ParticipationOptions() {
           <p className="mt-6 text-center text-sm text-on_surface">
             {getText(participationOptionsContent.registrationFee)}
           </p>
-          <p className="text-center text-[11px]">
+          <p className="text-center text-sm">
             {getText(participationOptionsContent.pricingNote)}
           </p>
 
@@ -216,7 +216,7 @@ export default function ParticipationOptions() {
             2. {getText(participationOptionsContent.partnershipTitle)}
           </div>
 
-          <div className="mt-3 text-[11px] leading-relaxed">
+          <div className="mt-3 text-sm leading-relaxed">
             <p className="mb-2">
               {getText(participationOptionsContent.partnershipIntro)}
             </p>
