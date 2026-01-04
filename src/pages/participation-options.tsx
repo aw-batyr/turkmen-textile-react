@@ -134,13 +134,13 @@ export default function ParticipationOptions() {
             {getText(participationOptionsContent.title)}
           </p>
 
-          <Button className="mb-2 bg-primary md:text-sm w-full">
+          <Button className="mb-2 bg-primary md:text-base w-full">
             1. {getText(participationOptionsContent.exhibitionSpace)}
           </Button>
 
           <Button
             variant={"outline"}
-            className="w-full mb-10 border border-primary py-1 text-center text-sm text-primary md:text-sm"
+            className="w-full mb-10 border border-primary py-1 text-center text-base text-primary md:text-base"
           >
             {getText(participationOptionsContent.spaceOnly)}
           </Button>
@@ -157,20 +157,20 @@ export default function ParticipationOptions() {
             />
           </div>
 
-          <div className="mt-5 text-center text-sm leading-relaxed">
+          <div className="mt-5 text-center text-base leading-relaxed">
             <p>{getText(participationOptionsContent.spaceOnlyDescription)}</p>
           </div>
 
           <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
             <div className="w-full flex flex-col items-center gap-2 text-primary">
               <ArrowIcon />
-              <div className="w-full border border-primary py-1 text-center text-sm text-primary md:text-sm">
+              <div className="w-full border border-primary py-1 text-center text-base text-primary md:text-base">
                 {getText(participationOptionsContent.standardBooth)}
               </div>
             </div>
             <div className="flex flex-col items-center gap-2 text-primary">
               <ArrowIcon />
-              <div className="w-full border border-primary py-1 text-center text-sm text-primary md:text-sm">
+              <div className="w-full border border-primary py-1 text-center text-base text-primary md:text-base">
                 {getText(participationOptionsContent.customBooth)}
               </div>
             </div>
@@ -178,45 +178,45 @@ export default function ParticipationOptions() {
 
           <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
-              <p className="mb-5 text-sm">
+              <p className="mb-5 text-base">
                 {getText(participationOptionsContent.example)}:
               </p>
               <img
-                src={exampleImage}
+                src={"/example.jpeg"}
                 alt={getText(participationOptionsContent.standardExampleAlt)}
                 className="h-[160px] w-full rounded-sm object-cover md:h-[190px]"
               />
-              <p className="mt-2 text-sm leading-relaxed">
+              <p className="mt-2 text-base leading-relaxed">
                 {getText(participationOptionsContent.boothExampleDescription)}
               </p>
             </div>
             <div>
-              <p className="mb-5 text-sm">
+              <p className="mb-5 text-base">
                 {getText(participationOptionsContent.example)}:
               </p>
               <img
-                src={exampleImage}
+                src={"/example-2.jpeg"}
                 alt={getText(participationOptionsContent.customExampleAlt)}
                 className="h-[160px] w-full rounded-sm object-cover md:h-[190px]"
               />
-              <p className="mt-2 text-sm leading-relaxed">
+              <p className="mt-2 text-base leading-relaxed">
                 {getText(participationOptionsContent.boothExampleDescription)}
               </p>
             </div>
           </div>
 
-          <p className="mt-6 text-center text-sm text-on_surface">
+          <p className="mt-6 text-2xl">
             {getText(participationOptionsContent.registrationFee)}
           </p>
-          <p className="text-center text-sm">
+          <p className="text-base mt-3">
             {getText(participationOptionsContent.pricingNote)}
           </p>
 
-          <div className="mt-6 bg-primary py-3 text-center text-xs font-medium text-on_primary md:text-sm">
+          <div className="mt-6 bg-primary py-3 text-center text-xs font-medium text-on_primary md:text-base">
             2. {getText(participationOptionsContent.partnershipTitle)}
           </div>
 
-          <div className="mt-3 text-sm leading-relaxed">
+          <div className="mt-3 text-base leading-relaxed font-normal">
             <p className="mb-2">
               {getText(participationOptionsContent.partnershipIntro)}
             </p>
